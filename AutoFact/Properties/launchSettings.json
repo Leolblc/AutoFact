@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AutoFact": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

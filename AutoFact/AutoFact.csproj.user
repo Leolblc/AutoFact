@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Vue\AjoutClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vue\AjoutFacturation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vue\AjoutPresta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vue\Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vue\Facturation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vue\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vue\Prestation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vue\Recapitulatif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
