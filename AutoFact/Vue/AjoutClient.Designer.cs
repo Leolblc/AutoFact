@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TextBox TBPrénom;
+            TextBox TBPrenom;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AjoutClient));
             panelAjoutClient = new Panel();
             BtnRecap2 = new Button();
@@ -52,7 +52,7 @@
             TBMail = new TextBox();
             TBPhone = new TextBox();
             TBNom = new TextBox();
-            TBPrénom = new TextBox();
+            TBPrenom = new TextBox();
             panelAjoutClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -61,12 +61,13 @@
             panel4.SuspendLayout();
             SuspendLayout();
             // 
-            // TBPrénom
+            // TBPrenom
             // 
-            TBPrénom.Location = new Point(374, 75);
-            TBPrénom.Name = "TBPrénom";
-            TBPrénom.Size = new Size(161, 23);
-            TBPrénom.TabIndex = 3;
+            TBPrenom.Location = new Point(374, 75);
+            TBPrenom.Name = "TBPrenom";
+            TBPrenom.Size = new Size(161, 23);
+            TBPrenom.TabIndex = 3;
+            TBPrenom.TextChanged += TBPrenom_TextChanged;
             // 
             // panelAjoutClient
             // 
@@ -208,7 +209,7 @@
             panel4.Controls.Add(TBAdresse);
             panel4.Controls.Add(TBMail);
             panel4.Controls.Add(TBPhone);
-            panel4.Controls.Add(TBPrénom);
+            panel4.Controls.Add(TBPrenom);
             panel4.Controls.Add(TBNom);
             panel4.Location = new Point(289, 180);
             panel4.Name = "panel4";
@@ -318,6 +319,7 @@
             Controls.Add(panelAjoutClient);
             Name = "AjoutClient";
             Text = "AjoutClient";
+            Load += AjoutClient_Load;
             panelAjoutClient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);

@@ -75,6 +75,7 @@
             buttonRecap.TabIndex = 4;
             buttonRecap.Text = "Récapitulatif";
             buttonRecap.UseVisualStyleBackColor = true;
+            buttonRecap.Click += buttonRecap_Click;
             // 
             // buttonFact
             // 

@@ -79,3 +79,4 @@ C:\Users\leole\Source\Repos\Leolblc\Autofact\AutoFact\bin\Debug\net8.0-windows\M
 C:\Users\leole\Source\Repos\Leolblc\Autofact\AutoFact\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Configuration.dll
 C:\Users\leole\Source\Repos\Leolblc\Autofact\AutoFact\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Console.dll
 C:\Users\leole\Source\Repos\Leolblc\Autofact\AutoFact\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\leole\Source\Repos\Leolblc\Autofact\AutoFact\obj\Debug\net8.0-windows\AutoFact.sourcelink.json

@@ -31,5 +31,15 @@ namespace AutoFact
         {
 
         }
+
+        private void AjoutClient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBPrenom_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

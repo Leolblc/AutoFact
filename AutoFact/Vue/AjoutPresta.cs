@@ -19,6 +19,7 @@ using Microsoft.Extensions.Logging;
 using System.Security.Cryptography.X509Certificates;
 using Org.BouncyCastle.Bcpg;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using System.ComponentModel.Design;
 
 namespace AutoFact
 {
@@ -35,7 +36,7 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=localhost;Database=RPGQuest;User ID=root;Password=;";
+            string connectionString = "Server=192.168.56.2;Database=db_AutoFact;User ID=operateur;Password=Operateur;";
             connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
@@ -79,23 +80,23 @@ namespace AutoFact
 
             try
             {
-                
-                    MySqlCommand cmd = new MySqlCommand("SELECT id,name FROM Prestation", connection);
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                    DataTable ds2 = new DataTable();
-                    adapter.Fill(ds2);
 
-                    foreach (DataRow row in ds2.Rows)
-                    {
-                        int ID = Convert.ToInt32(row["id"]);
-                        string nom = row["name"].ToString();
-                        UnePresta lapresta = new UnePresta { anName = nom, anid = ID };
-                        comboBox1.Items.Add(lapresta);
+                MySqlCommand cmd = new MySqlCommand("SELECT id,type_prestation FROM Prestation", connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable ds2 = new DataTable();
+                adapter.Fill(ds2);
 
-                    }
-                    
+                foreach (DataRow row in ds2.Rows)
+                {
+                    int ID = Convert.ToInt32(row["id"]);
+                    string nom = row["type_prestation"].ToString();
+                    UnePresta lapresta = new UnePresta { anName = nom, anid = ID };
+                    comboBox1.Items.Add(lapresta);
 
-                
+                }
+
+
+
 
             }
             catch (Exception ex)
@@ -110,14 +111,51 @@ namespace AutoFact
 
         }
 
-        
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonValider2_Click(object sender, EventArgs e)
+        {
+            UnePresta selectedPrestation = comboBox1.SelectedItem as UnePresta;
+            if (selectedPrestation == null)
+            {
+                MessageBox.Show("Veuillez sélectionner une prestation.", "Erreur");
+                return;
+            }
+
+            try
+            {
+               
+                    string command1 = "INSERT INTO Prestation (name, description, prix_unitaire, montant_ht, type_prestation) VALUES (@name, @description, @prix_unitaire, @montant_ht, @type_prestation)";
+                    MySqlCommand cmmd = new MySqlCommand(command1, connection);
+                    cmmd.Parameters.AddWithValue("@name", TBNom.Text);
+                    cmmd.Parameters.AddWithValue("@description", richTextBox1.Text);
+                    cmmd.Parameters.AddWithValue("@prix_unitaire", TBPrixunitaire.Text);
+                    cmmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
+                    cmmd.Parameters.AddWithValue("@type_prestation", selectedPrestation.anName);
+                    cmmd.ExecuteNonQuery();
+                    MessageBox.Show("La Prestation a été ajoutée dans la liste");
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de l'enregistrement : {ex.Message}");
+            }
+
+
+        }
     }
 }
+
             
       
     

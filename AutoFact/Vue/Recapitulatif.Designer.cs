@@ -136,6 +136,7 @@
             Controls.Add(panelClient);
             Name = "Recapitulatif";
             Text = "Recapitulatif";
+            Load += Recapitulatif_Load;
             panelClient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

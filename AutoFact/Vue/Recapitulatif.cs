@@ -16,5 +16,12 @@ namespace AutoFact.Vue
         {
             InitializeComponent();
         }
+
+
+
+        private void Recapitulatif_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

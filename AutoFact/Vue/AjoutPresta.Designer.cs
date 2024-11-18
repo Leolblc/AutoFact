@@ -38,6 +38,8 @@ namespace AutoFact
             pictureBox1 = new PictureBox();
             panel5 = new Panel();
             panel4 = new Panel();
+            CB_HT = new TextBox();
+            Lab_Ht = new Label();
             label3 = new Label();
             label1 = new Label();
             richTextBox1 = new RichTextBox();
@@ -45,7 +47,7 @@ namespace AutoFact
             buttonValider2 = new Button();
             label8 = new Label();
             labelNP = new Label();
-            TBPhone = new TextBox();
+            TBPrixunitaire = new TextBox();
             TBNom = new TextBox();
             panel2 = new Panel();
             label2 = new Label();
@@ -141,6 +143,8 @@ namespace AutoFact
             // 
             // panel4
             // 
+            panel4.Controls.Add(CB_HT);
+            panel4.Controls.Add(Lab_Ht);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label1);
             panel4.Controls.Add(richTextBox1);
@@ -148,12 +152,29 @@ namespace AutoFact
             panel4.Controls.Add(buttonValider2);
             panel4.Controls.Add(label8);
             panel4.Controls.Add(labelNP);
-            panel4.Controls.Add(TBPhone);
+            panel4.Controls.Add(TBPrixunitaire);
             panel4.Controls.Add(TBNom);
             panel4.Location = new Point(287, 180);
             panel4.Name = "panel4";
             panel4.Size = new Size(857, 608);
             panel4.TabIndex = 5;
+            panel4.Paint += panel4_Paint;
+            // 
+            // CB_HT
+            // 
+            CB_HT.Location = new Point(44, 267);
+            CB_HT.Name = "CB_HT";
+            CB_HT.Size = new Size(140, 23);
+            CB_HT.TabIndex = 19;
+            // 
+            // Lab_Ht
+            // 
+            Lab_Ht.AutoSize = true;
+            Lab_Ht.Location = new Point(44, 243);
+            Lab_Ht.Name = "Lab_Ht";
+            Lab_Ht.Size = new Size(71, 15);
+            Lab_Ht.TabIndex = 18;
+            Lab_Ht.Text = "Montant HT";
             // 
             // label3
             // 
@@ -169,7 +190,7 @@ namespace AutoFact
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(41, 254);
+            label1.Location = new Point(44, 333);
             label1.Name = "label1";
             label1.Size = new Size(240, 22);
             label1.TabIndex = 16;
@@ -177,9 +198,9 @@ namespace AutoFact
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(41, 293);
+            richTextBox1.Location = new Point(41, 380);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(499, 203);
+            richTextBox1.Size = new Size(499, 116);
             richTextBox1.TabIndex = 15;
             richTextBox1.Text = "";
             // 
@@ -203,6 +224,7 @@ namespace AutoFact
             buttonValider2.TabIndex = 12;
             buttonValider2.Text = "Valider";
             buttonValider2.UseVisualStyleBackColor = false;
+            buttonValider2.Click += buttonValider2_Click;
             // 
             // label8
             // 
@@ -224,12 +246,12 @@ namespace AutoFact
             labelNP.TabIndex = 7;
             labelNP.Text = "Nom de la prestation";
             // 
-            // TBPhone
+            // TBPrixunitaire
             // 
-            TBPhone.Location = new Point(44, 173);
-            TBPhone.Name = "TBPhone";
-            TBPhone.Size = new Size(140, 23);
-            TBPhone.TabIndex = 4;
+            TBPrixunitaire.Location = new Point(44, 173);
+            TBPrixunitaire.Name = "TBPrixunitaire";
+            TBPrixunitaire.Size = new Size(140, 23);
+            TBPrixunitaire.TabIndex = 4;
             // 
             // TBNom
             // 
@@ -296,7 +318,7 @@ namespace AutoFact
         private Label label8;
         private Label label6;
         private Label labelNP;
-        private TextBox TBPhone;
+        private TextBox TBPrixunitaire;
         private TextBox TBNom;
         private Panel panel2;
         private Label label2;
@@ -304,5 +326,7 @@ namespace AutoFact
         private Label label1;
         private RichTextBox richTextBox1;
         private Label label3;
+        private Label Lab_Ht;
+        private TextBox CB_HT;
     }
 }

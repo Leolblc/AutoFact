@@ -1,3 +1,6 @@
+using AutoFact.Vue;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace AutoFact
 {
     public partial class Form1 : Form
@@ -7,7 +10,7 @@ namespace AutoFact
             InitializeComponent();
         }
 
-        
+
 
         private void buttonClient_Click(object sender, EventArgs e)
         {
@@ -33,6 +36,13 @@ namespace AutoFact
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void buttonRecap_Click(object sender, EventArgs e)
+        {
+            Recapitulatif FormRecap = new Recapitulatif();
+            FormRecap.ShowDialog();
+            this.Hide();
         }
     }
 }
