@@ -205,6 +205,10 @@
             // 
             // DGVListClient
             // 
+            DGVListClient.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGVListClient.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            DGVListClient.BorderStyle = BorderStyle.Fixed3D;
+            DGVListClient.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             DGVListClient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVListClient.Location = new Point(30, 81);
             DGVListClient.Name = "DGVListClient";

@@ -42,7 +42,7 @@
             panel2 = new Panel();
             label2 = new Label();
             panel4 = new Panel();
-            buttonValider = new Button();
+            BtnVal = new Button();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -197,7 +197,7 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(buttonValider);
+            panel4.Controls.Add(BtnVal);
             panel4.Controls.Add(label8);
             panel4.Controls.Add(label7);
             panel4.Controls.Add(label6);
@@ -213,17 +213,18 @@
             panel4.Size = new Size(857, 608);
             panel4.TabIndex = 3;
             // 
-            // buttonValider
+            // BtnVal
             // 
-            buttonValider.BackColor = Color.Transparent;
-            buttonValider.FlatStyle = FlatStyle.Popup;
-            buttonValider.Font = new Font("Segoe UI", 18F, FontStyle.Underline);
-            buttonValider.Location = new Point(41, 532);
-            buttonValider.Name = "buttonValider";
-            buttonValider.Size = new Size(101, 39);
-            buttonValider.TabIndex = 12;
-            buttonValider.Text = "Valider";
-            buttonValider.UseVisualStyleBackColor = false;
+            BtnVal.BackColor = Color.Transparent;
+            BtnVal.FlatStyle = FlatStyle.Popup;
+            BtnVal.Font = new Font("Segoe UI", 18F, FontStyle.Underline);
+            BtnVal.Location = new Point(41, 532);
+            BtnVal.Name = "BtnVal";
+            BtnVal.Size = new Size(101, 39);
+            BtnVal.TabIndex = 12;
+            BtnVal.Text = "Valider";
+            BtnVal.UseVisualStyleBackColor = false;
+            BtnVal.Click += BtnVal_Click;
             // 
             // label8
             // 
@@ -349,8 +350,8 @@
         private Label label5;
         private Label label7;
         private Label label6;
-        private Button buttonValider;
         private Label label8;
         private TextBox TBPrenom;
+        private Button BtnVal;
     }
 }

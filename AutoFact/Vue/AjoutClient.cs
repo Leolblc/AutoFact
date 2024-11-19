@@ -8,7 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySqlConnector;
+using MySql.EntityFrameworkCore;
+using MySql;
+using MySql.Data;
+using AutoFact.Vue;
+using System.Net.Mail;
+using System.ComponentModel.DataAnnotations;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.Extensions.Logging;
+using System.Security.Cryptography.X509Certificates;
+using Org.BouncyCastle.Bcpg;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using System.ComponentModel.Design;
 
 namespace AutoFact
 {
@@ -56,17 +67,27 @@ namespace AutoFact
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void TBPrenom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnVal_Click(object sender, EventArgs e)
+        {
             try
             {
 
-                string command1 = "INSERT INTO Client(name,lastname,mail,phone,address) values (@name, @lastname,@mail,@phone,@address);";
-                MySqlCommand cmmd = new MySqlCommand(command1, connection);
-                cmmd.Parameters.AddWithValue("@name", TBNom.Text);
-                cmmd.Parameters.AddWithValue("@lastname", TBPrenom.Text);
-                cmmd.Parameters.AddWithValue("@mail", TBMail.Text);
-                cmmd.Parameters.AddWithValue("@phone", TBPhone.Text);
-                cmmd.Parameters.AddWithValue("@adress", TBAdresse.Text);
-                cmmd.ExecuteNonQuery();
+                string command2 = "INSERT INTO Client(name,lastname,mail,phone,address) VALUES (@name, @lastname,@mail,@phone,@address);";
+                MySqlCommand cmd1 = new MySqlCommand(command2, connection);
+                cmd1.Parameters.AddWithValue("@name", TBNom.Text);
+                cmd1.Parameters.AddWithValue("@lastname", TBPrenom.Text);
+                cmd1.Parameters.AddWithValue("@mail", TBMail.Text);
+                cmd1.Parameters.AddWithValue("@phone", TBPhone.Text);
+                cmd1.Parameters.AddWithValue("@address", TBAdresse.Text);
+                cmd1.ExecuteNonQuery();
                 MessageBox.Show("Le Client a été ajoutée dans la liste");
 
             }
@@ -74,11 +95,6 @@ namespace AutoFact
             {
                 MessageBox.Show($"Erreur lors de l'enregistrement : {ex.Message}");
             }
-        }
-
-        private void TBPrenom_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

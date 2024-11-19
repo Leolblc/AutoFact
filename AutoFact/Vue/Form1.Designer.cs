@@ -37,14 +37,14 @@
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             label1 = new Label();
-            dataGridViewLFact = new DataGridView();
-            dataGridViewFacImp = new DataGridView();
+            DGVPrestation = new DataGridView();
+            DGVLastClient = new DataGridView();
             dataGridViewCA = new DataGridView();
             dataGridViewDebitnonpayer = new DataGridView();
             panelClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewLFact).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewFacImp).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVPrestation).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVLastClient).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDebitnonpayer).BeginInit();
             SuspendLayout();
@@ -150,28 +150,36 @@
             label1.TabIndex = 2;
             label1.Text = "Bienvenue";
             // 
-            // dataGridViewLFact
+            // DGVPrestation
             // 
-            dataGridViewLFact.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewLFact.Location = new Point(324, 204);
-            dataGridViewLFact.Name = "dataGridViewLFact";
-            dataGridViewLFact.Size = new Size(272, 172);
-            dataGridViewLFact.TabIndex = 3;
+            DGVPrestation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGVPrestation.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DGVPrestation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVPrestation.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DGVPrestation.Location = new Point(324, 204);
+            DGVPrestation.Name = "DGVPrestation";
+            DGVPrestation.ReadOnly = true;
+            DGVPrestation.Size = new Size(323, 200);
+            DGVPrestation.TabIndex = 3;
+            DGVPrestation.CellContentClick += DGVPrestation_CellContentClick;
             // 
-            // dataGridViewFacImp
+            // DGVLastClient
             // 
-            dataGridViewFacImp.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewFacImp.Location = new Point(876, 204);
-            dataGridViewFacImp.Name = "dataGridViewFacImp";
-            dataGridViewFacImp.Size = new Size(285, 172);
-            dataGridViewFacImp.TabIndex = 4;
+            DGVLastClient.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGVLastClient.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DGVLastClient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVLastClient.Location = new Point(876, 204);
+            DGVLastClient.Name = "DGVLastClient";
+            DGVLastClient.Size = new Size(318, 200);
+            DGVLastClient.TabIndex = 4;
+            DGVLastClient.CellContentClick += DGVLastClient_CellContentClick;
             // 
             // dataGridViewCA
             // 
             dataGridViewCA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCA.Location = new Point(876, 528);
             dataGridViewCA.Name = "dataGridViewCA";
-            dataGridViewCA.Size = new Size(285, 191);
+            dataGridViewCA.Size = new Size(318, 200);
             dataGridViewCA.TabIndex = 5;
             // 
             // dataGridViewDebitnonpayer
@@ -179,7 +187,7 @@
             dataGridViewDebitnonpayer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewDebitnonpayer.Location = new Point(324, 528);
             dataGridViewDebitnonpayer.Name = "dataGridViewDebitnonpayer";
-            dataGridViewDebitnonpayer.Size = new Size(272, 191);
+            dataGridViewDebitnonpayer.Size = new Size(323, 200);
             dataGridViewDebitnonpayer.TabIndex = 6;
             // 
             // Form1
@@ -190,17 +198,18 @@
             ClientSize = new Size(1281, 877);
             Controls.Add(dataGridViewDebitnonpayer);
             Controls.Add(dataGridViewCA);
-            Controls.Add(dataGridViewFacImp);
-            Controls.Add(dataGridViewLFact);
+            Controls.Add(DGVLastClient);
+            Controls.Add(DGVPrestation);
             Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(panelClient);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             panelClient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewLFact).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewFacImp).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVPrestation).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVLastClient).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCA).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDebitnonpayer).EndInit();
             ResumeLayout(false);
@@ -217,8 +226,8 @@
         private Button buttonRecap;
         private Button buttonFact;
         private Label label1;
-        private DataGridView dataGridViewLFact;
-        private DataGridView dataGridViewFacImp;
+        private DataGridView DGVPrestation;
+        private DataGridView DGVLastClient;
         private DataGridView dataGridViewCA;
         private DataGridView dataGridViewDebitnonpayer;
     }
