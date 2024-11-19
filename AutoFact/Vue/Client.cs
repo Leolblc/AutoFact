@@ -35,5 +35,10 @@ namespace AutoFact
             newClient.Show();
             this.Hide();
         }
+
+        private void Client_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -205,6 +205,8 @@
             // 
             // DGVListClient
             // 
+            DGVListClient.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGVListClient.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DGVListClient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVListClient.Location = new Point(30, 81);
             DGVListClient.Name = "DGVListClient";
@@ -223,6 +225,7 @@
             Controls.Add(panel1);
             Name = "Prestation";
             Text = "Prestation";
+            Load += Prestation_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel5.ResumeLayout(false);

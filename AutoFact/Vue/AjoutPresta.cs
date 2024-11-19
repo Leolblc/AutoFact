@@ -81,7 +81,7 @@ namespace AutoFact
             try
             {
 
-                MySqlCommand cmd = new MySqlCommand("SELECT id,type_prestation FROM Prestation", connection);
+                MySqlCommand cmd = new MySqlCommand("SELECT id , libelle FROM Type_Prestation;", connection);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable ds2 = new DataTable();
                 adapter.Fill(ds2);
@@ -89,7 +89,7 @@ namespace AutoFact
                 foreach (DataRow row in ds2.Rows)
                 {
                     int ID = Convert.ToInt32(row["id"]);
-                    string nom = row["type_prestation"].ToString();
+                    string nom = row["libelle"].ToString();
                     UnePresta lapresta = new UnePresta { anName = nom, anid = ID };
                     comboBox1.Items.Add(lapresta);
 
@@ -135,13 +135,13 @@ namespace AutoFact
             try
             {
                
-                    string command1 = "INSERT INTO Prestation (name, description, prix_unitaire, montant_ht, type_prestation) VALUES (@name, @description, @prix_unitaire, @montant_ht, @type_prestation)";
+                    string command1 = "INSERT INTO Prestation (name, description, prix_unitaire, montant_ht, id_type) VALUES (@name, @description, @prix_unitaire, @montant_ht, @id_type)";
                     MySqlCommand cmmd = new MySqlCommand(command1, connection);
                     cmmd.Parameters.AddWithValue("@name", TBNom.Text);
                     cmmd.Parameters.AddWithValue("@description", richTextBox1.Text);
                     cmmd.Parameters.AddWithValue("@prix_unitaire", TBPrixunitaire.Text);
                     cmmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
-                    cmmd.Parameters.AddWithValue("@type_prestation", selectedPrestation.anName);
+                    cmmd.Parameters.AddWithValue("@id_type", comboBox1.Items.Count);
                     cmmd.ExecuteNonQuery();
                     MessageBox.Show("La Prestation a été ajoutée dans la liste");
                 

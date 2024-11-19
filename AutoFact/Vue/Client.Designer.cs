@@ -223,6 +223,7 @@
             Controls.Add(panel1);
             Name = "Client";
             Text = "Client";
+            Load += Client_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TextBox TBPrenom;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AjoutClient));
+            TBPrenom = new TextBox();
             panelAjoutClient = new Panel();
             BtnRecap2 = new Button();
             BtnFacture2 = new Button();
@@ -52,7 +52,6 @@
             TBMail = new TextBox();
             TBPhone = new TextBox();
             TBNom = new TextBox();
-            TBPrenom = new TextBox();
             panelAjoutClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -134,7 +133,6 @@
             BtnClientNA2.TabIndex = 2;
             BtnClientNA2.Text = "Client";
             BtnClientNA2.UseVisualStyleBackColor = true;
-            BtnClientNA2.Click += BtnClientNA2_Click;
             // 
             // pictureBox1
             // 
@@ -196,7 +194,6 @@
             label2.Size = new Size(274, 47);
             label2.TabIndex = 0;
             label2.Text = "Nouveau Client";
-            label2.Click += label2_Click;
             // 
             // panel4
             // 
@@ -277,7 +274,6 @@
             label3.Size = new Size(50, 22);
             label3.TabIndex = 7;
             label3.Text = "Nom";
-            label3.Click += label3_Click;
             // 
             // TBAdresse
             // 
@@ -319,7 +315,6 @@
             Controls.Add(panelAjoutClient);
             Name = "AjoutClient";
             Text = "AjoutClient";
-            Load += AjoutClient_Load;
             panelAjoutClient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
@@ -356,5 +351,6 @@
         private Label label6;
         private Button buttonValider;
         private Label label8;
+        private TextBox TBPrenom;
     }
 }
