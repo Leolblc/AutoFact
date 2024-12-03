@@ -96,5 +96,10 @@ namespace AutoFact
                 MessageBox.Show($"Erreur lors de l'enregistrement : {ex.Message}");
             }
         }
+
+        private void TBNom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -303,6 +303,7 @@
             TBNom.Name = "TBNom";
             TBNom.Size = new Size(161, 23);
             TBNom.TabIndex = 2;
+            TBNom.TextChanged += TBNom_TextChanged;
             // 
             // AjoutClient
             // 

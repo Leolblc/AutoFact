@@ -40,13 +40,13 @@
             BtnAddFact = new Button();
             label3 = new Label();
             label2 = new Label();
-            DGVListClient = new DataGridView();
+            DGVFacturation = new DataGridView();
             panel5 = new Panel();
             label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DGVListClient).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVFacturation).BeginInit();
             panel5.SuspendLayout();
             SuspendLayout();
             // 
@@ -141,7 +141,7 @@
             panel6.Controls.Add(BtnAddFact);
             panel6.Controls.Add(label3);
             panel6.Controls.Add(label2);
-            panel6.Controls.Add(DGVListClient);
+            panel6.Controls.Add(DGVFacturation);
             panel6.Location = new Point(316, 152);
             panel6.Name = "panel6";
             panel6.Size = new Size(857, 608);
@@ -181,13 +181,16 @@
             label2.TabIndex = 1;
             label2.Text = "Liste des factures";
             // 
-            // DGVListClient
+            // DGVFacturation
             // 
-            DGVListClient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVListClient.Location = new Point(30, 81);
-            DGVListClient.Name = "DGVListClient";
-            DGVListClient.Size = new Size(780, 414);
-            DGVListClient.TabIndex = 0;
+            DGVFacturation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGVFacturation.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DGVFacturation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVFacturation.Location = new Point(30, 81);
+            DGVFacturation.Name = "DGVFacturation";
+            DGVFacturation.ReadOnly = true;
+            DGVFacturation.Size = new Size(780, 414);
+            DGVFacturation.TabIndex = 0;
             // 
             // panel5
             // 
@@ -222,11 +225,12 @@
             Controls.Add(panel1);
             Name = "Facturation";
             Text = "Facturation";
+            Load += Facturation_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DGVListClient).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVFacturation).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ResumeLayout(false);
@@ -245,7 +249,7 @@
         private Button BtnAddFact;
         private Label label3;
         private Label label2;
-        private DataGridView DGVListClient;
+        private DataGridView DGVFacturation;
         private Panel panel5;
         private Label label1;
     }

@@ -170,6 +170,7 @@
             DGVLastClient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVLastClient.Location = new Point(876, 204);
             DGVLastClient.Name = "DGVLastClient";
+            DGVLastClient.ReadOnly = true;
             DGVLastClient.Size = new Size(318, 200);
             DGVLastClient.TabIndex = 4;
             DGVLastClient.CellContentClick += DGVLastClient_CellContentClick;

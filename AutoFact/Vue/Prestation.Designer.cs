@@ -210,6 +210,7 @@
             DGVListClient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVListClient.Location = new Point(30, 81);
             DGVListClient.Name = "DGVListClient";
+            DGVListClient.ReadOnly = true;
             DGVListClient.Size = new Size(780, 414);
             DGVListClient.TabIndex = 0;
             // 

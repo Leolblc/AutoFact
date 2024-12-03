@@ -39,6 +39,9 @@
             panel1 = new Panel();
             label8 = new Label();
             panel4 = new Panel();
+            DTPDate = new DateTimePicker();
+            TBEscompte = new TextBox();
+            LBEscompte = new Label();
             CBNpresta = new ComboBox();
             NUDQte = new NumericUpDown();
             CBListCli = new ComboBox();
@@ -50,6 +53,7 @@
             label56 = new Label();
             label3 = new Label();
             TBNomFacture = new TextBox();
+            LBDate = new Label();
             panelClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -167,6 +171,10 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(LBDate);
+            panel4.Controls.Add(DTPDate);
+            panel4.Controls.Add(TBEscompte);
+            panel4.Controls.Add(LBEscompte);
             panel4.Controls.Add(CBNpresta);
             panel4.Controls.Add(NUDQte);
             panel4.Controls.Add(CBListCli);
@@ -182,6 +190,30 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(857, 608);
             panel4.TabIndex = 4;
+            // 
+            // DTPDate
+            // 
+            DTPDate.Location = new Point(328, 266);
+            DTPDate.Name = "DTPDate";
+            DTPDate.Size = new Size(200, 23);
+            DTPDate.TabIndex = 20;
+            // 
+            // TBEscompte
+            // 
+            TBEscompte.Location = new Point(46, 370);
+            TBEscompte.Name = "TBEscompte";
+            TBEscompte.Size = new Size(243, 23);
+            TBEscompte.TabIndex = 19;
+            // 
+            // LBEscompte
+            // 
+            LBEscompte.AutoSize = true;
+            LBEscompte.Font = new Font("Arial", 14F);
+            LBEscompte.Location = new Point(46, 327);
+            LBEscompte.Name = "LBEscompte";
+            LBEscompte.Size = new Size(97, 22);
+            LBEscompte.TabIndex = 18;
+            LBEscompte.Text = "Escompte";
             // 
             // CBNpresta
             // 
@@ -209,7 +241,7 @@
             // 
             // TBDescription
             // 
-            TBDescription.Location = new Point(46, 360);
+            TBDescription.Location = new Point(41, 473);
             TBDescription.Name = "TBDescription";
             TBDescription.Size = new Size(466, 23);
             TBDescription.TabIndex = 13;
@@ -225,12 +257,13 @@
             buttonValider.TabIndex = 12;
             buttonValider.Text = "Valider";
             buttonValider.UseVisualStyleBackColor = false;
+            buttonValider.Click += buttonValider_Click;
             // 
             // label34
             // 
             label34.AutoSize = true;
             label34.Font = new Font("Arial", 14F);
-            label34.Location = new Point(44, 309);
+            label34.Location = new Point(46, 448);
             label34.Name = "label34";
             label34.Size = new Size(106, 22);
             label34.TabIndex = 11;
@@ -283,6 +316,16 @@
             TBNomFacture.Size = new Size(468, 23);
             TBNomFacture.TabIndex = 2;
             // 
+            // LBDate
+            // 
+            LBDate.AutoSize = true;
+            LBDate.Font = new Font("Arial", 14F);
+            LBDate.Location = new Point(328, 230);
+            LBDate.Name = "LBDate";
+            LBDate.Size = new Size(169, 22);
+            LBDate.TabIndex = 21;
+            LBDate.Text = "Date de facturation";
+            // 
             // AjoutFacturation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -329,5 +372,9 @@
         private TextBox TBDescription;
         private NumericUpDown NUDQte;
         private ComboBox CBNpresta;
+        private Label LBEscompte;
+        private TextBox TBEscompte;
+        private DateTimePicker DTPDate;
+        private Label LBDate;
     }
 }
