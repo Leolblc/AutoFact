@@ -40,13 +40,13 @@
             DGVPrestation = new DataGridView();
             DGVLastClient = new DataGridView();
             dataGridViewCA = new DataGridView();
-            dataGridViewDebitnonpayer = new DataGridView();
+            DGVFact = new DataGridView();
             panelClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DGVPrestation).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DGVLastClient).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCA).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewDebitnonpayer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVFact).BeginInit();
             SuspendLayout();
             // 
             // panelClient
@@ -183,13 +183,14 @@
             dataGridViewCA.Size = new Size(318, 200);
             dataGridViewCA.TabIndex = 5;
             // 
-            // dataGridViewDebitnonpayer
+            // DGVFact
             // 
-            dataGridViewDebitnonpayer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewDebitnonpayer.Location = new Point(324, 528);
-            dataGridViewDebitnonpayer.Name = "dataGridViewDebitnonpayer";
-            dataGridViewDebitnonpayer.Size = new Size(323, 200);
-            dataGridViewDebitnonpayer.TabIndex = 6;
+            DGVFact.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVFact.Location = new Point(254, 528);
+            DGVFact.Name = "DGVFact";
+            DGVFact.Size = new Size(521, 200);
+            DGVFact.TabIndex = 6;
+            DGVFact.CellContentClick += DGVFact_CellContentClick;
             // 
             // Form1
             // 
@@ -197,7 +198,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1281, 877);
-            Controls.Add(dataGridViewDebitnonpayer);
+            Controls.Add(DGVFact);
             Controls.Add(dataGridViewCA);
             Controls.Add(DGVLastClient);
             Controls.Add(DGVPrestation);
@@ -212,7 +213,7 @@
             ((System.ComponentModel.ISupportInitialize)DGVPrestation).EndInit();
             ((System.ComponentModel.ISupportInitialize)DGVLastClient).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCA).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewDebitnonpayer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVFact).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -230,6 +231,6 @@
         private DataGridView DGVPrestation;
         private DataGridView DGVLastClient;
         private DataGridView dataGridViewCA;
-        private DataGridView dataGridViewDebitnonpayer;
+        private DataGridView DGVFact;
     }
 }

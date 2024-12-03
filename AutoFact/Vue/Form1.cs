@@ -127,6 +127,7 @@ namespace AutoFact
         {
             LoadDernieresPrestations();
             LoadDernierClients();
+            LoadDerniereFacture();
         }
 
         private void DGVLastClient_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -154,6 +155,33 @@ namespace AutoFact
             {
                 MessageBox.Show($"Erreur lors du chargement des dernières prestations : {ex.Message}", "Erreur de chargement");
             }
+        }
+
+        private void LoadDerniereFacture()
+        {
+            string query = "SELECT * FROM Derniere_Facture";
+
+            try
+            {
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    using (var adapter = new MySqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        DGVFact.DataSource = dataTable; // Assurez-vous que le nom du DataGridView est correct
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors du chargement des dernières prestations : {ex.Message}", "Erreur de chargement");
+            }
+        }
+
+        private void DGVFact_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
