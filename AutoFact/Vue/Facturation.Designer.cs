@@ -37,6 +37,8 @@
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel6 = new Panel();
+            BtnExportPDF = new Button();
+            CBPDF = new ComboBox();
             BtnAddFact = new Button();
             label3 = new Label();
             label2 = new Label();
@@ -138,6 +140,8 @@
             // 
             // panel6
             // 
+            panel6.Controls.Add(BtnExportPDF);
+            panel6.Controls.Add(CBPDF);
             panel6.Controls.Add(BtnAddFact);
             panel6.Controls.Add(label3);
             panel6.Controls.Add(label2);
@@ -146,6 +150,23 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(857, 608);
             panel6.TabIndex = 5;
+            // 
+            // BtnExportPDF
+            // 
+            BtnExportPDF.Location = new Point(180, 550);
+            BtnExportPDF.Name = "BtnExportPDF";
+            BtnExportPDF.Size = new Size(75, 23);
+            BtnExportPDF.TabIndex = 5;
+            BtnExportPDF.Text = "Exporter";
+            BtnExportPDF.UseVisualStyleBackColor = true;
+            // 
+            // CBPDF
+            // 
+            CBPDF.FormattingEnabled = true;
+            CBPDF.Location = new Point(41, 550);
+            CBPDF.Name = "CBPDF";
+            CBPDF.Size = new Size(121, 23);
+            CBPDF.TabIndex = 4;
             // 
             // BtnAddFact
             // 
@@ -252,5 +273,7 @@
         private DataGridView DGVFacturation;
         private Panel panel5;
         private Label label1;
+        private Button BtnExportPDF;
+        private ComboBox CBPDF;
     }
 }
