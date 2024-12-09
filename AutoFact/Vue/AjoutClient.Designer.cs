@@ -94,6 +94,7 @@
             BtnRecap2.TabIndex = 5;
             BtnRecap2.Text = "Récapitulatif";
             BtnRecap2.UseVisualStyleBackColor = true;
+            BtnRecap2.Click += BtnRecap2_Click;
             // 
             // BtnFacture2
             // 
@@ -107,6 +108,7 @@
             BtnFacture2.TabIndex = 4;
             BtnFacture2.Text = "Facture";
             BtnFacture2.UseVisualStyleBackColor = true;
+            BtnFacture2.Click += BtnFacture2_Click;
             // 
             // BtnPrestation2
             // 

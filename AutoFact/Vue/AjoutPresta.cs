@@ -36,14 +36,14 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.2;Database=db_AutoFact;User ID=operateur;Password=Operateur;";
+            string connectionString = "Server=192.168.56.10;Database=Autofact;User ID=operateur;Password=Operateur;";
             connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.2",
+                Server = "192.168.56.10",
                 UserID = "operateur",
                 Password = "Operateur",
-                Database = "db_AutoFact",
+                Database = "Autofact",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try
@@ -81,7 +81,7 @@ namespace AutoFact
             try
             {
 
-                MySqlCommand cmd = new MySqlCommand("SELECT id , libelle FROM Type_Prestation;", connection);
+                MySqlCommand cmd = new MySqlCommand("SELECT id , type_prestation FROM Prestation;", connection);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable ds2 = new DataTable();
                 adapter.Fill(ds2);
@@ -89,7 +89,7 @@ namespace AutoFact
                 foreach (DataRow row in ds2.Rows)
                 {
                     int ID = Convert.ToInt32(row["id"]);
-                    string nom = row["libelle"].ToString();
+                    string nom = row["type_prestation"].ToString();
                     UnePresta lapresta = new UnePresta { anName = nom, anid = ID };
                     comboBox1.Items.Add(lapresta);
 
@@ -134,23 +134,48 @@ namespace AutoFact
 
             try
             {
-               
-                    string command1 = "INSERT INTO Prestation (name, description, prix_unitaire, montant_ht, id_type) VALUES (@name, @description, @prix_unitaire, @montant_ht, @id_type)";
-                    MySqlCommand cmmd = new MySqlCommand(command1, connection);
-                    cmmd.Parameters.AddWithValue("@name", TBNom.Text);
-                    cmmd.Parameters.AddWithValue("@description", richTextBox1.Text);
-                    cmmd.Parameters.AddWithValue("@prix_unitaire", TBPrixunitaire.Text);
-                    cmmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
-                    cmmd.Parameters.AddWithValue("@id_type", comboBox1.Items.Count);
-                    cmmd.ExecuteNonQuery();
-                    MessageBox.Show("La Prestation a été ajoutée dans la liste");
-                
+
+                string command1 = "INSERT INTO Prestation (name, description, prix_unitaire, montant_ht, date_vente, type_prestation) VALUES (@name, @description, @prix_unitaire, @montant_ht, @date_vente, @type_prestation )";
+                MySqlCommand cmmd = new MySqlCommand(command1, connection);
+                cmmd.Parameters.AddWithValue("@name", TBNom.Text);
+                cmmd.Parameters.AddWithValue("@description", richTextBox1.Text);
+                cmmd.Parameters.AddWithValue("@prix_unitaire", TBPrixunitaire.Text);
+                cmmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
+                cmmd.Parameters.AddWithValue("@date_vente", DateTime.Now);
+                cmmd.Parameters.AddWithValue("@type_prestation", comboBox1.Text);
+
+                cmmd.ExecuteNonQuery();
+                MessageBox.Show("La Prestation a été ajoutée dans la liste");
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erreur lors de l'enregistrement : {ex.Message}");
             }
 
+
+        }
+
+        private void BtnClientNA3_Click(object sender, EventArgs e)
+        {
+            Client FormClient = new Client();
+            FormClient.ShowDialog();
+        }
+
+        private void BtnFacture3_Click(object sender, EventArgs e)
+        {
+            Facturation FormFacturation = new Facturation();
+            FormFacturation.ShowDialog();
+        }
+
+        private void BtnRecap3_Click(object sender, EventArgs e)
+        {
+            Recapitulatif FormRecap = new Recapitulatif();
+            FormRecap.ShowDialog();
+        }
+
+        private void TBNom_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -76,6 +76,7 @@
             buttonRecap3.TabIndex = 5;
             buttonRecap3.Text = "Récapitulatif";
             buttonRecap3.UseVisualStyleBackColor = true;
+            buttonRecap3.Click += buttonRecap3_Click;
             // 
             // buttonFact3
             // 
@@ -117,6 +118,7 @@
             buttonClient3.TabIndex = 2;
             buttonClient3.Text = "Client";
             buttonClient3.UseVisualStyleBackColor = false;
+            buttonClient3.Click += buttonClient3_Click;
             // 
             // pictureBox1
             // 
@@ -188,6 +190,7 @@
             DGVListClient.Name = "DGVListClient";
             DGVListClient.Size = new Size(780, 414);
             DGVListClient.TabIndex = 0;
+            DGVListClient.CellContentClick += DGVListClient_CellContentClick;
             // 
             // panel5
             // 
@@ -222,6 +225,7 @@
             Controls.Add(panel1);
             Name = "Facturation";
             Text = "Facturation";
+            Load += Facturation_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel6.ResumeLayout(false);

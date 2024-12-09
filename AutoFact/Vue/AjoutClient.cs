@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutoFact.Vue;
 using MySqlConnector;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -23,11 +24,11 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.2;Database=db_AutoFact;User ID=operateur;Password=Operateur;";
+            string connectionString = "Server=192.168.56.10;Database=AutoFact;User ID=operateur;Password=Operateur;";
             connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.2",
+                Server = "192.168.56.10",
                 UserID = "operateur",
                 Password = "Operateur",
                 Database = "db_AutoFact",
@@ -79,6 +80,18 @@ namespace AutoFact
         private void TBPrenom_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnFacture2_Click(object sender, EventArgs e)
+        {
+            Facturation FormFacturation = new Facturation();
+            FormFacturation.ShowDialog();
+        }
+
+        private void BtnRecap2_Click(object sender, EventArgs e)
+        {
+            Recapitulatif FormRecap = new Recapitulatif();
+            FormRecap.ShowDialog();
         }
     }
 }

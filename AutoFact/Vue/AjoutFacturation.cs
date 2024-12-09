@@ -38,14 +38,14 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.2;Database=db_AutoFact;User ID=operateur;Password=Operateur;";
+            string connectionString = "Server=192.168.56.10;Database=AutoFact;User ID=operateur;Password=Operateur;";
             connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.2",
+                Server = "192.168.56.10",
                 UserID = "operateur",
                 Password = "Operateur",
-                Database = "db_AutoFact",
+                Database = "AutoFact",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try
@@ -158,6 +158,18 @@ namespace AutoFact
         private void buttonFact_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonClient_Click(object sender, EventArgs e)
+        {
+            Client FormClient = new Client();
+            FormClient.ShowDialog();
+        }
+
+        private void buttonRecap_Click(object sender, EventArgs e)
+        {
+            Recapitulatif FormRecap = new Recapitulatif();
+            FormRecap.ShowDialog();
         }
     }
 

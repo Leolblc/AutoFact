@@ -1,6 +1,6 @@
 ﻿namespace AutoFact
 {
-    partial class Form1
+    partial class Home
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             panelClient = new Panel();
             buttonRecap = new Button();
             buttonFact = new Button();
@@ -157,6 +157,7 @@
             dataGridViewLFact.Name = "dataGridViewLFact";
             dataGridViewLFact.Size = new Size(272, 172);
             dataGridViewLFact.TabIndex = 3;
+            dataGridViewLFact.CellContentClick += dataGridViewLFact_CellContentClick;
             // 
             // dataGridViewFacImp
             // 
@@ -182,7 +183,7 @@
             dataGridViewDebitnonpayer.Size = new Size(272, 191);
             dataGridViewDebitnonpayer.TabIndex = 6;
             // 
-            // Form1
+            // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -195,8 +196,9 @@
             Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(panelClient);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "Home";
+            Text = "Home";
+            Load += Home_Load;
             panelClient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLFact).EndInit();

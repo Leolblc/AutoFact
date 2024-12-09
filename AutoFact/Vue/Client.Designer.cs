@@ -39,7 +39,7 @@
             panel3 = new Panel();
             label1 = new Label();
             panel4 = new Panel();
-            button1 = new Button();
+            bntAjoutClient = new Button();
             label3 = new Label();
             label2 = new Label();
             DGVListClient = new DataGridView();
@@ -77,6 +77,7 @@
             BtnRecap.TabIndex = 4;
             BtnRecap.Text = "Récapitulatif";
             BtnRecap.UseVisualStyleBackColor = true;
+            BtnRecap.Click += BtnRecap_Click;
             // 
             // BtnFacture
             // 
@@ -90,6 +91,7 @@
             BtnFacture.TabIndex = 3;
             BtnFacture.Text = "Facture";
             BtnFacture.UseVisualStyleBackColor = true;
+            BtnFacture.Click += BtnFacture_Click;
             // 
             // BtnPrestation
             // 
@@ -160,7 +162,7 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(button1);
+            panel4.Controls.Add(bntAjoutClient);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(DGVListClient);
@@ -169,19 +171,19 @@
             panel4.Size = new Size(857, 608);
             panel4.TabIndex = 2;
             // 
-            // button1
+            // bntAjoutClient
             // 
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.Transparent;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(801, 563);
-            button1.Name = "button1";
-            button1.Size = new Size(27, 27);
-            button1.TabIndex = 3;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            bntAjoutClient.BackgroundImageLayout = ImageLayout.None;
+            bntAjoutClient.FlatAppearance.BorderSize = 0;
+            bntAjoutClient.FlatStyle = FlatStyle.Flat;
+            bntAjoutClient.ForeColor = Color.Transparent;
+            bntAjoutClient.Image = (Image)resources.GetObject("bntAjoutClient.Image");
+            bntAjoutClient.Location = new Point(801, 563);
+            bntAjoutClient.Name = "bntAjoutClient";
+            bntAjoutClient.Size = new Size(27, 27);
+            bntAjoutClient.TabIndex = 3;
+            bntAjoutClient.UseVisualStyleBackColor = true;
+            bntAjoutClient.Click += button1_Click;
             // 
             // label3
             // 
@@ -250,6 +252,6 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private Label label2;
         private Label label3;
-        private Button button1;
+        private Button bntAjoutClient;
     }
 }

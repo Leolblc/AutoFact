@@ -35,14 +35,14 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.2;Database=db_AutoFact;User ID=operateur;Password=Operateur;";
+            string connectionString = "Server=192.168.56.10;Database=Autofact;User ID=operateur;Password=Operateur;";
             connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.2",
+                Server = "192.168.56.10",
                 UserID = "operateur",
                 Password = "Operateur",
-                Database = "db_AutoFact",
+                Database = "Autofact",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try
@@ -76,9 +76,7 @@ namespace AutoFact
 
         private void LoadData()
         {
-            string query = "SELECT Prestation.id, Prestation.name, Type_Prestation.libelle " +
-                           "FROM Prestation " +
-                           "INNER JOIN Type_Prestation ON Prestation.id_type = Type_Prestation.id";
+            string query = "select * from AffichePrestation;";
 
             try
             {
@@ -96,6 +94,29 @@ namespace AutoFact
             {
                 MessageBox.Show($"Erreur lors du chargement des données : {ex.Message}", "Erreur de chargement");
             }
+        }
+
+        private void buttonClient3_Click(object sender, EventArgs e)
+        {
+            Client FormClient = new Client();
+            FormClient.ShowDialog();
+        }
+
+        private void DGVListClient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonFact3_Click(object sender, EventArgs e)
+        {
+            Facturation FormFacturation = new Facturation();
+            FormFacturation.ShowDialog();
+        }
+
+        private void buttonRecap3_Click(object sender, EventArgs e)
+        {
+            Recapitulatif FormRecap = new Recapitulatif();
+            FormRecap.ShowDialog();
         }
     }
 }

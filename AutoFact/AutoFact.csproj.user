@@ -16,7 +16,7 @@
     <Compile Update="Vue\Facturation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Vue\Form1.cs">
+    <Compile Update="Vue\Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Vue\Prestation.cs">

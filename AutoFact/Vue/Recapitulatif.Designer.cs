@@ -36,8 +36,23 @@
             buttonPresta = new Button();
             buttonClient = new Button();
             pictureBox1 = new PictureBox();
+            dataGridViewM = new DataGridView();
+            dataGridViewT = new DataGridView();
+            panel5 = new Panel();
+            label1 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            panel1 = new Panel();
+            ARPT = new DataGridView();
+            ARPM = new DataGridView();
             panelClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewM).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewT).BeginInit();
+            panel5.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ARPT).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ARPM).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -89,6 +104,7 @@
             buttonFact.TabIndex = 3;
             buttonFact.Text = "Facture";
             buttonFact.UseVisualStyleBackColor = true;
+            buttonFact.Click += buttonFact_Click;
             // 
             // buttonPresta
             // 
@@ -102,6 +118,7 @@
             buttonPresta.TabIndex = 2;
             buttonPresta.Text = "Prestation";
             buttonPresta.UseVisualStyleBackColor = true;
+            buttonPresta.Click += buttonPresta_Click;
             // 
             // buttonClient
             // 
@@ -116,6 +133,7 @@
             buttonClient.TabIndex = 1;
             buttonClient.Text = "Client";
             buttonClient.UseVisualStyleBackColor = false;
+            buttonClient.Click += buttonClient_Click;
             // 
             // pictureBox1
             // 
@@ -126,20 +144,127 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // dataGridViewM
+            // 
+            dataGridViewM.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewM.Location = new Point(17, 46);
+            dataGridViewM.Name = "dataGridViewM";
+            dataGridViewM.Size = new Size(993, 263);
+            dataGridViewM.TabIndex = 4;
+            dataGridViewM.CellContentClick += dataGridViewM_CellContentClick;
+            // 
+            // dataGridViewT
+            // 
+            dataGridViewT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewT.Location = new Point(17, 426);
+            dataGridViewT.Name = "dataGridViewT";
+            dataGridViewT.Size = new Size(993, 263);
+            dataGridViewT.TabIndex = 6;
+            dataGridViewT.CellContentClick += dataGridViewT_CellContentClick;
+            // 
+            // panel5
+            // 
+            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel5.BackgroundImageLayout = ImageLayout.None;
+            panel5.Controls.Add(label1);
+            panel5.ImeMode = ImeMode.Disable;
+            panel5.Location = new Point(352, 46);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(796, 82);
+            panel5.TabIndex = 8;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 26F, FontStyle.Bold);
+            label1.ImageAlign = ContentAlignment.TopLeft;
+            label1.Location = new Point(3, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(230, 47);
+            label1.TabIndex = 0;
+            label1.Text = "Récapitulatif";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            label3.ImageAlign = ContentAlignment.TopLeft;
+            label3.Location = new Point(258, 145);
+            label3.Name = "label3";
+            label3.Size = new Size(256, 32);
+            label3.TabIndex = 1;
+            label3.Text = "Votre cumul mensuel";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            label2.ImageAlign = ContentAlignment.TopLeft;
+            label2.Location = new Point(258, 525);
+            label2.Name = "label2";
+            label2.Size = new Size(278, 32);
+            label2.TabIndex = 9;
+            label2.Text = "Votre cumul trimestriel";
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackgroundImageLayout = ImageLayout.None;
+            panel1.Controls.Add(ARPT);
+            panel1.Controls.Add(ARPM);
+            panel1.Controls.Add(dataGridViewT);
+            panel1.Controls.Add(dataGridViewM);
+            panel1.ImeMode = ImeMode.Disable;
+            panel1.Location = new Point(241, 134);
+            panel1.Name = "panel1";
+            panel1.RightToLeft = RightToLeft.No;
+            panel1.Size = new Size(1028, 720);
+            panel1.TabIndex = 9;
+            // 
+            // ARPT
+            // 
+            ARPT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ARPT.Location = new Point(777, 541);
+            ARPT.Name = "ARPT";
+            ARPT.Size = new Size(233, 148);
+            ARPT.TabIndex = 12;
+            ARPT.CellContentClick += ARPT_CellContentClick;
+            // 
+            // ARPM
+            // 
+            ARPM.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ARPM.Location = new Point(777, 161);
+            ARPM.Name = "ARPM";
+            ARPM.Size = new Size(233, 148);
+            ARPM.TabIndex = 11;
+            ARPM.CellContentClick += ARPM_CellContentClick;
+            // 
             // Recapitulatif
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1281, 877);
+            Controls.Add(label2);
+            Controls.Add(label3);
+            Controls.Add(panel5);
             Controls.Add(panel2);
             Controls.Add(panelClient);
+            Controls.Add(panel1);
             Name = "Recapitulatif";
             Text = "Recapitulatif";
             Load += Recapitulatif_Load;
             panelClient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewM).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewT).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ARPT).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ARPM).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -151,5 +276,14 @@
         private Button buttonPresta;
         private Button buttonClient;
         private PictureBox pictureBox1;
+        private DataGridView dataGridViewM;
+        private DataGridView dataGridViewT;
+        private Panel panel5;
+        private Label label1;
+        private Label label3;
+        private Label label2;
+        private Panel panel1;
+        private DataGridView ARPT;
+        private DataGridView ARPM;
     }
 }

@@ -2593,23 +2593,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\leole\\.nuget\\packages\\": {},
+    "C:\\Users\\WACHE\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\leole\\Source\\Repos\\Leolblc\\Autofact\\AutoFact\\AutoFact.csproj",
+      "projectUniqueName": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\AutoFact.csproj",
       "projectName": "AutoFact",
-      "projectPath": "C:\\Users\\leole\\Source\\Repos\\Leolblc\\Autofact\\AutoFact\\AutoFact.csproj",
-      "packagesPath": "C:\\Users\\leole\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leole\\Source\\Repos\\Leolblc\\Autofact\\AutoFact\\obj\\",
+      "projectPath": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\AutoFact.csproj",
+      "packagesPath": "C:\\Users\\WACHE\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\leole\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\WACHE\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

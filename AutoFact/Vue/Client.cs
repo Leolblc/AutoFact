@@ -8,6 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutoFact.Vue;
 
 namespace AutoFact
 {
@@ -39,6 +40,18 @@ namespace AutoFact
         private void Client_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnFacture_Click(object sender, EventArgs e)
+        {
+            Facturation FormFacturation = new Facturation();
+            FormFacturation.ShowDialog();
+        }
+
+        private void BtnRecap_Click(object sender, EventArgs e)
+        {
+            Recapitulatif FormRecap = new Recapitulatif();
+            FormRecap.ShowDialog();
         }
     }
 }

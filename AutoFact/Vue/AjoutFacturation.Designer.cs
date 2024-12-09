@@ -83,6 +83,7 @@
             buttonRecap.TabIndex = 4;
             buttonRecap.Text = "Récapitulatif";
             buttonRecap.UseVisualStyleBackColor = true;
+            buttonRecap.Click += buttonRecap_Click;
             // 
             // buttonFact
             // 
@@ -125,6 +126,7 @@
             buttonClient.TabIndex = 1;
             buttonClient.Text = "Client";
             buttonClient.UseVisualStyleBackColor = false;
+            buttonClient.Click += buttonClient_Click;
             // 
             // pictureBox1
             // 
