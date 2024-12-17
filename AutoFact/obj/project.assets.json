@@ -2778,11 +2778,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marichal\\Documents\\AutoFact\\AutoFact\\AutoFact.csproj",
+      "projectUniqueName": "C:\\Users\\marichal\\Documents\\Autofact\\AutoFact\\AutoFact.csproj",
       "projectName": "AutoFact",
-      "projectPath": "C:\\Users\\marichal\\Documents\\AutoFact\\AutoFact\\AutoFact.csproj",
+      "projectPath": "C:\\Users\\marichal\\Documents\\Autofact\\AutoFact\\AutoFact.csproj",
       "packagesPath": "C:\\Users\\marichal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marichal\\Documents\\Autofact\\AutoFact\\obj\\",
+      "outputPath": "C:\\Users\\marichal\\Documents\\AutoFact\\AutoFact\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

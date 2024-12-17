@@ -97,7 +97,7 @@
             buttonRecap.FlatAppearance.BorderSize = 0;
             buttonRecap.FlatStyle = FlatStyle.Flat;
             buttonRecap.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
-            buttonRecap.ForeColor = SystemColors.Control;
+            buttonRecap.ForeColor = SystemColors.ButtonShadow;
             buttonRecap.Location = new Point(29, 560);
             buttonRecap.Name = "buttonRecap";
             buttonRecap.Size = new Size(147, 46);
