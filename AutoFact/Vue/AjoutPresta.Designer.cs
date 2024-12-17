@@ -96,6 +96,7 @@ namespace AutoFact
             BtnRecap3.TabIndex = 5;
             BtnRecap3.Text = "Récapitulatif";
             BtnRecap3.UseVisualStyleBackColor = true;
+            BtnRecap3.Click += BtnRecap3_Click;
             // 
             // BtnFacture3
             // 
@@ -109,6 +110,7 @@ namespace AutoFact
             BtnFacture3.TabIndex = 4;
             BtnFacture3.Text = "Facture";
             BtnFacture3.UseVisualStyleBackColor = true;
+            BtnFacture3.Click += BtnFacture3_Click;
             // 
             // BtnPrestationNA
             // 
@@ -122,6 +124,7 @@ namespace AutoFact
             BtnPrestationNA.TabIndex = 3;
             BtnPrestationNA.Text = "Prestation";
             BtnPrestationNA.UseVisualStyleBackColor = true;
+            BtnPrestationNA.Click += BtnPrestationNA_Click;
             // 
             // BtnClientNA3
             // 
@@ -135,6 +138,7 @@ namespace AutoFact
             BtnClientNA3.TabIndex = 2;
             BtnClientNA3.Text = "Client";
             BtnClientNA3.UseVisualStyleBackColor = true;
+            BtnClientNA3.Click += BtnClientNA3_Click;
             // 
             // pictureBox1
             // 

@@ -95,6 +95,7 @@
             BtnRecap2.TabIndex = 5;
             BtnRecap2.Text = "Récapitulatif";
             BtnRecap2.UseVisualStyleBackColor = true;
+            BtnRecap2.Click += BtnRecap2_Click;
             // 
             // BtnFacture2
             // 
@@ -108,6 +109,7 @@
             BtnFacture2.TabIndex = 4;
             BtnFacture2.Text = "Facture";
             BtnFacture2.UseVisualStyleBackColor = true;
+            BtnFacture2.Click += BtnFacture2_Click;
             // 
             // BtnPrestation2
             // 
@@ -121,6 +123,7 @@
             BtnPrestation2.TabIndex = 3;
             BtnPrestation2.Text = "Prestation";
             BtnPrestation2.UseVisualStyleBackColor = true;
+            BtnPrestation2.Click += BtnPrestation2_Click;
             // 
             // BtnClientNA2
             // 
@@ -143,6 +146,7 @@
             pictureBox1.Size = new Size(48, 50);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel1
             // 

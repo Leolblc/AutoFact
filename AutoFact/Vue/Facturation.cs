@@ -40,6 +40,7 @@ namespace AutoFact
         {
             AjoutFacturation ajoutFacturation = new AjoutFacturation();
             ajoutFacturation.Show();
+            this.Close();
         }
 
         private void InitializeDatabaseConnection()
@@ -148,6 +149,41 @@ namespace AutoFact
         private void buttonQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.Show();
+            this.Close();
+        }
+
+        private void buttonClient3_Click(object sender, EventArgs e)
+        {
+            Client client = new Client();
+            client.Show();
+            this.Close();
+        }
+
+        private void buttonPresta3_Click(object sender, EventArgs e)
+        {
+            Prestation prestation = new Prestation();
+            prestation.Show();
+            this.Close();
+        }
+
+        private void buttonRecap3_Click(object sender, EventArgs e)
+        {
+            Recapitulatif recapitulatif = new Recapitulatif();
+            recapitulatif.Show();
+            this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            AjoutFacturation ajoutFacturation = new AjoutFacturation();
+            ajoutFacturation.Show();
+            this.Close();
         }
     }
 }

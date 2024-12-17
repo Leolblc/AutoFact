@@ -66,6 +66,7 @@ namespace AutoFact
         {
             AjoutPresta newPresta = new AjoutPresta();
             newPresta.ShowDialog();
+            this.Close();
         }
 
 
@@ -101,6 +102,41 @@ namespace AutoFact
         private void buttonQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Close();
+        }
+
+        private void buttonClient3_Click(object sender, EventArgs e)
+        {
+            Client client = new Client();
+            client.Show();
+            this.Close();
+        }
+
+        private void buttonFact3_Click(object sender, EventArgs e)
+        {
+            Facturation facturation = new Facturation();
+            facturation.Show();
+            this.Close();
+        }
+
+        private void buttonRecap3_Click(object sender, EventArgs e)
+        {
+            Recapitulatif recapitulatif = new Recapitulatif();
+            recapitulatif.Show();
+            this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            AjoutPresta ajoutPresta = new AjoutPresta();
+            ajoutPresta.Show();
+            this.Close();
         }
     }
 }

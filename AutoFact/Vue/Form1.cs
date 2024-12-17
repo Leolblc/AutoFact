@@ -66,6 +66,7 @@ namespace AutoFact
         {
             Client FormClient = new Client();
             FormClient.ShowDialog();
+            this.Hide();
 
         }
 
@@ -73,14 +74,14 @@ namespace AutoFact
         {
             Prestation FormPrestation = new Prestation();
             FormPrestation.ShowDialog();
-
+            this.Hide();
         }
 
         private void buttonFact_Click(object sender, EventArgs e)
         {
             Facturation FormFacturation = new Facturation();
             FormFacturation.ShowDialog();
-
+            this.Hide();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -92,7 +93,7 @@ namespace AutoFact
         {
             Recapitulatif FormRecap = new Recapitulatif();
             FormRecap.ShowDialog();
-
+            this.Hide();
         }
 
         private void DGVPrestation_CellContentClick(object sender, DataGridViewCellEventArgs e)

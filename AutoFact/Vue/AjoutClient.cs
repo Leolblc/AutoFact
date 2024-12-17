@@ -90,6 +90,10 @@ namespace AutoFact
                 cmd1.ExecuteNonQuery();
                 MessageBox.Show("Le Client a été ajoutée dans la liste");
 
+                Client client = new Client();
+                client.Show();
+                this.Close();
+
             }
             catch (Exception ex)
             {
@@ -105,6 +109,34 @@ namespace AutoFact
         private void buttonQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.Show();
+            this.Close();
+        }
+
+        private void BtnPrestation2_Click(object sender, EventArgs e)
+        {
+            Prestation prestation = new Prestation();
+            prestation.Show();
+            this.Close();
+        }
+
+        private void BtnFacture2_Click(object sender, EventArgs e)
+        {
+            Facturation facture = new Facturation();
+            facture.Show();
+            this.Close();
+        }
+
+        private void BtnRecap2_Click(object sender, EventArgs e)
+        {
+            Recapitulatif recapitulatif = new Recapitulatif();
+            recapitulatif.Show();
+            this.Close();
         }
     }
 }

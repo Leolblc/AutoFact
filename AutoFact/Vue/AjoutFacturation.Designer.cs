@@ -88,6 +88,7 @@
             buttonRecap.TabIndex = 4;
             buttonRecap.Text = "Récapitulatif";
             buttonRecap.UseVisualStyleBackColor = true;
+            buttonRecap.Click += buttonRecap_Click;
             // 
             // buttonFact
             // 
@@ -116,6 +117,7 @@
             buttonPresta.TabIndex = 2;
             buttonPresta.Text = "Prestation";
             buttonPresta.UseVisualStyleBackColor = true;
+            buttonPresta.Click += buttonPresta_Click;
             // 
             // buttonClient
             // 
@@ -130,6 +132,7 @@
             buttonClient.TabIndex = 1;
             buttonClient.Text = "Client";
             buttonClient.UseVisualStyleBackColor = false;
+            buttonClient.Click += buttonClient_Click;
             // 
             // pictureBox1
             // 
@@ -139,6 +142,7 @@
             pictureBox1.Size = new Size(48, 50);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 

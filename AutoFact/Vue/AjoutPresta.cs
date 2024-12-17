@@ -143,7 +143,11 @@ namespace AutoFact
                 cmmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
                 cmmd.Parameters.AddWithValue("@id_type", comboBox1.Items.Count);
                 cmmd.ExecuteNonQuery();
-                MessageBox.Show("La Prestation a été ajoutée dans la liste");
+                MessageBox.Show("La Prestation a été ajoutée dans la liste")
+
+                Prestation presta = new Prestation();
+                presta.Show();
+                this.Close();
 
             }
             catch (Exception ex)
@@ -157,6 +161,32 @@ namespace AutoFact
         private void buttonQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BtnClientNA3_Click(object sender, EventArgs e)
+        {
+            Client client = new Client();
+            client.Show();
+            this.Close();
+        }
+
+        private void BtnPrestationNA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnFacture3_Click(object sender, EventArgs e)
+        {
+            Facturation facturation = new Facturation();
+            facturation.Show();
+            this.Close();
+        }
+
+        private void BtnRecap3_Click(object sender, EventArgs e)
+        {
+            Recapitulatif recapitulatif = new Recapitulatif();
+            recapitulatif.Show();
+            this.Close();
         }
     }
 }

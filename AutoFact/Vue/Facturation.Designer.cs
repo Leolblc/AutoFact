@@ -79,6 +79,7 @@
             buttonRecap3.TabIndex = 5;
             buttonRecap3.Text = "Récapitulatif";
             buttonRecap3.UseVisualStyleBackColor = true;
+            buttonRecap3.Click += buttonRecap3_Click;
             // 
             // buttonFact3
             // 
@@ -106,6 +107,7 @@
             buttonPresta3.TabIndex = 3;
             buttonPresta3.Text = "Prestation";
             buttonPresta3.UseVisualStyleBackColor = true;
+            buttonPresta3.Click += buttonPresta3_Click;
             // 
             // buttonClient3
             // 
@@ -120,6 +122,7 @@
             buttonClient3.TabIndex = 2;
             buttonClient3.Text = "Client";
             buttonClient3.UseVisualStyleBackColor = false;
+            buttonClient3.Click += buttonClient3_Click;
             // 
             // pictureBox1
             // 
@@ -129,6 +132,7 @@
             pictureBox1.Size = new Size(48, 50);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
@@ -192,6 +196,7 @@
             label3.Size = new Size(175, 25);
             label3.TabIndex = 2;
             label3.Text = "Ajouter une facture";
+            label3.Click += label3_Click;
             // 
             // label2
             // 

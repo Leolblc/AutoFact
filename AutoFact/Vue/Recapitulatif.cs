@@ -198,5 +198,40 @@ namespace AutoFact.Vue
         {
             Application.Exit();
         }
+
+        private void buttonClient_Click_1(object sender, EventArgs e)
+        {
+            Client FormClient = new Client();
+
+            FormClient.Show();
+
+            this.Close();
+        }
+
+        private void buttonPresta_Click_1(object sender, EventArgs e)
+        {
+            Prestation prestation = new Prestation();
+            prestation.Show();
+            this.Close();
+        }
+
+        private void buttonFact_Click_1(object sender, EventArgs e)
+        {
+            Facturation formFacturation = new Facturation();
+            formFacturation.Show();
+            this.Close();
+        }
+
+        private void buttonRecap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Close();
+        }
     }
 }

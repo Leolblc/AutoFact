@@ -195,6 +195,10 @@ namespace AutoFact
                 cmd1.ExecuteNonQuery();
                 MessageBox.Show("La facture a été ajoutée dans la liste");
 
+                Facturation facturation = new Facturation();
+                facturation.Show();
+                this.Close();
+
             }
             catch (Exception ex)
             {
@@ -205,6 +209,34 @@ namespace AutoFact
         private void buttonQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.Show();
+            this.Close();
+        }
+
+        private void buttonClient_Click(object sender, EventArgs e)
+        {
+            Client client = new Client();
+            client.Show();
+            this.Close();
+        }
+
+        private void buttonPresta_Click(object sender, EventArgs e)
+        {
+            Prestation prestation = new Prestation();
+            prestation.Show();
+            this.Close();
+        }
+
+        private void buttonRecap_Click(object sender, EventArgs e)
+        {
+            Recapitulatif recapitulatif = new Recapitulatif();
+            recapitulatif.Show();
+            this.Close();
         }
     }
 
