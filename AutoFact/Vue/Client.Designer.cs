@@ -44,6 +44,7 @@
             label2 = new Label();
             DGVListClient = new DataGridView();
             printDocument1 = new System.Drawing.Printing.PrintDocument();
+            buttonQuitter = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -216,12 +217,24 @@
             DGVListClient.Size = new Size(780, 414);
             DGVListClient.TabIndex = 0;
             // 
+            // buttonQuitter
+            // 
+            buttonQuitter.Font = new Font("Segoe UI", 12F);
+            buttonQuitter.Location = new Point(50, 777);
+            buttonQuitter.Name = "buttonQuitter";
+            buttonQuitter.Size = new Size(100, 50);
+            buttonQuitter.TabIndex = 7;
+            buttonQuitter.Text = "Quitter";
+            buttonQuitter.UseVisualStyleBackColor = true;
+            buttonQuitter.Click += buttonQuitter_Click;
+            // 
             // Client
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1281, 877);
+            Controls.Add(buttonQuitter);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -256,5 +269,6 @@
         private Label label2;
         private Label label3;
         private Button button1;
+        private Button buttonQuitter;
     }
 }

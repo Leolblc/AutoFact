@@ -109,7 +109,7 @@ namespace AutoFact
         public class unePresta
         {
 
-            
+
             public object Type { get; set; }
             public string anName { get; set; }
             public int id { get; set; }
@@ -200,6 +200,11 @@ namespace AutoFact
             {
                 MessageBox.Show($"Erreur lors de l'enregistrement : {ex.Message}");
             }
+        }
+
+        private void buttonQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 

@@ -52,6 +52,7 @@
             TBMail = new TextBox();
             TBPhone = new TextBox();
             TBNom = new TextBox();
+            buttonQuitter = new Button();
             panelAjoutClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -305,12 +306,24 @@
             TBNom.TabIndex = 2;
             TBNom.TextChanged += TBNom_TextChanged;
             // 
+            // buttonQuitter
+            // 
+            buttonQuitter.Font = new Font("Segoe UI", 12F);
+            buttonQuitter.Location = new Point(50, 777);
+            buttonQuitter.Name = "buttonQuitter";
+            buttonQuitter.Size = new Size(100, 50);
+            buttonQuitter.TabIndex = 10;
+            buttonQuitter.Text = "Quitter";
+            buttonQuitter.UseVisualStyleBackColor = true;
+            buttonQuitter.Click += buttonQuitter_Click;
+            // 
             // AjoutClient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1281, 877);
+            Controls.Add(buttonQuitter);
             Controls.Add(panel4);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -354,5 +367,6 @@
         private Label label8;
         private TextBox TBPrenom;
         private Button BtnVal;
+        private Button buttonQuitter;
     }
 }

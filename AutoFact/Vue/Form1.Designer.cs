@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panelClient = new Panel();
+            buttonQuitter = new Button();
             buttonRecap = new Button();
             buttonFact = new Button();
             buttonPresta = new Button();
@@ -52,6 +53,7 @@
             // panelClient
             // 
             panelClient.BackColor = Color.FromArgb(45, 45, 45);
+            panelClient.Controls.Add(buttonQuitter);
             panelClient.Controls.Add(buttonRecap);
             panelClient.Controls.Add(buttonFact);
             panelClient.Controls.Add(buttonPresta);
@@ -62,6 +64,17 @@
             panelClient.Name = "panelClient";
             panelClient.Size = new Size(210, 877);
             panelClient.TabIndex = 0;
+            // 
+            // buttonQuitter
+            // 
+            buttonQuitter.Font = new Font("Segoe UI", 12F);
+            buttonQuitter.Location = new Point(50, 777);
+            buttonQuitter.Name = "buttonQuitter";
+            buttonQuitter.Size = new Size(100, 50);
+            buttonQuitter.TabIndex = 6;
+            buttonQuitter.Text = "Quitter";
+            buttonQuitter.UseVisualStyleBackColor = true;
+            buttonQuitter.Click += buttonQuitter_Click;
             // 
             // buttonRecap
             // 
@@ -232,5 +245,6 @@
         private DataGridView DGVLastClient;
         private DataGridView dataGridViewCA;
         private DataGridView DGVFact;
+        private Button buttonQuitter;
     }
 }

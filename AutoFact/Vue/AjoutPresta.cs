@@ -134,17 +134,17 @@ namespace AutoFact
 
             try
             {
-               
-                    string command1 = "INSERT INTO Prestation (name, description, prix_unitaire, montant_ht, id_type) VALUES (@name, @description, @prix_unitaire, @montant_ht, @id_type)";
-                    MySqlCommand cmmd = new MySqlCommand(command1, connection);
-                    cmmd.Parameters.AddWithValue("@name", TBNom.Text);
-                    cmmd.Parameters.AddWithValue("@description", richTextBox1.Text);
-                    cmmd.Parameters.AddWithValue("@prix_unitaire", TBPrixunitaire.Text);
-                    cmmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
-                    cmmd.Parameters.AddWithValue("@id_type", comboBox1.Items.Count);
-                    cmmd.ExecuteNonQuery();
-                    MessageBox.Show("La Prestation a été ajoutée dans la liste");
-                
+
+                string command1 = "INSERT INTO Prestation (name, description, prix_unitaire, montant_ht, id_type) VALUES (@name, @description, @prix_unitaire, @montant_ht, @id_type)";
+                MySqlCommand cmmd = new MySqlCommand(command1, connection);
+                cmmd.Parameters.AddWithValue("@name", TBNom.Text);
+                cmmd.Parameters.AddWithValue("@description", richTextBox1.Text);
+                cmmd.Parameters.AddWithValue("@prix_unitaire", TBPrixunitaire.Text);
+                cmmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
+                cmmd.Parameters.AddWithValue("@id_type", comboBox1.Items.Count);
+                cmmd.ExecuteNonQuery();
+                MessageBox.Show("La Prestation a été ajoutée dans la liste");
+
             }
             catch (Exception ex)
             {
@@ -152,6 +152,11 @@ namespace AutoFact
             }
 
 
+        }
+
+        private void buttonQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
