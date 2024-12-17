@@ -181,7 +181,12 @@ namespace AutoFact
 
         private void DGVFact_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+        }
+
+        private void buttonQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

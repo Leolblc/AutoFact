@@ -31,6 +31,7 @@ namespace AutoFact
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AjoutPresta));
             panelAjoutClient = new Panel();
+            buttonQuitter = new Button();
             BtnRecap3 = new Button();
             BtnFacture3 = new Button();
             BtnPrestationNA = new Button();
@@ -60,6 +61,7 @@ namespace AutoFact
             // panelAjoutClient
             // 
             panelAjoutClient.BackColor = Color.FromArgb(45, 45, 45);
+            panelAjoutClient.Controls.Add(buttonQuitter);
             panelAjoutClient.Controls.Add(BtnRecap3);
             panelAjoutClient.Controls.Add(BtnFacture3);
             panelAjoutClient.Controls.Add(BtnPrestationNA);
@@ -70,6 +72,17 @@ namespace AutoFact
             panelAjoutClient.Name = "panelAjoutClient";
             panelAjoutClient.Size = new Size(210, 877);
             panelAjoutClient.TabIndex = 1;
+            // 
+            // buttonQuitter
+            // 
+            buttonQuitter.Font = new Font("Segoe UI", 12F);
+            buttonQuitter.Location = new Point(50, 777);
+            buttonQuitter.Name = "buttonQuitter";
+            buttonQuitter.Size = new Size(100, 50);
+            buttonQuitter.TabIndex = 8;
+            buttonQuitter.Text = "Quitter";
+            buttonQuitter.UseVisualStyleBackColor = true;
+            buttonQuitter.Click += buttonQuitter_Click;
             // 
             // BtnRecap3
             // 
@@ -328,5 +341,6 @@ namespace AutoFact
         private Label label3;
         private Label Lab_Ht;
         private TextBox CB_HT;
+        private Button buttonQuitter;
     }
 }

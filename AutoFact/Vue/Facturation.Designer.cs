@@ -45,6 +45,7 @@
             DGVFacturation = new DataGridView();
             panel5 = new Panel();
             label1 = new Label();
+            buttonQuitter = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel6.SuspendLayout();
@@ -234,12 +235,24 @@
             label1.TabIndex = 0;
             label1.Text = "Facturation";
             // 
+            // buttonQuitter
+            // 
+            buttonQuitter.Font = new Font("Segoe UI", 12F);
+            buttonQuitter.Location = new Point(50, 777);
+            buttonQuitter.Name = "buttonQuitter";
+            buttonQuitter.Size = new Size(100, 50);
+            buttonQuitter.TabIndex = 6;
+            buttonQuitter.Text = "Quitter";
+            buttonQuitter.UseVisualStyleBackColor = true;
+            buttonQuitter.Click += buttonQuitter_Click;
+            // 
             // Facturation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1281, 877);
+            Controls.Add(buttonQuitter);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel2);
@@ -275,5 +288,6 @@
         private Label label1;
         private Button BtnExportPDF;
         private ComboBox CBPDF;
+        private Button buttonQuitter;
     }
 }

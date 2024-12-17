@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Recapitulatif));
             panel2 = new Panel();
             panelClient = new Panel();
+            buttonQuitter = new Button();
             buttonRecap = new Button();
             buttonFact = new Button();
             buttonPresta = new Button();
@@ -40,12 +41,12 @@
             label1 = new Label();
             label3 = new Label();
             panel1 = new Panel();
+            label4 = new Label();
             ARPT = new DataGridView();
             ARPM = new DataGridView();
             dataGridViewT = new DataGridView();
             dataGridViewM = new DataGridView();
             label2 = new Label();
-            label4 = new Label();
             panelClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
@@ -68,6 +69,7 @@
             // panelClient
             // 
             panelClient.BackColor = Color.FromArgb(45, 45, 45);
+            panelClient.Controls.Add(buttonQuitter);
             panelClient.Controls.Add(buttonRecap);
             panelClient.Controls.Add(buttonFact);
             panelClient.Controls.Add(buttonPresta);
@@ -79,12 +81,23 @@
             panelClient.Size = new Size(210, 877);
             panelClient.TabIndex = 2;
             // 
+            // buttonQuitter
+            // 
+            buttonQuitter.Font = new Font("Segoe UI", 12F);
+            buttonQuitter.Location = new Point(50, 777);
+            buttonQuitter.Name = "buttonQuitter";
+            buttonQuitter.Size = new Size(100, 50);
+            buttonQuitter.TabIndex = 5;
+            buttonQuitter.Text = "Quitter";
+            buttonQuitter.UseVisualStyleBackColor = true;
+            buttonQuitter.Click += buttonQuitter_Click;
+            // 
             // buttonRecap
             // 
             buttonRecap.FlatAppearance.BorderSize = 0;
             buttonRecap.FlatStyle = FlatStyle.Flat;
             buttonRecap.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
-            buttonRecap.ForeColor = SystemColors.Control;
+            buttonRecap.ForeColor = SystemColors.ButtonShadow;
             buttonRecap.Location = new Point(29, 560);
             buttonRecap.Name = "buttonRecap";
             buttonRecap.Size = new Size(147, 46);
@@ -191,6 +204,17 @@
             panel1.Size = new Size(1028, 720);
             panel1.TabIndex = 11;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            label4.ImageAlign = ContentAlignment.TopLeft;
+            label4.Location = new Point(17, 379);
+            label4.Name = "label4";
+            label4.Size = new Size(278, 32);
+            label4.TabIndex = 13;
+            label4.Text = "Votre cumul trimestriel";
+            // 
             // ARPT
             // 
             ARPT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -233,17 +257,6 @@
             label2.Size = new Size(278, 32);
             label2.TabIndex = 12;
             label2.Text = "Votre cumul trimestriel";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label4.ImageAlign = ContentAlignment.TopLeft;
-            label4.Location = new Point(17, 379);
-            label4.Name = "label4";
-            label4.Size = new Size(278, 32);
-            label4.TabIndex = 13;
-            label4.Text = "Votre cumul trimestriel";
             // 
             // Recapitulatif
             // 
@@ -293,5 +306,6 @@
         private DataGridView dataGridViewM;
         private Label label2;
         private Label label4;
+        private Button buttonQuitter;
     }
 }

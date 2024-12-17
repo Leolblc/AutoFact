@@ -39,6 +39,7 @@
             panel1 = new Panel();
             label8 = new Label();
             panel4 = new Panel();
+            LBDate = new Label();
             DTPDate = new DateTimePicker();
             TBEscompte = new TextBox();
             LBEscompte = new Label();
@@ -53,7 +54,7 @@
             label56 = new Label();
             label3 = new Label();
             TBNomFacture = new TextBox();
-            LBDate = new Label();
+            buttonQuitter = new Button();
             panelClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -191,6 +192,16 @@
             panel4.Size = new Size(857, 608);
             panel4.TabIndex = 4;
             // 
+            // LBDate
+            // 
+            LBDate.AutoSize = true;
+            LBDate.Font = new Font("Arial", 14F);
+            LBDate.Location = new Point(328, 230);
+            LBDate.Name = "LBDate";
+            LBDate.Size = new Size(169, 22);
+            LBDate.TabIndex = 21;
+            LBDate.Text = "Date de facturation";
+            // 
             // DTPDate
             // 
             DTPDate.Location = new Point(328, 266);
@@ -316,15 +327,16 @@
             TBNomFacture.Size = new Size(468, 23);
             TBNomFacture.TabIndex = 2;
             // 
-            // LBDate
+            // buttonQuitter
             // 
-            LBDate.AutoSize = true;
-            LBDate.Font = new Font("Arial", 14F);
-            LBDate.Location = new Point(328, 230);
-            LBDate.Name = "LBDate";
-            LBDate.Size = new Size(169, 22);
-            LBDate.TabIndex = 21;
-            LBDate.Text = "Date de facturation";
+            buttonQuitter.Font = new Font("Segoe UI", 12F);
+            buttonQuitter.Location = new Point(50, 777);
+            buttonQuitter.Name = "buttonQuitter";
+            buttonQuitter.Size = new Size(100, 50);
+            buttonQuitter.TabIndex = 9;
+            buttonQuitter.Text = "Quitter";
+            buttonQuitter.UseVisualStyleBackColor = true;
+            buttonQuitter.Click += buttonQuitter_Click;
             // 
             // AjoutFacturation
             // 
@@ -332,6 +344,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1281, 877);
+            Controls.Add(buttonQuitter);
             Controls.Add(panel4);
             Controls.Add(panel1);
             Controls.Add(panel2);
@@ -376,5 +389,6 @@
         private TextBox TBEscompte;
         private DateTimePicker DTPDate;
         private Label LBDate;
+        private Button buttonQuitter;
     }
 }

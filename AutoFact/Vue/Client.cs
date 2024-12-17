@@ -100,5 +100,10 @@ namespace AutoFact
                 MessageBox.Show($"Erreur lors du chargement des données : {ex.Message}", "Erreur de chargement");
             }
         }
+
+        private void buttonQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
