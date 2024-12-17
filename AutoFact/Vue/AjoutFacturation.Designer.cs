@@ -192,6 +192,7 @@
             CBNpresta.Name = "CBNpresta";
             CBNpresta.Size = new Size(184, 23);
             CBNpresta.TabIndex = 16;
+            CBNpresta.SelectedIndexChanged += CBNpresta_SelectedIndexChanged;
             // 
             // NUDQte
             // 

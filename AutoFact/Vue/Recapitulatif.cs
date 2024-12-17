@@ -37,7 +37,7 @@ namespace AutoFact.Vue
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=172.16.119.17;Database=Autofact;User ID=operateur;Password=Operateur;";
+            string connectionString = "Server=172.16.119.17Database=Autofact;User ID=operateur;Password=Operateur;";
             connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {

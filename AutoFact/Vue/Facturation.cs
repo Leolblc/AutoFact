@@ -26,6 +26,11 @@ using Microsoft.Extensions.Logging;
 using System.Security.Cryptography.X509Certificates;
 using Org.BouncyCastle.Bcpg;
 using System.ComponentModel.Design;
+using QuestPDF.Fluent;
+
+using QuestPDF.Helpers;
+
+using QuestPDF.Infrastructure;
 
 namespace AutoFact
 {
@@ -37,13 +42,14 @@ namespace AutoFact
             InitializeComponent();
             InitializeDatabaseConnection();
         }
+
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.10;Database=Autofact;User ID=operateur;Password=Operateur;";
+            string connectionString = "Server=172.16.119.17Database=Autofact;User ID=operateur;Password=Operateur;";
             connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.10",
+                Server = "172.16.119.17",
                 UserID = "operateur",
                 Password = "Operateur",
                 Database = "Autofact",
@@ -59,6 +65,7 @@ namespace AutoFact
                 MessageBox.Show($"Erreur de connexion à la base de données : {ex.Message}", "Erreur de connexion");
             }
         }
+
         private void BtnAddFact_Click(object sender, EventArgs e)
         {
             AjoutFacturation FormFacturation = new AjoutFacturation();
@@ -91,6 +98,84 @@ namespace AutoFact
                 MessageBox.Show($"Erreur lors du chargement des données : {ex.Message}", "Erreur de chargement");
             }
         }
+        public class UneFacture
+        {
+
+            public string Text { get; set; }
+            public object Value { get; set; }
+            public object Type { get; set; }
+            public string anName { get; set; }
+            public int anid { get; set; }
+
+
+            public override string ToString()
+            {
+                return anName;
+            }
+
+        }
+        private void LoadCBNFacturation()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("SELECT id, numfact FROM Facturation;", connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable ds2 = new DataTable();
+                adapter.Fill(ds2);
+
+                // Assurez-vous que le ComboBox est correctement nommé
+                CBNFacturation.Items.Clear(); // Effacez les éléments précédents
+                foreach (DataRow row in ds2.Rows)
+                {
+                    int ID = Convert.ToInt32(row["id"]);
+                    string nom = row["numfact"].ToString();
+                    UneFacture laFacture = new UneFacture { anName = nom, anid = ID };
+                    CBNFacturation.Items.Add(laFacture); // Utilisez le nom du ComboBox
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors du chargement des données : {ex.Message}", "Erreur de chargement");
+            }
+        }
+
+        private void ExportPDF()
+        {
+            QuestPDF.Settings.License = LicenseType.Community;
+
+            var document = QuestPDF.Fluent.Document.Create(container =>
+            {
+                container.Page(page =>
+                {
+                    page.Size(PageSizes.A4);
+                    page.Margin(2, Unit.Centimetre);
+                    page.PageColor(Colors.White);
+                    page.DefaultTextStyle(x => x.FontSize(20));
+
+                    page.Header()
+                        .Text("Exemple de PDF")
+                        .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
+
+                    page.Content()
+                        .Text(text =>
+                        {
+                            text.Span("Ceci est un exemple de contenu pour un fichier PDF généré avec QuestPDF.");
+                            text.Line("Vous pouvez ajouter des paragraphes, des images, des tableaux, etc.");
+                        });
+
+                    page.Footer()
+                        .AlignCenter()
+                        .Text(x =>
+                        {
+                            x.Span("Page ");
+                            x.CurrentPageNumber();
+                        });
+                });
+            });
+
+            document.GeneratePdf("exemple.pdf"); // Vous pouvez spécifier un chemin si nécessaire
+            MessageBox.Show("PDF généré avec succès !");
+        }
 
         private void buttonRecap3_Click(object sender, EventArgs e)
         {
@@ -106,6 +191,17 @@ namespace AutoFact
         private void Facturation_Load(object sender, EventArgs e)
         {
             LoadData();
+            LoadCBNFacturation(); // Appelez la méthode pour charger les numéros de factures
+        }
+
+        private void CBNFacturation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pdf_Click(object sender, EventArgs e)
+        {
+            ExportPDF();
         }
     }
 }

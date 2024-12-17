@@ -38,14 +38,14 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.10;Database=AutoFact;User ID=operateur;Password=Operateur;";
+            string connectionString = "Server=172.16.119.17Database=Autofact;User ID=operateur;Password=Operateur;";
             connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.10",
+                Server = "172.16.119.17",
                 UserID = "operateur",
                 Password = "Operateur",
-                Database = "AutoFact",
+                Database = "Autofact",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try
@@ -81,7 +81,7 @@ namespace AutoFact
 
             try
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT id , name FROM Info_Client", connection);
+                MySqlCommand cmd = new MySqlCommand("SELECT id , name FROM Client", connection);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable ds = new DataTable();
                 adapter.Fill(ds);
@@ -102,6 +102,13 @@ namespace AutoFact
             }
 
         }
+
+        private void downloadFacture()
+        {
+
+
+        }
+
         public class unePresta
         {
 
@@ -170,6 +177,11 @@ namespace AutoFact
         {
             Recapitulatif FormRecap = new Recapitulatif();
             FormRecap.ShowDialog();
+        }
+
+        private void CBNpresta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

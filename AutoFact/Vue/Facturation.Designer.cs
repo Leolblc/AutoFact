@@ -37,6 +37,8 @@
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel6 = new Panel();
+            pdf = new Button();
+            CBNFacturation = new ComboBox();
             BtnAddFact = new Button();
             label3 = new Label();
             label2 = new Label();
@@ -140,6 +142,8 @@
             // 
             // panel6
             // 
+            panel6.Controls.Add(pdf);
+            panel6.Controls.Add(CBNFacturation);
             panel6.Controls.Add(BtnAddFact);
             panel6.Controls.Add(label3);
             panel6.Controls.Add(label2);
@@ -148,6 +152,25 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(857, 608);
             panel6.TabIndex = 5;
+            // 
+            // pdf
+            // 
+            pdf.Location = new Point(235, 563);
+            pdf.Name = "pdf";
+            pdf.Size = new Size(84, 22);
+            pdf.TabIndex = 18;
+            pdf.Text = "export pdf";
+            pdf.UseVisualStyleBackColor = true;
+            pdf.Click += pdf_Click;
+            // 
+            // CBNFacturation
+            // 
+            CBNFacturation.FormattingEnabled = true;
+            CBNFacturation.Location = new Point(16, 563);
+            CBNFacturation.Name = "CBNFacturation";
+            CBNFacturation.Size = new Size(184, 23);
+            CBNFacturation.TabIndex = 17;
+            CBNFacturation.SelectedIndexChanged += CBNFacturation_SelectedIndexChanged;
             // 
             // BtnAddFact
             // 
@@ -252,5 +275,7 @@
         private DataGridView DGVListClient;
         private Panel panel5;
         private Label label1;
+        private Button pdf;
+        private ComboBox CBNFacturation;
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace AutoFact
+﻿using System.Windows.Forms;
+
+namespace AutoFact
 {
     partial class Home
     {

@@ -35,11 +35,11 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.10;Database=Autofact;User ID=operateur;Password=Operateur;";
+            string connectionString = "Server=172.16.119.17Database=Autofact;User ID=operateur;Password=Operateur;";
             connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.10",
+                Server = "172.16.119.17",
                 UserID = "operateur",
                 Password = "Operateur",
                 Database = "Autofact",
@@ -55,7 +55,6 @@ namespace AutoFact
                 MessageBox.Show($"Erreur de connexion à la base de données : {ex.Message}", "Erreur de connexion");
             }
         }
-
 
         private void label1_Click(object sender, EventArgs e)
         {
