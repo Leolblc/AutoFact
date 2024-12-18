@@ -143,6 +143,30 @@ namespace AutoFact
         {
             QuestPDF.Settings.License = LicenseType.Community;
 
+            // Récupérer les données de la base de données
+            string selectedFacture = CBNFacturation.Text; // Assurez-vous que l'élément sélectionné est valide
+            string query = "SELECT * FROM AfficheFacturation WHERE numfact = @numfact"; // Remplacez par votre requête
+
+            DataTable factureData = new DataTable();
+
+            try
+            {
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@numfact", selectedFacture);
+                    using (var adapter = new MySqlDataAdapter(command))
+                    {
+                        adapter.Fill(factureData);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de la récupération des données : {ex.Message}", "Erreur de chargement");
+                return; // Sortir de la méthode si une erreur se produit
+            }
+
+            // Créer le document PDF
             var document = QuestPDF.Fluent.Document.Create(container =>
             {
                 container.Page(page =>
@@ -153,14 +177,28 @@ namespace AutoFact
                     page.DefaultTextStyle(x => x.FontSize(20));
 
                     page.Header()
-                        .Text("Exemple de PDF")
+                        .Text($"Facture de {selectedFacture}")
                         .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
 
                     page.Content()
                         .Text(text =>
                         {
-                            text.Span("Ceci est un exemple de contenu pour un fichier PDF généré avec QuestPDF.");
-                            text.Line("Vous pouvez ajouter des paragraphes, des images, des tableaux, etc.");
+                            // Ajoutez ici les données de la facture
+                            foreach (DataRow row in factureData.Rows)
+                            {
+                                string numFacture = row["numfact"] != DBNull.Value ? row["numfact"].ToString() : "Inconnu";
+                                string clientValue = row["Client"] != DBNull.Value ? row["Client"].ToString() : "Inconnu";
+                                string dateValue = row["date"] != DBNull.Value ? row["date"].ToString() : "Inconnue";
+                                string DescriptionValue = row["Description"] != DBNull.Value ? row["Description"].ToString() : "Inconnu";
+                                string StatutValue = row["Statut"] != DBNull.Value ? row["Statut"].ToString() : "Inconnue";
+
+                                text.Line($"Numéro de Facture: {row["numfact"]}");
+                                text.Line($"Client: {row["Client"]}");
+                                text.Line($"Date: {row["date"]}");
+                                text.Line($"Description: {row["Description"]}");
+                                text.Line($"Statut: {row["Statut"]}");
+                                // Ajoutez d'autres champs selon vos besoins
+                            }
                         });
 
                     page.Footer()

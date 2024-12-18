@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\AutoFact.csproj": {}
+    "C:\\Users\\WACHE\\Documents\\Autofact\\AutoFact\\AutoFact.csproj": {}
   },
   "projects": {
-    "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\AutoFact.csproj": {
+    "C:\\Users\\WACHE\\Documents\\Autofact\\AutoFact\\AutoFact.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\AutoFact.csproj",
+        "projectUniqueName": "C:\\Users\\WACHE\\Documents\\Autofact\\AutoFact\\AutoFact.csproj",
         "projectName": "AutoFact",
-        "projectPath": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\AutoFact.csproj",
+        "projectPath": "C:\\Users\\WACHE\\Documents\\Autofact\\AutoFact\\AutoFact.csproj",
         "packagesPath": "C:\\Users\\WACHE\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\obj\\",
         "projectStyle": "PackageReference",
