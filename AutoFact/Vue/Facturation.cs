@@ -27,8 +27,11 @@ using System.Security.Cryptography.X509Certificates;
 using Org.BouncyCastle.Bcpg;
 using System.ComponentModel.Design;
 using QuestPDF.Fluent;
-
+using QuestPDF.Drawing;
 using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+using QuestPDF.Companion;
+using QuestPDF.Previewer;
 
 using QuestPDF.Infrastructure;
 
@@ -145,7 +148,7 @@ namespace AutoFact
 
             // Récupérer les données de la base de données
             string selectedFacture = CBNFacturation.Text; // Assurez-vous que l'élément sélectionné est valide
-            string query = "SELECT * FROM AfficheFacturation WHERE numfact = @numfact"; // Remplacez par votre requête
+            string query = "SELECT * FROM AfficheFacturationTotale WHERE numfact = @numfact"; // Remplacez par votre requête
 
             DataTable factureData = new DataTable();
 
@@ -171,6 +174,9 @@ namespace AutoFact
             {
                 container.Page(page =>
                 {
+
+
+                    page.Margin(50);
                     page.Size(PageSizes.A4);
                     page.Margin(2, Unit.Centimetre);
                     page.PageColor(Colors.White);
@@ -186,29 +192,66 @@ namespace AutoFact
                             // Ajoutez ici les données de la facture
                             foreach (DataRow row in factureData.Rows)
                             {
-                                string numFacture = row["numfact"] != DBNull.Value ? row["numfact"].ToString() : "Inconnu";
-                                string clientValue = row["Client"] != DBNull.Value ? row["Client"].ToString() : "Inconnu";
-                                string dateValue = row["date"] != DBNull.Value ? row["date"].ToString() : "Inconnue";
-                                string DescriptionValue = row["Description"] != DBNull.Value ? row["Description"].ToString() : "Inconnu";
-                                string StatutValue = row["Statut"] != DBNull.Value ? row["Statut"].ToString() : "Inconnue";
+                                string nomFacture = row["numfact"] != DBNull.Value ? row["numfact"].ToString() : "Inconnu";
+                                string addressValue = row["address"] != DBNull.Value ? row["address"].ToString() : "Inconnu";
+                                string dateValue = row["datepayement"] != DBNull.Value ? row["datepayement"].ToString() : "Inconnue";
+                                string DescriptionValue = row["description_F"] != DBNull.Value ? row["description_F"].ToString() : "Inconnu";
+                                string StatutValue = row["etat"] != DBNull.Value ? row["etat"].ToString() : "Inconnue";
 
-                                text.Line($"Numéro de Facture: {row["numfact"]}");
-                                text.Line($"Client: {row["Client"]}");
-                                text.Line($"Date: {row["date"]}");
+                                text.Line($"nom de Facture: {row["numfact"]}");
+                                text.Line($"Client: {row["nom"]}");
+                                text.Line($"Date: {row["datepayement"]}");
                                 text.Line($"Description: {row["Description"]}");
-                                text.Line($"Statut: {row["Statut"]}");
+                                text.Line($"Statut: {row["etat"]}");
                                 // Ajoutez d'autres champs selon vos besoins
                             }
                         });
 
-                    page.Footer()
-                        .AlignCenter()
-                        .Text(x =>
-                        {
-                            x.Span("Page ");
-                            x.CurrentPageNumber();
-                        });
+                    page.Footer().AlignCenter().Text(text =>
+                    {
+                        text.CurrentPageNumber();
+                        text.Span(" / ");
+                        text.TotalPages();
+                    });
                 });
+
+                var headerStyle = TextStyle.Default.SemiBold();
+
+                container.Table(table =>
+                {
+                    table.ColumnsDefinition(columns =>
+                    {
+                        columns.ConstantColumn(25);
+                        columns.RelativeColumn(3);
+                        columns.RelativeColumn();
+                        columns.RelativeColumn();
+                        columns.RelativeColumn();
+                    });
+
+                    table.Header(header =>
+                    {
+                        header.Cell().Text("#");
+                        header.Cell().Text("Product").Style(headerStyle);
+                        header.Cell().AlignRight().Text("Quantity").Style(headerStyle);
+                        header.Cell().AlignRight().Text("Unit price").Style(headerStyle);
+                        header.Cell().AlignRight().Text("Total").Style(headerStyle);
+                        header.Cell().ColumnSpan(5).PaddingTop(5).BorderBottom(1).BorderColor(Colors.Black);
+                    });
+
+                    foreach (var item in Model.Items)
+                    {
+                        var index = Model.Items.IndexOf(item) + 1;
+
+                        table.Cell().Element(CellStyle).Text($"{index}");
+                        table.Cell().Element(CellStyle).Text(item.Name);
+                        table.Cell().Element(CellStyle).AlignRight().Text($"{item.Quantity}");
+                        table.Cell().Element(CellStyle).AlignRight().Text($"{item.Price:C}");
+                        table.Cell().Element(CellStyle).AlignRight().Text($"{item.Price * item.Quantity:C}");
+
+                        static IContainer CellStyle(IContainer container) => container.BorderBottom(1).BorderColor(Colors.Grey.Lighten2).PaddingVertical(5);
+                    }
+                });
+
             });
 
             document.GeneratePdf("exemple.pdf"); // Vous pouvez spécifier un chemin si nécessaire
