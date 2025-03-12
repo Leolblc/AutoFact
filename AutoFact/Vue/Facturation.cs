@@ -90,7 +90,7 @@ namespace AutoFact
 
         private void Facturation_Load(object sender, EventArgs e)
         {
-            string query = "SELECT numfact, condition_escompte,datepayement , Prestation.name as name , Client.name as clientName FROM Facturation JOIN db_AutoFact.Client on Client.id = Facturation.id_1 JOIN Prestation on Prestation.id = Facturation.id_2;";
+            string query = "SELECT numfact, condition_escompte,datepayement , Prestation.name as name , Client.name as clientName ,Prestation.prix_unitaire , quantite FROM Facturation JOIN db_AutoFact.Client on Client.id = Facturation.id_1 JOIN Prestation on Prestation.id = Facturation.id_2;";
 
             try
             {

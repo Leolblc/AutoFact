@@ -143,7 +143,7 @@ namespace AutoFact
                 cmmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
                 cmmd.Parameters.AddWithValue("@id_type", comboBox1.Items.Count);
                 cmmd.ExecuteNonQuery();
-                MessageBox.Show("La Prestation a été ajoutée dans la liste")
+                MessageBox.Show("La Prestation a été ajoutée dans la liste");
 
                 Prestation presta = new Prestation();
                 presta.Show();

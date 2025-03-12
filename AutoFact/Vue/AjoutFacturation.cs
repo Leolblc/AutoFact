@@ -183,6 +183,7 @@ namespace AutoFact
             try
             {
 
+
                 string command2 = "INSERT INTO Facturation(numfact,condition_escompte,datepayement,id_1,id_2,description,quantite) VALUES (@numfact, @escompte,@datepayement,@id_1,@id_2,@description,@quantite);";
                 MySqlCommand cmd1 = new MySqlCommand(command2, connection);
                 cmd1.Parameters.AddWithValue("@numfact", TBNomFacture.Text);
