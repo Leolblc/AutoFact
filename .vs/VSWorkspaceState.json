@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AutoFact",
+    "\\AutoFact\\Vue"
   ],
-  "SelectedNode": "\\AutoFact.sln",
+  "SelectedNode": "\\AutoFact\\Vue\\Facturation.cs",
   "PreviewInSolutionExplorer": false
 }

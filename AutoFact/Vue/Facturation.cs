@@ -30,10 +30,10 @@ using QuestPDF.Fluent;
 using QuestPDF.Drawing;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
-using QuestPDF.Companion;
-using QuestPDF.Previewer;
+
 
 using QuestPDF.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace AutoFact
 {
@@ -48,8 +48,13 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=172.16.119.17Database=Autofact;User ID=operateur;Password=Operateur;";
-            connection = new MySqlConnection(connectionString);
+            if (connection != null && connection.State == System.Data.ConnectionState.Open)
+            {
+                Console.WriteLine("La connexion est déjà ouverte.");
+                return;
+            }
+            /*string connectionString = "Server=172.16.119.17Database=Autofact;User ID=operateur;Password=Operateur;";
+            connection = new MySqlConnection(connectionString);*/
             var builder = new MySqlConnectionStringBuilder
             {
                 Server = "172.16.119.17",
@@ -146,10 +151,14 @@ namespace AutoFact
         {
             QuestPDF.Settings.License = LicenseType.Community;
 
-            // Récupérer les données de la base de données
-            string selectedFacture = CBNFacturation.Text; // Assurez-vous que l'élément sélectionné est valide
-            string query = "SELECT * FROM AfficheFacturationTotale WHERE numfact = @numfact"; // Remplacez par votre requête
+            string selectedFacture = CBNFacturation.Text;
+            if (string.IsNullOrEmpty(selectedFacture))
+            {
+                MessageBox.Show($"Aucune valeur entrée.");
+                return;
+            }
 
+            string query = "SELECT * FROM AfficheFacturationTotale WHERE numfact = @numfact";
             DataTable factureData = new DataTable();
 
             try
@@ -166,47 +175,31 @@ namespace AutoFact
             catch (Exception ex)
             {
                 MessageBox.Show($"Erreur lors de la récupération des données : {ex.Message}", "Erreur de chargement");
-                return; // Sortir de la méthode si une erreur se produit
+                return;
             }
 
-            // Créer le document PDF
-            var document = QuestPDF.Fluent.Document.Create(container =>
+            // Création du document PDF
+            var document = Document.Create(container =>
             {
                 container.Page(page =>
                 {
-
-
                     page.Margin(50);
                     page.Size(PageSizes.A4);
-                    page.Margin(2, Unit.Centimetre);
                     page.PageColor(Colors.White);
-                    page.DefaultTextStyle(x => x.FontSize(20));
+                    page.DefaultTextStyle(x => x.FontSize(12));
 
-                    page.Header()
-                        .Text($"Facture de {selectedFacture}")
-                        .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
+                    // 📌 En-tête
+                    page.Header().Element(container => ComposeHeader(container, factureData, selectedFacture));
 
-                    page.Content()
-                        .Text(text =>
-                        {
-                            // Ajoutez ici les données de la facture
-                            foreach (DataRow row in factureData.Rows)
-                            {
-                                string nomFacture = row["numfact"] != DBNull.Value ? row["numfact"].ToString() : "Inconnu";
-                                string addressValue = row["address"] != DBNull.Value ? row["address"].ToString() : "Inconnu";
-                                string dateValue = row["datepayement"] != DBNull.Value ? row["datepayement"].ToString() : "Inconnue";
-                                string DescriptionValue = row["description_F"] != DBNull.Value ? row["description_F"].ToString() : "Inconnu";
-                                string StatutValue = row["etat"] != DBNull.Value ? row["etat"].ToString() : "Inconnue";
+                    // 📌 Contenu unique (évite le double appel à `page.Content()`)
+                    page.Content().Column(column =>
+                    {
+                        column.Item().Element(container => ComposeForFrom(container, factureData));
+                        column.Item().Element(container => ComposeContent(container, factureData));
+                        column.Item().Element(container => ComposeTable(container, factureData));
+                    });
 
-                                text.Line($"nom de Facture: {row["numfact"]}");
-                                text.Line($"Client: {row["nom"]}");
-                                text.Line($"Date: {row["datepayement"]}");
-                                text.Line($"Description: {row["Description"]}");
-                                text.Line($"Statut: {row["etat"]}");
-                                // Ajoutez d'autres champs selon vos besoins
-                            }
-                        });
-
+                    // 📌 Pied de page
                     page.Footer().AlignCenter().Text(text =>
                     {
                         text.CurrentPageNumber();
@@ -214,49 +207,146 @@ namespace AutoFact
                         text.TotalPages();
                     });
                 });
+            });
 
-                var headerStyle = TextStyle.Default.SemiBold();
+            document.GeneratePdf("exemple.pdf");
+            MessageBox.Show("PDF généré avec succès !");
+        }
 
-                container.Table(table =>
+        // 📌 Déplacement des méthodes à l'extérieur pour plus de clarté
+        private void ComposeHeader(QuestPDF.Infrastructure.IContainer container, DataTable factureData, string numfact)
+        {
+            if (factureData.Rows.Count == 0) return;
+            DataRow row = factureData.Rows[0];
+
+            string dateValue = row["datepayement"] != DBNull.Value ? Convert.ToDateTime(row["datepayement"]).ToShortDateString() : "Inconnue";
+            string dateLimite = row["echeance"] != DBNull.Value ? Convert.ToDateTime(row["echeance"]).ToShortDateString() : "Inconnue";
+            string addressValue = row["address"] != DBNull.Value ? row["address"].ToString() : "Inconnu";
+            string datePDF = DateTime.Now.ToString("dd/MM/yyyy");
+
+            container.Row(row =>
+            {
+                row.RelativeItem().Column(column =>
+                {
+                    column.Item().Text($"Facture #{numfact}")
+                        .FontSize(20).SemiBold().FontColor(Colors.Blue.Medium);
+                    column.Item().Text($"Date PDF : {datePDF}");
+                    column.Item().Text($"Date de paiement : {dateValue}");
+                    column.Item().Text($"Date d'échéance : {dateLimite}");
+                    column.Item().Text($"Adresse : {addressValue}");
+                });
+            });
+        }
+
+        private void ComposeContent(QuestPDF.Infrastructure.IContainer container, DataTable factureData)
+        {
+            if (factureData.Rows.Count == 0) return;
+            DataRow row = factureData.Rows[0];
+            
+            string description = row["description_F"] != DBNull.Value ? row["description_F"].ToString() : "Inconnu";
+            string statut = row["etat"] != DBNull.Value ? row["etat"].ToString() : "Inconnue";
+
+            container.PaddingVertical(20).Column(column =>
+            {
+                column.Item().Text($"Description : {description}").FontSize(12).SemiBold();
+                column.Item().Text($"Statut : {statut}").FontSize(12).SemiBold(); ;
+            });
+        }
+
+        private void ComposeForFrom(QuestPDF.Infrastructure.IContainer container, DataTable factureData) 
+        {
+            if (factureData.Rows.Count == 0) return;
+            DataRow row = factureData.Rows[0];
+
+            string client_n = row["nom"] != DBNull.Value ? row["nom"].ToString() : "Inconnu";
+            string client_p = row["lastname"] != DBNull.Value ? row["lastname"].ToString() : "Inconnu";
+            string mail = row["mail"] != DBNull.Value ? row["mail"].ToString() : "Inconnu";
+            string téléphone = row["phone"] != DBNull.Value ? row["phone"].ToString() : "Inconnu";
+            string residence = row["residence"] != DBNull.Value ? row["residence"].ToString() : "Inconnu";
+            string address = row["address"] != DBNull.Value ? row["address"].ToString() : "Inconnu";
+
+            container.PaddingVertical(40).Column(column =>
+            {
+                column.Item().Text("For").Bold().Underline();
+                column.Spacing(20);
+
+                column.Item().Row(row =>
+                {
+                    row.RelativeItem().Column(clientColumn =>  // Ajout des infos client
+                    {
+                        clientColumn.Item().Text("From").Bold().Underline();
+                        clientColumn.Item().Text($"Client: {client_n} {client_p}");
+                        clientColumn.Item().Text($"Residence: {residence}");
+                        clientColumn.Item().Text($"Addresse: {address}");
+                        clientColumn.Item().Text($"Adresse Mail: {mail}");
+                        clientColumn.Item().Text($"Numéro téléphone: {téléphone}");
+                    });
+                });
+            });
+
+        }
+
+        private void ComposeTable(QuestPDF.Infrastructure.IContainer container, DataTable factureData)
+        {
+            var headerStyle = TextStyle.Default.SemiBold();
+            decimal TousTotal = 0;
+            container.Column(column =>
+            {
+                column.Item().Table(table =>
                 {
                     table.ColumnsDefinition(columns =>
                     {
                         columns.ConstantColumn(25);
                         columns.RelativeColumn(3);
-                        columns.RelativeColumn();
-                        columns.RelativeColumn();
-                        columns.RelativeColumn();
+                        columns.RelativeColumn(2);
+                        columns.RelativeColumn(2);
+                        columns.RelativeColumn(2);
+                        columns.RelativeColumn(2);
                     });
 
                     table.Header(header =>
                     {
                         header.Cell().Text("#");
-                        header.Cell().Text("Product").Style(headerStyle);
-                        header.Cell().AlignRight().Text("Quantity").Style(headerStyle);
-                        header.Cell().AlignRight().Text("Unit price").Style(headerStyle);
+                        header.Cell().Text("Produit").Style(headerStyle);
+                        header.Cell().AlignRight().Text("Quantité").Style(headerStyle);
+                        header.Cell().AlignRight().Text("Prix Unitaire").Style(headerStyle);
+                        header.Cell().AlignRight().Text("Montant HT").Style(headerStyle);
                         header.Cell().AlignRight().Text("Total").Style(headerStyle);
-                        header.Cell().ColumnSpan(5).PaddingTop(5).BorderBottom(1).BorderColor(Colors.Black);
+                        header.Cell().ColumnSpan(6).PaddingTop(5).BorderBottom(1).BorderColor(Colors.Black);
                     });
 
-                    foreach (var item in Model.Items)
+                    
+                    int index = 0;
+                    foreach (DataRow row in factureData.Rows)
                     {
-                        var index = Model.Items.IndexOf(item) + 1;
+                        index++;
+                        int qte = row["qte"] != DBNull.Value ? Convert.ToInt32(row["qte"]) : 0;
+                        string name = row["name"] != DBNull.Value ? row["name"].ToString() : "Inconnue";
+                        decimal prix_unitaire = row["prix_unitaire"] != DBNull.Value ? Convert.ToDecimal(row["prix_unitaire"]) : 0m;
+                        decimal montant_ht = row["montant_ht"] != DBNull.Value ? Convert.ToDecimal(row["montant_ht"]) : 0m;
+                        decimal total = prix_unitaire * qte;
+                        TousTotal += total;
 
-                        table.Cell().Element(CellStyle).Text($"{index}");
-                        table.Cell().Element(CellStyle).Text(item.Name);
-                        table.Cell().Element(CellStyle).AlignRight().Text($"{item.Quantity}");
-                        table.Cell().Element(CellStyle).AlignRight().Text($"{item.Price:C}");
-                        table.Cell().Element(CellStyle).AlignRight().Text($"{item.Price * item.Quantity:C}");
-
-                        static IContainer CellStyle(IContainer container) => container.BorderBottom(1).BorderColor(Colors.Grey.Lighten2).PaddingVertical(5);
+                        table.Cell().Text($"{index}");
+                        table.Cell().Text(name);
+                        table.Cell().AlignRight().Text($"{qte}");
+                        table.Cell().AlignRight().Text($"{prix_unitaire:C}");
+                        table.Cell().AlignRight().Text($"{montant_ht:C}");
+                        table.Cell().AlignRight().Text($"{total:C}");
                     }
                 });
 
-            });
+                decimal TVA = TousTotal * 0.2M;
+                decimal PlusTVA = TousTotal * (1 + 0.2M);
+                // Ajout du total en dehors du tableau
+                column.Item().PaddingTop(10).AlignRight().Text($"Total Général : {TousTotal:C}").SemiBold().FontSize(14);
+                column.Item().PaddingTop(10).AlignRight().Text($"TVA (20%) : {TVA:C}").SemiBold().FontSize(14);
+                column.Item().PaddingTop(10).AlignRight().Text($"Total : {PlusTVA:C}").SemiBold().FontSize(14);
+                column.Item().PaddingTop(10).AlignRight().Text($"Total : {PlusTVA:C}").SemiBold().FontSize(14);
 
-            document.GeneratePdf("exemple.pdf"); // Vous pouvez spécifier un chemin si nécessaire
-            MessageBox.Show("PDF généré avec succès !");
+            });
         }
+
 
         private void buttonRecap3_Click(object sender, EventArgs e)
         {
@@ -284,5 +374,6 @@ namespace AutoFact
         {
             ExportPDF();
         }
+        
     }
 }

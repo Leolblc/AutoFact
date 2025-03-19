@@ -33,8 +33,13 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=172.16.119.17Database=Autofact;User ID=operateur;Password=Operateur;";
-            connection = new MySqlConnection(connectionString);
+            //string connectionString = "Server=172.16.119.17Database=Autofact;User ID=operateur;Password=Operateur;";
+            //connection = new MySqlConnection(connectionString);
+            if (connection != null && connection.State == System.Data.ConnectionState.Open)
+            {
+                Console.WriteLine("La connexion est déjà ouverte.");
+                return;
+            }
             var builder = new MySqlConnectionStringBuilder
             {
                 Server = "172.16.119.17",

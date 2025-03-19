@@ -1,97 +1,105 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\WACHE\\Documents\\AutoFact\\",
+  "WorkspaceRootPath": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\facturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\facturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\facturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact\\autofact\\vue\\facturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\facturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact\\autofact\\vue\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\recapitulatif.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\recapitulatif.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\prestation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\prestation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\ajoutclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\ajoutclient.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutclient.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact\\autofact\\vue\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\autofact\\vue\\facturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\facturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact\\autofact\\vue\\ajoutpresta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutpresta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\autofact\\vue\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact\\autofact\\vue\\ajoutfacturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutfacturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact\\autofact\\vue\\ajoutclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\autofact.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\autofact.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\ajoutpresta.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutpresta.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact\\autofact\\vue\\recapitulatif.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\recapitulatif.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact\\autofact\\vue\\prestation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\prestation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\ajoutpresta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutpresta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\ajoutfacturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\ajoutfacturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutfacturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\ajoutfacturation.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\autofact\\vue\\ajoutfacturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutfacturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\ajoutclient.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutclient.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\pdf\\facturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\pdf\\facturation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\ajoutpresta.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutpresta.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\autofact\\vue\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\facturation.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\facturation.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\recapitulatif.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\recapitulatif.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\prestation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\prestation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\ajoutclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\autofact\\vue\\ajoutpresta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutpresta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\autofact\\vue\\ajoutclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\autofact.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\autofact.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\autofact\\vue\\recapitulatif.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\recapitulatif.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\autofact\\vue\\prestation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\prestation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\ajoutpresta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutpresta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\ajoutfacturation.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\ajoutfacturation.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\home.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\home.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\home.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact\\autofact\\vue\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|c:\\users\\wache\\documents\\autofact_nathan\\autofact\\vue\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4448BA26-3015-4E93-B1FA-1E20E86F6DED}|AutoFact\\AutoFact.csproj|solutionrelative:autofact\\vue\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -102,7 +110,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,74 +118,49 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AjoutClient.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\Autofact\\AutoFact\\Vue\\AjoutClient.Designer.cs",
-              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutClient.Designer.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\Autofact\\AutoFact\\Vue\\AjoutClient.Designer.cs",
-              "RelativeToolTip": "AutoFact\\Vue\\AjoutClient.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T11:59:13.612Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Facturation.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Facturation.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Facturation.cs",
               "RelativeDocumentMoniker": "AutoFact\\Vue\\Facturation.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Facturation.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Facturation.cs",
               "RelativeToolTip": "AutoFact\\Vue\\Facturation.cs",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAiwKwAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAACkBAAAAAAAAAAAewFgBAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T10:05:43.109Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Program.cs",
-              "RelativeDocumentMoniker": "AutoFact\\Program.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Program.cs",
-              "RelativeToolTip": "AutoFact\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAArAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "AjoutClient.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutClient.Designer.cs",
+              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutClient.Designer.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutClient.Designer.cs",
+              "RelativeToolTip": "AutoFact\\Vue\\AjoutClient.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:35:07.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T11:59:13.612Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Facturation.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Facturation.cs",
-              "RelativeDocumentMoniker": "AutoFact\\Vue\\Facturation.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Facturation.cs [Conception]",
-              "RelativeToolTip": "AutoFact\\Vue\\Facturation.cs [Conception]",
+              "Title": "Home.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Home.cs",
+              "RelativeDocumentMoniker": "AutoFact\\Vue\\Home.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Home.cs",
+              "RelativeToolTip": "AutoFact\\Vue\\Home.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:05:40.858Z",
-              "EditorCaption": " [Conception]"
+              "WhenOpened": "2024-12-17T10:09:03.597Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AjoutPresta.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutPresta.Designer.cs",
-              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutPresta.Designer.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutPresta.Designer.cs",
-              "RelativeToolTip": "AutoFact\\Vue\\AjoutPresta.Designer.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAtwEIBAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T09:09:55.822Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "AjoutFacturation.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutFacturation.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutFacturation.Designer.cs",
               "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutFacturation.Designer.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutFacturation.Designer.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutFacturation.Designer.cs",
               "RelativeToolTip": "AutoFact\\Vue\\AjoutFacturation.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -185,61 +168,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AjoutFacturation.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutFacturation.cs",
-              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutFacturation.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutFacturation.cs",
-              "RelativeToolTip": "AutoFact\\Vue\\AjoutFacturation.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAwwLcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Program.cs",
+              "RelativeDocumentMoniker": "AutoFact\\Program.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Program.cs",
+              "RelativeToolTip": "AutoFact\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwBAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:11:27.731Z"
+              "WhenOpened": "2024-12-17T15:35:07.193Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AjoutClient.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutClient.cs",
-              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutClient.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutClient.cs",
-              "RelativeToolTip": "AutoFact\\Vue\\AjoutClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:11:47.614Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "AjoutPresta.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutPresta.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutPresta.cs",
               "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutPresta.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutPresta.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutPresta.cs",
               "RelativeToolTip": "AutoFact\\Vue\\AjoutPresta.cs",
               "ViewState": "AgIAAGMAAAAAAAAAAAAkwI8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:11:10.341Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Home.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Home.cs",
-              "RelativeDocumentMoniker": "AutoFact\\Vue\\Home.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Home.cs",
-              "RelativeToolTip": "AutoFact\\Vue\\Home.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:09:03.597Z",
+              "WhenOpened": "2024-12-17T10:11:10.341Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "Recapitulatif.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Recapitulatif.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Recapitulatif.cs",
               "RelativeDocumentMoniker": "AutoFact\\Vue\\Recapitulatif.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Recapitulatif.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Recapitulatif.cs",
               "RelativeToolTip": "AutoFact\\Vue\\Recapitulatif.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAACkAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -248,11 +206,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "Prestation.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Prestation.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Prestation.cs",
               "RelativeDocumentMoniker": "AutoFact\\Vue\\Prestation.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Prestation.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Prestation.cs",
               "RelativeToolTip": "AutoFact\\Vue\\Prestation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -261,36 +219,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Home.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Home.cs",
-              "RelativeDocumentMoniker": "AutoFact\\Vue\\Home.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Home.cs [Conception]",
-              "RelativeToolTip": "AutoFact\\Vue\\Home.cs [Conception]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:05:37.149Z",
-              "EditorCaption": " [Conception]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "Home.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Home.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Home.Designer.cs",
               "RelativeDocumentMoniker": "AutoFact\\Vue\\Home.Designer.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Home.Designer.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Home.Designer.cs",
               "RelativeToolTip": "AutoFact\\Vue\\Home.Designer.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAowDMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:19:32.351Z",
+              "WhenOpened": "2024-12-17T10:19:32.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AjoutPresta.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutPresta.Designer.cs",
+              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutPresta.Designer.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutPresta.Designer.cs",
+              "RelativeToolTip": "AutoFact\\Vue\\AjoutPresta.Designer.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAmwEIBAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:09:55.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AjoutFacturation.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutFacturation.cs",
+              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutFacturation.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutFacturation.cs",
+              "RelativeToolTip": "AutoFact\\Vue\\AjoutFacturation.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwEQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T10:11:27.731Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 14,
+              "Title": "AjoutClient.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutClient.cs",
+              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutClient.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutClient.cs",
+              "RelativeToolTip": "AutoFact\\Vue\\AjoutClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T10:11:47.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Facturation.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Facturation.Designer.cs",
+              "RelativeDocumentMoniker": "AutoFact\\Vue\\Facturation.Designer.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Facturation.Designer.cs",
+              "RelativeToolTip": "AutoFact\\Vue\\Facturation.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQBAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T14:42:08.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Facturation.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\PDF\\Facturation.cs",
+              "RelativeDocumentMoniker": "AutoFact\\PDF\\Facturation.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\PDF\\Facturation.cs",
+              "RelativeToolTip": "AutoFact\\PDF\\Facturation.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAmwE8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T12:43:42.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Client.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Client.cs",
               "RelativeDocumentMoniker": "AutoFact\\Vue\\Client.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Client.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Client.cs",
               "RelativeToolTip": "AutoFact\\Vue\\Client.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -299,22 +306,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "AutoFact",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\Autofact\\AutoFact\\AutoFact.csproj",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\AutoFact.csproj",
               "RelativeDocumentMoniker": "AutoFact\\AutoFact.csproj",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\Autofact\\AutoFact\\AutoFact.csproj",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\AutoFact.csproj",
               "RelativeToolTip": "AutoFact\\AutoFact.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-03-04T07:10:21.073Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "AutoFact\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Properties\\launchSettings.json",
               "RelativeToolTip": "AutoFact\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -322,71 +329,91 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AjoutClient.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutClient.cs",
-              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutClient.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutClient.cs [Conception]",
-              "RelativeToolTip": "AutoFact\\Vue\\AjoutClient.cs [Conception]",
+              "DocumentIndex": 3,
+              "Title": "Facturation.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Facturation.cs",
+              "RelativeDocumentMoniker": "AutoFact\\Vue\\Facturation.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Facturation.cs [Conception]",
+              "RelativeToolTip": "AutoFact\\Vue\\Facturation.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:03:43.267Z",
-              "EditorCaption": " [Conception]"
+              "WhenOpened": "2024-12-17T10:05:40.858Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AjoutFacturation.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutFacturation.cs",
+              "DocumentIndex": 4,
+              "Title": "Home.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Home.cs",
+              "RelativeDocumentMoniker": "AutoFact\\Vue\\Home.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Home.cs [Conception]",
+              "RelativeToolTip": "AutoFact\\Vue\\Home.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T10:05:37.149Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AjoutFacturation.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutFacturation.cs",
               "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutFacturation.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutFacturation.cs [Conception]",
-              "RelativeToolTip": "AutoFact\\Vue\\AjoutFacturation.cs [Conception]",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutFacturation.cs [Design]",
+              "RelativeToolTip": "AutoFact\\Vue\\AjoutFacturation.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T10:27:15.246Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "AjoutPresta.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutPresta.cs",
-              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutPresta.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutPresta.cs [Conception]",
-              "RelativeToolTip": "AutoFact\\Vue\\AjoutPresta.cs [Conception]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:06:09.365Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "Client.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Client.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Client.cs",
               "RelativeDocumentMoniker": "AutoFact\\Vue\\Client.cs",
-              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Client.cs [Conception]",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Client.cs [Conception]",
               "RelativeToolTip": "AutoFact\\Vue\\Client.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T10:06:08.525Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
+              "Title": "AjoutClient.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutClient.cs",
+              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutClient.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutClient.cs [Conception]",
+              "RelativeToolTip": "..\\AutoFact\\AutoFact\\Vue\\AjoutClient.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T10:03:43.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AjoutPresta.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\AjoutPresta.cs",
+              "RelativeDocumentMoniker": "AutoFact\\Vue\\AjoutPresta.cs",
+              "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\AjoutPresta.cs [Conception]",
+              "RelativeToolTip": "..\\AutoFact\\AutoFact\\Vue\\AjoutPresta.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T10:06:09.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "Prestation.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Prestation.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Prestation.cs",
               "RelativeDocumentMoniker": "AutoFact\\Vue\\Prestation.cs",
               "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Prestation.cs [Conception]",
-              "RelativeToolTip": "AutoFact\\Vue\\Prestation.cs [Conception]",
+              "RelativeToolTip": "..\\AutoFact\\AutoFact\\Vue\\Prestation.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T10:03:51.117Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Recapitulatif.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Recapitulatif.cs",
+              "DocumentMoniker": "C:\\Users\\WACHE\\Documents\\AutoFact_Nathan\\AutoFact\\Vue\\Recapitulatif.cs",
               "RelativeDocumentMoniker": "AutoFact\\Vue\\Recapitulatif.cs",
               "ToolTip": "C:\\Users\\WACHE\\Documents\\AutoFact\\AutoFact\\Vue\\Recapitulatif.cs [Conception]",
-              "RelativeToolTip": "AutoFact\\Vue\\Recapitulatif.cs [Conception]",
+              "RelativeToolTip": "..\\AutoFact\\AutoFact\\Vue\\Recapitulatif.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:03:49.39Z",
-              "EditorCaption": " [Conception]"
+              "WhenOpened": "2024-12-17T10:03:49.39Z"
             }
           ]
         }
