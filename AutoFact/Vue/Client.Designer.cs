@@ -221,6 +221,7 @@
             DGVListClient.ReadOnly = true;
             DGVListClient.Size = new Size(780, 414);
             DGVListClient.TabIndex = 0;
+            DGVListClient.CellContentClick += DGVListClient_CellContentClick;
             // 
             // buttonQuitter
             // 

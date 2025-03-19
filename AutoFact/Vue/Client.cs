@@ -31,18 +31,18 @@ namespace AutoFact
         {
             InitializeComponent();
             InitializeDatabaseConnection();
-            
+
         }
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.2;Database=db_AutoFact;User ID=operateur;Password=Operateur;";
+            string connectionString = "Server=172.16.119.9;Database=db_AutoFact;User ID=admin;Password=admin;";
             connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.2",
-                UserID = "operateur",
-                Password = "Operateur",
+                Server = "172.16.119.9",
+                UserID = "admin",
+                Password = "admin",
                 Database = "db_AutoFact",
             };
             connection = new MySqlConnection(builder.ConnectionString);
@@ -78,6 +78,7 @@ namespace AutoFact
         private void Client_Load(object sender, EventArgs e)
         {
             LoadData();
+            AddDeleteButtonColumn();
         }
 
         private void LoadData()
@@ -140,6 +141,64 @@ namespace AutoFact
             AjoutClient jout = new AjoutClient();
             jout.Show();
             this.Close();
+        }
+
+        private void DeleteClient(int clientId)
+        {
+            try
+            {
+                string command = "DELETE FROM Client WHERE id = @id;";
+                MySqlCommand cmd = new MySqlCommand(command, connection);
+                cmd.Parameters.AddWithValue("@id", clientId);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Le client a été supprimé.");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de la suppression : {ex.Message}");
+            }
+        }
+
+        private void AddDeleteButtonColumn()
+        {
+            if (DGVListClient.Columns["DeleteButton"] == null) // Vérifie si la colonne existe déjà
+            {
+                DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+                deleteButton.Name = "DeleteButton";
+                deleteButton.HeaderText = "Action";
+                deleteButton.Text = "Supprimer";
+                deleteButton.UseColumnTextForButtonValue = true; // Afficher le texte dans les boutons
+
+                DGVListClient.Columns.Add(deleteButton);
+            }
+        }
+
+        private void DGVListClient_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == DGVListClient.Columns["DeleteButton"].Index && e.RowIndex >= 0)
+            {
+                // Récupérer l'ID du client
+                int clientId = Convert.ToInt32(DGVListClient.Rows[e.RowIndex].Cells["id"].Value);
+
+                // Demande de confirmation
+                DialogResult result = MessageBox.Show("Voulez-vous vraiment supprimer ce client ?",
+                                                      "Confirmation de suppression",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    DeleteClient(clientId);
+                    LoadData(); // Rafraîchir les données après suppression
+                }
+            }
+        }
+
+        private void DGVListClient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

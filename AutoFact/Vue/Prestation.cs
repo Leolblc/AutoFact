@@ -35,13 +35,13 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.2;Database=db_AutoFact;User ID=operateur;Password=Operateur;";
+            string connectionString = "Server=172.16.119.9;Database=db_AutoFact;User ID=admin;Password=admin;";
             connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.2",
-                UserID = "operateur",
-                Password = "Operateur",
+                Server = "172.16.119.9",
+                UserID = "admin",
+                Password = "admin",
                 Database = "db_AutoFact",
             };
             connection = new MySqlConnection(builder.ConnectionString);

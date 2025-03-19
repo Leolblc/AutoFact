@@ -334,6 +334,7 @@
             Controls.Add(panelAjoutClient);
             Name = "AjoutClient";
             Text = "AjoutClient";
+            Load += AjoutClient_Load;
             panelAjoutClient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
