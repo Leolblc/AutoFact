@@ -35,13 +35,13 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.2;Database=db_AutoFact;User ID=operateur;Password=Operateur;";
-            connection = new MySqlConnection(connectionString);
+            // string connectionString = "Server=172.16.119.9Database=db_AutoFact;User ID=admin;Password=admin;";
+            // connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.2",
-                UserID = "operateur",
-                Password = "Operateur",
+                Server = "172.16.119.9",
+                UserID = "admin",
+                Password = "admin",
                 Database = "db_AutoFact",
             };
             connection = new MySqlConnection(builder.ConnectionString);
@@ -71,7 +71,7 @@ namespace AutoFact
         {
             AjoutClient newClient = new AjoutClient();
             newClient.Show();
-            this.Hide();
+            // this.Hide();
         }
 
         private void Client_Load(object sender, EventArgs e)
@@ -110,35 +110,35 @@ namespace AutoFact
         {
             Form1 form1 = new Form1();
             form1.Show();
-            this.Close();
+            // this.Close();
         }
 
         private void BtnPrestation_Click(object sender, EventArgs e)
         {
             Prestation prestation = new Prestation();
             prestation.Show();
-            this.Close();
+            // this.Close();
         }
 
         private void BtnFacture_Click(object sender, EventArgs e)
         {
             Facturation facture = new Facturation();
             facture.Show();
-            this.Close();
+            // this.Close();
         }
 
         private void BtnRecap_Click(object sender, EventArgs e)
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
-            this.Close();
+            // this.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
             AjoutClient jout = new AjoutClient();
             jout.Show();
-            this.Close();
+            // this.Close();
         }
     }
 }

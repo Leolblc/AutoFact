@@ -164,6 +164,7 @@
             BtnExportPDF.TabIndex = 5;
             BtnExportPDF.Text = "Exporter";
             BtnExportPDF.UseVisualStyleBackColor = true;
+            BtnExportPDF.Click += BtnExportPDF_Click;
             // 
             // CBPDF
             // 
@@ -172,6 +173,7 @@
             CBPDF.Name = "CBPDF";
             CBPDF.Size = new Size(121, 23);
             CBPDF.TabIndex = 4;
+            CBPDF.SelectedIndexChanged += CBPDF_SelectedIndexChanged_1;
             // 
             // BtnAddFact
             // 

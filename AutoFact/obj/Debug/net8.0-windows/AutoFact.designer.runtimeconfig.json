@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\marichal\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\marichal\\.nuget\\packages",
+      "C:\\Users\\WACHE\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\WACHE\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

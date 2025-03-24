@@ -36,13 +36,13 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.2;Database=db_AutoFact;User ID=operateur;Password=Operateur;";
-            connection = new MySqlConnection(connectionString);
+            // string connectionString = "Server=172.16.119.9Database=db_AutoFact;User ID=admin;Password=admin;";
+            // connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.2",
-                UserID = "operateur",
-                Password = "Operateur",
+                Server = "172.16.119.9",
+                UserID = "admin",
+                Password = "admin",
                 Database = "db_AutoFact",
             };
             connection = new MySqlConnection(builder.ConnectionString);
@@ -143,11 +143,11 @@ namespace AutoFact
                 cmmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
                 cmmd.Parameters.AddWithValue("@id_type", comboBox1.Items.Count);
                 cmmd.ExecuteNonQuery();
-                MessageBox.Show("La Prestation a été ajoutée dans la liste")
+                MessageBox.Show("La Prestation a été ajoutée dans la liste");
 
                 Prestation presta = new Prestation();
                 presta.Show();
-                this.Close();
+                // this.Close();
 
             }
             catch (Exception ex)
@@ -167,7 +167,7 @@ namespace AutoFact
         {
             Client client = new Client();
             client.Show();
-            this.Close();
+            // this.Close();
         }
 
         private void BtnPrestationNA_Click(object sender, EventArgs e)
@@ -179,14 +179,14 @@ namespace AutoFact
         {
             Facturation facturation = new Facturation();
             facturation.Show();
-            this.Close();
+            // this.Close();
         }
 
         private void BtnRecap3_Click(object sender, EventArgs e)
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
-            this.Close();
+            // this.Close();
         }
     }
 }
