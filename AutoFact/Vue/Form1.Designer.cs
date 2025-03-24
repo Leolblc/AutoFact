@@ -42,6 +42,9 @@
             DGVLastClient = new DataGridView();
             dataGridViewCA = new DataGridView();
             DGVFact = new DataGridView();
+            LB_Last_Cli = new Label();
+            LB_Last_Presta = new Label();
+            LB_Last_Fact = new Label();
             panelClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DGVPrestation).BeginInit();
@@ -205,12 +208,45 @@
             DGVFact.TabIndex = 6;
             DGVFact.CellContentClick += DGVFact_CellContentClick;
             // 
+            // LB_Last_Cli
+            // 
+            LB_Last_Cli.AutoSize = true;
+            LB_Last_Cli.Font = new Font("Arial", 14F, FontStyle.Bold);
+            LB_Last_Cli.Location = new Point(876, 166);
+            LB_Last_Cli.Name = "LB_Last_Cli";
+            LB_Last_Cli.Size = new Size(159, 22);
+            LB_Last_Cli.TabIndex = 7;
+            LB_Last_Cli.Text = "Derniers Clients";
+            // 
+            // LB_Last_Presta
+            // 
+            LB_Last_Presta.AutoSize = true;
+            LB_Last_Presta.Font = new Font("Arial", 14F, FontStyle.Bold);
+            LB_Last_Presta.Location = new Point(324, 166);
+            LB_Last_Presta.Name = "LB_Last_Presta";
+            LB_Last_Presta.Size = new Size(212, 22);
+            LB_Last_Presta.TabIndex = 8;
+            LB_Last_Presta.Text = "Dernières Prestations";
+            // 
+            // LB_Last_Fact
+            // 
+            LB_Last_Fact.AutoSize = true;
+            LB_Last_Fact.Font = new Font("Arial", 14F, FontStyle.Bold);
+            LB_Last_Fact.Location = new Point(254, 489);
+            LB_Last_Fact.Name = "LB_Last_Fact";
+            LB_Last_Fact.Size = new Size(188, 22);
+            LB_Last_Fact.TabIndex = 9;
+            LB_Last_Fact.Text = "Dernières Factures";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1281, 877);
+            Controls.Add(LB_Last_Fact);
+            Controls.Add(LB_Last_Presta);
+            Controls.Add(LB_Last_Cli);
             Controls.Add(DGVFact);
             Controls.Add(dataGridViewCA);
             Controls.Add(DGVLastClient);
@@ -246,5 +282,8 @@
         private DataGridView dataGridViewCA;
         private DataGridView DGVFact;
         private Button buttonQuitter;
+        private Label LB_Last_Cli;
+        private Label LB_Last_Presta;
+        private Label LB_Last_Fact;
     }
 }
