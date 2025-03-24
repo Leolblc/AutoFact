@@ -14,6 +14,10 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AutoFact
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\WACHE\Documents\AutoFact_Leo\AutoFact\
+=======
+build_property.ProjectDir = C:\Users\leole\Source\Repos\Leolblc\Autofact\AutoFact\
+>>>>>>> 2a8c30112bf6514ea70a54bcf2c89ce22e54ece6
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

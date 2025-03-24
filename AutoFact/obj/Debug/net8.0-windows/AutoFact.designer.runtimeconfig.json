@@ -12,8 +12,13 @@
       }
     ],
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\WACHE\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\WACHE\\.nuget\\packages",
+=======
+      "C:\\Users\\leole\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\leole\\.nuget\\packages",
+>>>>>>> 2a8c30112bf6514ea70a54bcf2c89ce22e54ece6
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

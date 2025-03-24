@@ -31,6 +31,7 @@ namespace AutoFact
         {
             InitializeComponent();
             InitializeDatabaseConnection();
+            
         }
 
         private void InitializeDatabaseConnection()

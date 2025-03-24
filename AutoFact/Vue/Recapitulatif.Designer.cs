@@ -225,6 +225,7 @@
             ARPT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ARPT.Location = new Point(777, 541);
             ARPT.Name = "ARPT";
+            ARPT.ReadOnly = true;
             ARPT.Size = new Size(233, 148);
             ARPT.TabIndex = 12;
             // 
@@ -233,6 +234,7 @@
             ARPM.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ARPM.Location = new Point(777, 161);
             ARPM.Name = "ARPM";
+            ARPM.ReadOnly = true;
             ARPM.Size = new Size(233, 148);
             ARPM.TabIndex = 11;
             // 
@@ -241,6 +243,7 @@
             dataGridViewT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewT.Location = new Point(17, 426);
             dataGridViewT.Name = "dataGridViewT";
+            dataGridViewT.ReadOnly = true;
             dataGridViewT.Size = new Size(993, 263);
             dataGridViewT.TabIndex = 6;
             // 
@@ -249,6 +252,7 @@
             dataGridViewM.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewM.Location = new Point(17, 46);
             dataGridViewM.Name = "dataGridViewM";
+            dataGridViewM.ReadOnly = true;
             dataGridViewM.Size = new Size(993, 263);
             dataGridViewM.TabIndex = 4;
             // 
