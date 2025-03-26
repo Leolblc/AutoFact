@@ -26,6 +26,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
 using QuestPDF.Helpers;
 using System.Xml.Linq;
+using System.Reflection.Metadata;
 
 
 
@@ -47,19 +48,19 @@ namespace AutoFact
         {
             AjoutFacturation ajoutFacturation = new AjoutFacturation();
             ajoutFacturation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void InitializeDatabaseConnection()
         {
-            // string connectionString = "Server=172.16.119.9Database=db_AutoFact;User ID=admin;Password=admin;";
+            // string connectionString = "Server=172.16.119.17Database=Autofact_leo;User ID=operateur;Password=operateur;";
             // connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
+                Server = "172.16.119.17",
+                UserID = "operateur",
+                Password = "Operateur",
+                Database = "Autofact_leo",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try
@@ -97,7 +98,7 @@ namespace AutoFact
 
         private void Facturation_Load(object sender, EventArgs e)
         {
-            string query = "SELECT numfact, condition_escompte,datepayement , Prestation.name as name , Client.name as clientName ,Prestation.prix_unitaire , quantite FROM Facturation JOIN db_AutoFact.Client on Client.id = Facturation.id_1 JOIN Prestation on Prestation.id = Facturation.id_2;";
+            string query = "SELECT numfact, condition_escompte,datepayement , Prestation.name as name , Client.name as clientName ,Prestation.prix_unitaire , quantite FROM Facturation left join Autofact_leo.Client on Client.id = Facturation.id_1 left JOIN Generer on Generer.id_1=Facturation.id left join Prestation on Prestation.id = Generer.id;";
 
             try
             {
@@ -193,7 +194,7 @@ namespace AutoFact
             }
 
             // Création du document PDF
-            var document = Document.Create(container =>
+            var document = QuestPDF.Fluent.Document.Create(container =>
             {
                 container.Page(page =>
                 {
@@ -223,7 +224,7 @@ namespace AutoFact
                 });
             });
 
-            document.GeneratePdf("exemple.pdf");
+            document.GeneratePdfAndShow();
             MessageBox.Show("PDF généré avec succès !");
         }
 
@@ -354,20 +355,22 @@ namespace AutoFact
                         int index = 0;
                         foreach (DataRow row in factureData.Rows)
                         {
-                            index++;
-                            int qte = row["qte"] != DBNull.Value ? Convert.ToInt32(row["qte"]) : 0;
                             string name = row["name"] != DBNull.Value ? row["name"].ToString() : "Inconnue";
-                            decimal prix_unitaire = row["prix_unitaire"] != DBNull.Value ? Convert.ToDecimal(row["prix_unitaire"]) : 0m;
-                            decimal montant_ht = row["montant_ht"] != DBNull.Value ? Convert.ToDecimal(row["montant_ht"]) : 0m;
-                            decimal total = prix_unitaire * qte;
-                            TousTotal += total;
-
-                            table.Cell().Text($"{index}");
-                            table.Cell().Text(name);
-                            table.Cell().AlignRight().Text($"{qte}");
-                            table.Cell().AlignRight().Text($"{prix_unitaire:C}");
-                            table.Cell().AlignRight().Text($"{montant_ht:C}");
-                            table.Cell().AlignRight().Text($"{total:C}");
+                            if (name != "Inconnue")
+                            {
+                                index++;
+                                int qte = row["qte"] != DBNull.Value ? Convert.ToInt32(row["qte"]) : 0;
+                                decimal prix_unitaire = row["prix_unitaire"] != DBNull.Value ? Convert.ToDecimal(row["prix_unitaire"]) : 0m;
+                                decimal montant_ht = row["montant_ht"] != DBNull.Value ? Convert.ToDecimal(row["montant_ht"]) : 0m;
+                                decimal total = prix_unitaire * qte;
+                                TousTotal += total;
+                                table.Cell().Text($"{index}");
+                                table.Cell().Text(name);
+                                table.Cell().AlignRight().Text($"{qte}");
+                                table.Cell().AlignRight().Text($"{prix_unitaire:C}");
+                                table.Cell().AlignRight().Text($"{montant_ht:C}");
+                                table.Cell().AlignRight().Text($"{total:C}");
+                            }
                         }
                     });
 
@@ -390,35 +393,35 @@ namespace AutoFact
         {
             Form1 form = new Form1();
             form.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonClient3_Click(object sender, EventArgs e)
         {
             Client client = new Client();
             client.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonPresta3_Click(object sender, EventArgs e)
         {
             Prestation prestation = new Prestation();
             prestation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonRecap3_Click(object sender, EventArgs e)
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
             AjoutFacturation ajoutFacturation = new AjoutFacturation();
             ajoutFacturation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void CBPDF_SelectedIndexChanged_1(object sender, EventArgs e)

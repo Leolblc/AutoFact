@@ -37,14 +37,14 @@ namespace AutoFact.Vue
 
         private void InitializeDatabaseConnection()
         {
-            // string connectionString = "Server=172.16.119.9Database=db_AutoFact;User ID=admin;Password=admin;";
+            // string connectionString = "Server=172.16.119.17Database=Autofact_leo;User ID=operateur;Password=operateur;";
             // connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
+                Server = "172.16.119.17",
+                UserID = "operateur",
+                Password = "Operateur",
+                Database = "Autofact_leo",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try
@@ -205,21 +205,21 @@ namespace AutoFact.Vue
 
             FormClient.Show();
 
-            // this.Close();
+            this.Close();
         }
 
         private void buttonPresta_Click_1(object sender, EventArgs e)
         {
             Prestation prestation = new Prestation();
             prestation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonFact_Click_1(object sender, EventArgs e)
         {
             Facturation formFacturation = new Facturation();
             formFacturation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonRecap_Click(object sender, EventArgs e)
@@ -231,7 +231,12 @@ namespace AutoFact.Vue
         {
             Form1 form1 = new Form1();
             form1.Show();
-            // this.Close();
+            this.Close();
+        }
+
+        private void ARPM_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

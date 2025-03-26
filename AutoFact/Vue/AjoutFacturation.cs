@@ -41,14 +41,14 @@ namespace AutoFact
 
         private void InitializeDatabaseConnection()
         {
-            // string connectionString = "Server=172.16.119.9Database=db_AutoFact;User ID=admin;Password=admin;";
+            // string connectionString = "Server=172.16.119.17Database=Autofact_leo;User ID=operateur;Password=operateur;";
             // connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
+                Server = "172.16.119.17",
+                UserID = "operateur",
+                Password = "Operateur",
+                Database = "Autofact_leo",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try
@@ -184,21 +184,36 @@ namespace AutoFact
             {
 
 
-                string command2 = "INSERT INTO Facturation(numfact,condition_escompte,datepayement,id_1,id_2,description,quantite) VALUES (@numfact, @escompte,@datepayement,@id_1,@id_2,@description,@quantite);";
+                string command2 = "INSERT INTO Facturation(numfact,condition_escompte,datepayement, id_1, description) VALUES (@numfact, @escompte,@datepayement,@id_1,@description);";
+                string command3 = "INSERT INTO Generer(id, id_1, qte) VALUES (@id_p, @id_f, @quantite);";
                 MySqlCommand cmd1 = new MySqlCommand(command2, connection);
+                MySqlCommand cmd2 = new MySqlCommand(command3, connection);
                 cmd1.Parameters.AddWithValue("@numfact", TBNomFacture.Text);
                 cmd1.Parameters.AddWithValue("@escompte", TBEscompte.Text);
                 cmd1.Parameters.AddWithValue("@datepayement", DTPDate.Value);
                 cmd1.Parameters.AddWithValue("@id_1", ListePresta[CBListCli.SelectedIndex].id);
-                cmd1.Parameters.AddWithValue("@id_2", ListePresta[CBNpresta.SelectedIndex].id);
+                //cmd1.Parameters.AddWithValue("@id_2", ListePresta[CBNpresta.SelectedIndex].id);
                 cmd1.Parameters.AddWithValue("@description", TBDescription.Text);
-                cmd1.Parameters.AddWithValue("@quantite", NUDQte.Text);
+                cmd2.Parameters.AddWithValue("@quantite", NUDQte.Text);
                 cmd1.ExecuteNonQuery();
+                int lastId = 0;
+                using (var cmd = new MySqlCommand("SELECT LAST_INSERT_ID();", connection))
+                {
+                    var result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value && result != null)
+                    {
+                        lastId = Convert.ToInt32(result);
+                    }
+                }
+                cmd2.Parameters.AddWithValue("@id_f", lastId);
+                cmd2.Parameters.AddWithValue("@id_p", ListePresta[CBNpresta.SelectedIndex].id);
+                cmd2.ExecuteNonQuery();
+                
                 MessageBox.Show("La facture a été ajoutée dans la liste");
 
                 Facturation facturation = new Facturation();
                 facturation.Show();
-                // this.Close();
+                this.Close();
 
             }
             catch (Exception ex)
@@ -216,28 +231,28 @@ namespace AutoFact
         {
             Form1 form = new Form1();
             form.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonClient_Click(object sender, EventArgs e)
         {
             Client client = new Client();
             client.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonPresta_Click(object sender, EventArgs e)
         {
             Prestation prestation = new Prestation();
             prestation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonRecap_Click(object sender, EventArgs e)
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
-            // this.Close();
+            this.Close();
         }
     }
 

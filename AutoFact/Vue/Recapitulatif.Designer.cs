@@ -223,20 +223,21 @@
             // ARPT
             // 
             ARPT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ARPT.Location = new Point(777, 541);
+            ARPT.Location = new Point(17, 556);
             ARPT.Name = "ARPT";
             ARPT.ReadOnly = true;
-            ARPT.Size = new Size(233, 148);
+            ARPT.Size = new Size(993, 124);
             ARPT.TabIndex = 12;
             // 
             // ARPM
             // 
             ARPM.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ARPM.Location = new Point(777, 161);
+            ARPM.Location = new Point(17, 172);
             ARPM.Name = "ARPM";
             ARPM.ReadOnly = true;
-            ARPM.Size = new Size(233, 148);
+            ARPM.Size = new Size(993, 119);
             ARPM.TabIndex = 11;
+            ARPM.CellContentClick += ARPM_CellContentClick_1;
             // 
             // dataGridViewT
             // 
@@ -244,7 +245,7 @@
             dataGridViewT.Location = new Point(17, 426);
             dataGridViewT.Name = "dataGridViewT";
             dataGridViewT.ReadOnly = true;
-            dataGridViewT.Size = new Size(993, 263);
+            dataGridViewT.Size = new Size(993, 124);
             dataGridViewT.TabIndex = 6;
             // 
             // dataGridViewM
@@ -253,7 +254,7 @@
             dataGridViewM.Location = new Point(17, 46);
             dataGridViewM.Name = "dataGridViewM";
             dataGridViewM.ReadOnly = true;
-            dataGridViewM.Size = new Size(993, 263);
+            dataGridViewM.Size = new Size(993, 120);
             dataGridViewM.TabIndex = 4;
             // 
             // label2
