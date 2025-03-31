@@ -37,13 +37,13 @@ namespace AutoFact.Vue
 
         private void InitializeDatabaseConnection()
         {
-            string connectionString = "Server=192.168.56.2;Database=db_Autofact;User ID=operateur;Password=Operateur;";
-            connection = new MySqlConnection(connectionString);
+            // string connectionString = "Server=172.16.119.9Database=db_AutoFact;User ID=admin;Password=admin;";
+            // connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "192.168.56.2",
-                UserID = "operateur",
-                Password = "Operateur",
+                Server = "172.16.119.9",
+                UserID = "admin",
+                Password = "admin",
                 Database = "db_AutoFact",
             };
             connection = new MySqlConnection(builder.ConnectionString);
@@ -205,21 +205,21 @@ namespace AutoFact.Vue
 
             FormClient.Show();
 
-            this.Close();
+            // this.Close();
         }
 
         private void buttonPresta_Click_1(object sender, EventArgs e)
         {
             Prestation prestation = new Prestation();
             prestation.Show();
-            this.Close();
+            // this.Close();
         }
 
         private void buttonFact_Click_1(object sender, EventArgs e)
         {
             Facturation formFacturation = new Facturation();
             formFacturation.Show();
-            this.Close();
+            // this.Close();
         }
 
         private void buttonRecap_Click(object sender, EventArgs e)
@@ -231,7 +231,7 @@ namespace AutoFact.Vue
         {
             Form1 form1 = new Form1();
             form1.Show();
-            this.Close();
+            // this.Close();
         }
     }
 }

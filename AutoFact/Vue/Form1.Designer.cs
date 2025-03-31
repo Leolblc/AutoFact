@@ -45,6 +45,7 @@
             LB_Last_Cli = new Label();
             LB_Last_Presta = new Label();
             LB_Last_Fact = new Label();
+            Btn_info1 = new Button();
             panelClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DGVPrestation).BeginInit();
@@ -56,6 +57,7 @@
             // panelClient
             // 
             panelClient.BackColor = Color.FromArgb(45, 45, 45);
+            panelClient.Controls.Add(Btn_info1);
             panelClient.Controls.Add(buttonQuitter);
             panelClient.Controls.Add(buttonRecap);
             panelClient.Controls.Add(buttonFact);
@@ -238,6 +240,21 @@
             LB_Last_Fact.TabIndex = 9;
             LB_Last_Fact.Text = "Dernières Factures";
             // 
+            // Btn_info1
+            // 
+            Btn_info1.BackColor = Color.FromArgb(45, 45, 45);
+            Btn_info1.FlatAppearance.BorderSize = 0;
+            Btn_info1.FlatStyle = FlatStyle.Flat;
+            Btn_info1.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
+            Btn_info1.ForeColor = SystemColors.Control;
+            Btn_info1.Location = new Point(6, 680);
+            Btn_info1.Name = "Btn_info1";
+            Btn_info1.Size = new Size(198, 48);
+            Btn_info1.TabIndex = 7;
+            Btn_info1.Text = "Vos Informations";
+            Btn_info1.UseVisualStyleBackColor = true;
+            Btn_info1.Click += Btn_info1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -285,5 +302,6 @@
         private Label LB_Last_Cli;
         private Label LB_Last_Presta;
         private Label LB_Last_Fact;
+        private Button Btn_info1;
     }
 }

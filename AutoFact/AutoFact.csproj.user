@@ -19,6 +19,12 @@
     <Compile Update="Vue\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Vue\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vue\Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Vue\Prestation.cs">
       <SubType>Form</SubType>
     </Compile>
