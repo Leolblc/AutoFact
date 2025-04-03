@@ -43,10 +43,10 @@ namespace AutoFact
             // connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
+                Server = "172.16.119.17",
+                UserID = "operateur",
+                Password = "Operateur",
+                Database = "Autofact_leo",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try

@@ -41,10 +41,10 @@ namespace AutoFact.Vue
             // connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
+                Server = "172.16.119.17",
+                UserID = "operateur",
+                Password = "Operateur",
+                Database = "Autofact_leo",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try
@@ -60,7 +60,7 @@ namespace AutoFact.Vue
 
         private void LoadDataMois()
         {
-            string query = "SELECT * FROM DataMois;";
+            string query = "SELECT * FROM DataMois2;";
 
             try
             {
@@ -81,7 +81,7 @@ namespace AutoFact.Vue
         }
         private void LoadDatatrimestre()
         {
-            string query = "SELECT * FROM DataTrimestre";
+            string query = "SELECT * FROM DataTrimestre2;";
 
             try
             {
@@ -102,7 +102,7 @@ namespace AutoFact.Vue
         }
         private void LoadDataSommetrimestre()
         {
-            string query = "SELECT * FROM DataSommeTrimestre";
+            string query = "SELECT * FROM DataAnnees";
 
             try
             {
@@ -124,7 +124,7 @@ namespace AutoFact.Vue
         }
         private void LoadDataSommeMois()
         {
-            string query = "SELECT * FROM DataSommeMois";
+            string query = "SELECT * FROM DataAnnees";
 
             try
             {
@@ -205,21 +205,21 @@ namespace AutoFact.Vue
 
             FormClient.Show();
 
-            // this.Close();
+            this.Close();
         }
 
         private void buttonPresta_Click_1(object sender, EventArgs e)
         {
             Prestation prestation = new Prestation();
             prestation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonFact_Click_1(object sender, EventArgs e)
         {
             Facturation formFacturation = new Facturation();
             formFacturation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonRecap_Click(object sender, EventArgs e)
@@ -231,7 +231,7 @@ namespace AutoFact.Vue
         {
             Form1 form1 = new Form1();
             form1.Show();
-            // this.Close();
+            this.Close();
         }
     }
 }

@@ -39,10 +39,10 @@ namespace AutoFact
             // connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
+                Server = "172.16.119.17",
+                UserID = "operateur",
+                Password = "Operateur",
+                Database = "Autofact_leo",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try
@@ -66,7 +66,7 @@ namespace AutoFact
         {
             AjoutPresta newPresta = new AjoutPresta();
             newPresta.ShowDialog();
-            // this.Close();
+            this.Close();
         }
 
 
@@ -108,35 +108,35 @@ namespace AutoFact
         {
             Form1 form1 = new Form1();
             form1.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonClient3_Click(object sender, EventArgs e)
         {
             Client client = new Client();
             client.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonFact3_Click(object sender, EventArgs e)
         {
             Facturation facturation = new Facturation();
             facturation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonRecap3_Click(object sender, EventArgs e)
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
             AjoutPresta ajoutPresta = new AjoutPresta();
             ajoutPresta.Show();
-            // this.Close();
+            this.Close();
         }
     }
 }

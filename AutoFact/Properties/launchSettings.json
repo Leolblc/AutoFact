@@ -2,7 +2,13 @@
   "profiles": {
     "AutoFact": {
       "commandName": "Project",
-      "nativeDebugging": true
+      "workingDirectory": "C:\\Users\\WACHE\\Documents\\Autofact\\PDF-Nathan\\AutoFact",
+      "nativeDebugging": false,
+      "sqlDebugging": false
+    },
+    "Profil 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\WACHE\\Documents\\Autofact\\PDF-Nathan\\AutoFact\\Program.cs"
     }
   }
 }

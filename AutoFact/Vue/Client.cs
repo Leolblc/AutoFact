@@ -40,10 +40,10 @@ namespace AutoFact
             // connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
+                Server = "172.16.119.17",
+                UserID = "operateur",
+                Password = "Operateur",
+                Database = "Autofact_leo",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try
@@ -111,35 +111,35 @@ namespace AutoFact
         {
             Form1 form1 = new Form1();
             form1.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void BtnPrestation_Click(object sender, EventArgs e)
         {
             Prestation prestation = new Prestation();
             prestation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void BtnFacture_Click(object sender, EventArgs e)
         {
             Facturation facture = new Facturation();
             facture.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void BtnRecap_Click(object sender, EventArgs e)
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
             AjoutClient jout = new AjoutClient();
             jout.Show();
-            // this.Close();
+            this.Close();
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WAIL5rHM3RY=",
+  "dgSpecHash": "uGPIWqQ64Rs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\WACHE\\Documents\\AutoFact_Leo\\AutoFact\\AutoFact.csproj",
+  "projectFilePath": "C:\\Users\\WACHE\\Documents\\Autofact\\PDF-Nathan\\AutoFact\\AutoFact.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\WACHE\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\WACHE\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",
@@ -55,12 +55,5 @@
     "C:\\Users\\WACHE\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
     "C:\\Users\\WACHE\\.nuget\\packages\\zstdsharp.port\\0.8.0\\zstdsharp.port.0.8.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problème de lecture du fichier cache C:\\Users\\WACHE\\Documents\\AutoFact_Leo\\AutoFact\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

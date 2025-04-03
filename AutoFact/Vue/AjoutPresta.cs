@@ -40,10 +40,10 @@ namespace AutoFact
             // connection = new MySqlConnection(connectionString);
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
+                Server = "172.16.119.17",
+                UserID = "operateur",
+                Password = "Operateur",
+                Database = "Autofact_leo",
             };
             connection = new MySqlConnection(builder.ConnectionString);
             try
@@ -147,7 +147,7 @@ namespace AutoFact
 
                 Prestation presta = new Prestation();
                 presta.Show();
-                // this.Close();
+                this.Close();
 
             }
             catch (Exception ex)
@@ -167,7 +167,7 @@ namespace AutoFact
         {
             Client client = new Client();
             client.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void BtnPrestationNA_Click(object sender, EventArgs e)
@@ -179,14 +179,14 @@ namespace AutoFact
         {
             Facturation facturation = new Facturation();
             facturation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void BtnRecap3_Click(object sender, EventArgs e)
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
-            // this.Close();
+            this.Close();
         }
     }
 }
