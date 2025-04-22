@@ -41,6 +41,8 @@
             label1 = new Label();
             label3 = new Label();
             panel1 = new Panel();
+            label6 = new Label();
+            label5 = new Label();
             label4 = new Label();
             ARPT = new DataGridView();
             ARPM = new DataGridView();
@@ -189,14 +191,17 @@
             label3.ImageAlign = ContentAlignment.TopLeft;
             label3.Location = new Point(246, 163);
             label3.Name = "label3";
-            label3.Size = new Size(256, 32);
+            label3.Size = new Size(191, 32);
             label3.TabIndex = 10;
-            label3.Text = "Votre cumul mensuel";
+            label3.Text = "Cumul mensuel";
+            label3.Click += label3_Click;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackgroundImageLayout = ImageLayout.None;
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(ARPT);
             panel1.Controls.Add(ARPM);
@@ -209,6 +214,30 @@
             panel1.Size = new Size(1028, 720);
             panel1.TabIndex = 11;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            label6.ImageAlign = ContentAlignment.TopLeft;
+            label6.Location = new Point(17, 533);
+            label6.Name = "label6";
+            label6.Size = new Size(369, 32);
+            label6.TabIndex = 14;
+            label6.Text = "Cumul total pour chaque client";
+            label6.Click += label6_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            label5.ImageAlign = ContentAlignment.TopLeft;
+            label5.Location = new Point(17, 190);
+            label5.Name = "label5";
+            label5.Size = new Size(173, 32);
+            label5.TabIndex = 13;
+            label5.Text = "Cumul annuel";
+            label5.Click += label5_Click;
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -216,17 +245,17 @@
             label4.ImageAlign = ContentAlignment.TopLeft;
             label4.Location = new Point(17, 379);
             label4.Name = "label4";
-            label4.Size = new Size(278, 32);
+            label4.Size = new Size(213, 32);
             label4.TabIndex = 13;
-            label4.Text = "Votre cumul trimestriel";
+            label4.Text = "Cumul trimestriel";
             // 
             // ARPT
             // 
             ARPT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ARPT.Location = new Point(17, 562);
+            ARPT.Location = new Point(17, 571);
             ARPT.Name = "ARPT";
             ARPT.ReadOnly = true;
-            ARPT.Size = new Size(993, 127);
+            ARPT.Size = new Size(993, 142);
             ARPT.TabIndex = 12;
             // 
             // ARPM
@@ -241,10 +270,10 @@
             // dataGridViewT
             // 
             dataGridViewT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewT.Location = new Point(17, 426);
+            dataGridViewT.Location = new Point(17, 414);
             dataGridViewT.Name = "dataGridViewT";
             dataGridViewT.ReadOnly = true;
-            dataGridViewT.Size = new Size(993, 104);
+            dataGridViewT.Size = new Size(993, 116);
             dataGridViewT.TabIndex = 6;
             // 
             // dataGridViewM
@@ -255,6 +284,7 @@
             dataGridViewM.ReadOnly = true;
             dataGridViewM.Size = new Size(993, 143);
             dataGridViewM.TabIndex = 4;
+            dataGridViewM.CellContentClick += dataGridViewM_CellContentClick_1;
             // 
             // label2
             // 
@@ -316,5 +346,7 @@
         private Label label2;
         private Label label4;
         private Button buttonQuitter;
+        private Label label5;
+        private Label label6;
     }
 }

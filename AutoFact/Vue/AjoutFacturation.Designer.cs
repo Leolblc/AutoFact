@@ -212,6 +212,7 @@
             DTPDate.Name = "DTPDate";
             DTPDate.Size = new Size(200, 23);
             DTPDate.TabIndex = 20;
+            DTPDate.ValueChanged += DTPDate_ValueChanged;
             // 
             // TBEscompte
             // 

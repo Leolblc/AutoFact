@@ -184,16 +184,26 @@ namespace AutoFact
             {
 
 
-                string command2 = "INSERT INTO Facturation(numfact,condition_escompte,datepayement,id_1,id_2,description,quantite) VALUES (@numfact, @escompte,@datepayement,@id_1,@id_2,@description,@quantite);";
+                string command2 = "INSERT INTO Facturation(numfact,condition_escompte,datepayement,id_1,id_2,description,quantite) VALUES (@numfact, @escompte,@datepayement,@id_1, (select max(id) + 1 from Payement), @description, @quantite);";
                 MySqlCommand cmd1 = new MySqlCommand(command2, connection);
                 cmd1.Parameters.AddWithValue("@numfact", TBNomFacture.Text);
                 cmd1.Parameters.AddWithValue("@escompte", TBEscompte.Text);
                 cmd1.Parameters.AddWithValue("@datepayement", DTPDate.Value);
                 cmd1.Parameters.AddWithValue("@id_1", ListePresta[CBListCli.SelectedIndex].id);
-                cmd1.Parameters.AddWithValue("@id_2", ListePresta[CBNpresta.SelectedIndex].id);
                 cmd1.Parameters.AddWithValue("@description", TBDescription.Text);
                 cmd1.Parameters.AddWithValue("@quantite", NUDQte.Text);
                 cmd1.ExecuteNonQuery();
+
+                string command3 = "INSERT INTO Generer(id, id_1, qte) VALUES ( @id, (SELECT LAST_INSERT_ID() from Facturation limit 1), 1);";
+                MySqlCommand cmd3 = new MySqlCommand(command3, connection);
+                cmd3.Parameters.AddWithValue("@id", ListePresta[CBNpresta.SelectedIndex].id);
+                cmd3.ExecuteNonQuery();
+
+                string command4 = "INSERT INTO Payement(echeance, taux_penalite) VALUES ( @echeance, 1);";
+                MySqlCommand cmd4 = new MySqlCommand(command4, connection);
+                cmd4.Parameters.AddWithValue("@echeance", DTPDate.Value);
+                cmd4.ExecuteNonQuery();
+
                 MessageBox.Show("La facture a été ajoutée dans la liste");
 
                 Facturation facturation = new Facturation();
@@ -238,6 +248,11 @@ namespace AutoFact
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
             this.Close();
+        }
+
+        private void DTPDate_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

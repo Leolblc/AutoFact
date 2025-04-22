@@ -124,7 +124,7 @@ namespace AutoFact.Vue
         }
         private void LoadDataSommeMois()
         {
-            string query = "SELECT * FROM DataAnnees";
+            string query = "SELECT * FROM totalClients";
 
             try
             {
@@ -232,6 +232,26 @@ namespace AutoFact.Vue
             Form1 form1 = new Form1();
             form1.Show();
             this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewM_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
