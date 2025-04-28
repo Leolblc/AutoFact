@@ -30,32 +30,7 @@ namespace AutoFact
         public Prestation()
         {
             InitializeComponent();
-            InitializeDatabaseConnection();
         }
-
-        private void InitializeDatabaseConnection()
-        {
-            string connectionString = "Server=172.16.119.9Database=db_AutoFact;User ID=admin;Password=admin;"; ;
-            // connection = new MySqlConnection(connectionString);
-            var builder = new MySqlConnectionStringBuilder
-            {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
-            };
-            connection = new MySqlConnection(builder.ConnectionString);
-            try
-            {
-                connection.Open();
-                Console.WriteLine("Connexion à la base de données réussie!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erreur de connexion à la base de données : {ex.Message}", "Erreur de connexion");
-            }
-        }
-
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -78,18 +53,21 @@ namespace AutoFact
         private void LoadData()
         {
             string query = "SELECT Prestation.id, Prestation.name, Type_Prestation.libelle " +
-                           "FROM Prestation " +
-                           "INNER JOIN Type_Prestation ON Prestation.id_type = Type_Prestation.id Order By Prestation.id";
+               "FROM Prestation " +
+               "INNER JOIN Type_Prestation ON Prestation.id_type = Type_Prestation.id " +
+               "ORDER BY Prestation.id";
 
             try
             {
-                using (var command = new MySqlCommand(query, connection))
+                var db = DatabaseConnection.GetInstance();
+
+                using (var command = new MySqlCommand(query, db.GetConnection()))
                 {
                     using (var adapter = new MySqlDataAdapter(command))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
-                        DGVListClient.DataSource = dataTable; 
+                        DGVListClient.DataSource = dataTable;
                     }
                 }
             }

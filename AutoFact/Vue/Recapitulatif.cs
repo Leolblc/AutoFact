@@ -32,30 +32,6 @@ namespace AutoFact.Vue
         public Recapitulatif()
         {
             InitializeComponent();
-            InitializeDatabaseConnection();
-        }
-
-        private void InitializeDatabaseConnection()
-        {
-            // string connectionString = "Server=172.16.119.9Database=db_AutoFact;User ID=admin;Password=admin;";
-            // connection = new MySqlConnection(connectionString);
-            var builder = new MySqlConnectionStringBuilder
-            {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
-            };
-            connection = new MySqlConnection(builder.ConnectionString);
-            try
-            {
-                connection.Open();
-                Console.WriteLine("Connexion à la base de données réussie!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erreur de connexion à la base de données : {ex.Message}", "Erreur de connexion");
-            }
         }
 
         private void LoadDataMois()
@@ -64,13 +40,15 @@ namespace AutoFact.Vue
 
             try
             {
-                using (var command = new MySqlCommand(query, connection))
+                var db = DatabaseConnection.GetInstance();
+
+                using (var command = new MySqlCommand(query, db.GetConnection()))
                 {
                     using (var adapter = new MySqlDataAdapter(command))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
-                        dataGridViewM.DataSource = dataTable; // Assurez-vous que le nom du DataGridView est correct*/
+                        dataGridViewM.DataSource = dataTable;
                     }
                 }
             }
@@ -85,13 +63,15 @@ namespace AutoFact.Vue
 
             try
             {
-                using (var command = new MySqlCommand(query, connection))
+                var db = DatabaseConnection.GetInstance();
+
+                using (var command = new MySqlCommand(query, db.GetConnection()))
                 {
                     using (var adapter = new MySqlDataAdapter(command))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
-                        dataGridViewT.DataSource = dataTable; // Assurez-vous que le nom du DataGridView est correct
+                        dataGridViewT.DataSource = dataTable;
                     }
                 }
             }
@@ -106,14 +86,15 @@ namespace AutoFact.Vue
 
             try
             {
-                using (var command = new MySqlCommand(query, connection))
+                var db = DatabaseConnection.GetInstance();
+
+                using (var command = new MySqlCommand(query, db.GetConnection()))
                 {
                     using (var adapter = new MySqlDataAdapter(command))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
                         ARPT.DataSource = dataTable;
-                        // Assurez-vous que le nom du DataGridView est correct
                     }
                 }
             }

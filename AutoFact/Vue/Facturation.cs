@@ -1,27 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
 using System.Data;
 using AutoFact.Vue;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 using MySqlConnector;
-using QuestPDF;
-using MySql.EntityFrameworkCore;
-using MySql;
-using MySql.Data;
-using AutoFact.Vue;
-using System.Net.Mail;
-using System.ComponentModel.DataAnnotations;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Microsoft.Extensions.Logging;
-using System.Security.Cryptography.X509Certificates;
-using Org.BouncyCastle.Bcpg;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using System.ComponentModel.Design;
+
 using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
 using QuestPDF.Helpers;
@@ -40,7 +22,6 @@ namespace AutoFact
         public Facturation()
         {
             InitializeComponent();
-            InitializeDatabaseConnection();
         }
 
         private void BtnAddFact_Click(object sender, EventArgs e)
@@ -48,29 +29,6 @@ namespace AutoFact
             AjoutFacturation ajoutFacturation = new AjoutFacturation();
             ajoutFacturation.Show();
             // this.Close();
-        }
-
-        private void InitializeDatabaseConnection()
-        {
-            // string connectionString = "Server=172.16.119.9Database=db_AutoFact;User ID=admin;Password=admin;";
-            // connection = new MySqlConnection(connectionString);
-            var builder = new MySqlConnectionStringBuilder
-            {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
-            };
-            connection = new MySqlConnection(builder.ConnectionString);
-            try
-            {
-                connection.Open();
-                Console.WriteLine("Connexion à la base de données réussie!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erreur de connexion à la base de données : {ex.Message}", "Erreur de connexion");
-            }
         }
 
 
@@ -97,18 +55,17 @@ namespace AutoFact
 
         private void Facturation_Load(object sender, EventArgs e)
         {
-            string query = "SELECT numfact, condition_escompte,datepayement , Prestation.name as name , Client.name as clientName ,Prestation.prix_unitaire , quantite FROM Facturation JOIN db_AutoFact.Client on Client.id = Facturation.id_1 JOIN Prestation on Prestation.id = Facturation.id_2;";
-
             try
             {
-                using (var command = new MySqlCommand(query, connection))
+                var db = DatabaseConnection.GetInstance();
+                string query = "SELECT numfact, condition_escompte,datepayement , Prestation.name as name , Client.name as clientName ,Prestation.prix_unitaire , quantite FROM Facturation JOIN db_AutoFact.Client on Client.id = Facturation.id_1 JOIN Prestation on Prestation.id = Facturation.id_2";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, db.GetConnection()))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    using (var adapter = new MySqlDataAdapter(command))
-                    {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-                        DGVFacturation.DataSource = dataTable; // Assurez-vous que le nom du DataGridView est correct
-                    }
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+                    DGVFacturation.DataSource = dataTable;
                 }
             }
             catch (Exception ex)
@@ -129,23 +86,22 @@ namespace AutoFact
         {
             try
             {
+                var db = DatabaseConnection.GetInstance();
+                string query = "SELECT id, numfact FROM Facturation";
 
-                MySqlCommand cmd = new MySqlCommand("SELECT id , numfact FROM Facturation;", connection);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable ds2 = new DataTable();
-                adapter.Fill(ds2);
-
-                foreach (DataRow row in ds2.Rows)
+                using (MySqlCommand cmd = new MySqlCommand(query, db.GetConnection()))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    int ID = Convert.ToInt32(row["id"]);
-                    string nom = row["numfact"].ToString();
-                    UnExport exportpdf = new UnExport { LeFact = nom, LID = ID };
-                    CBPDF.Items.Add(exportpdf);
-                }
+                    while (reader.Read())
+                    {
+                        int ID = reader.GetInt32("id");
+                        string nom = reader.GetString("numfact");
 
-
-
-
+                        UnExport exportpdf = new UnExport { LeFact = nom, LID = ID };
+                        CBPDF.Items.Add(exportpdf);
+                    }
+                
+            }
             }
             catch (Exception ex)
             {

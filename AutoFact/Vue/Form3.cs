@@ -1,27 +1,6 @@
-﻿using AutoFact.Vue;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
 using MySqlConnector;
-using MySql.EntityFrameworkCore;
-using MySql;
-using MySql.Data;
-using System.Net.Mail;
-using System.ComponentModel.DataAnnotations;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Microsoft.Extensions.Logging;
-using System.Security.Cryptography.X509Certificates;
-using Org.BouncyCastle.Bcpg;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using static AutoFact.AjoutPresta;
-using Org.BouncyCastle.Crypto;
-using Microsoft.VisualBasic;
+
 
 namespace AutoFact.Vue
 {
@@ -32,30 +11,6 @@ namespace AutoFact.Vue
         public Form3()
         {
             InitializeComponent();
-            InitializeDatabaseConnection();
-        }
-
-        public void InitializeDatabaseConnection()
-        {
-            // string connectionString = "Server=172.16.119.9Database=db_AutoFact;User ID=admin;Password=admin;";
-            // connection = new MySqlConnection(connectionString);
-            var builder = new MySqlConnectionStringBuilder
-            {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
-            };
-            connection = new MySqlConnection(builder.ConnectionString);
-            try
-            {
-                connection.Open();
-                Console.WriteLine("Connexion à la base de données réussie!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erreur de connexion à la base de données : {ex.Message}", "Erreur de connexion");
-            }
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -67,17 +22,22 @@ namespace AutoFact.Vue
         {
             try
             {
-                string command3 = "UPDATE Info_entrepreneur SET nom=@nom, prenom=@prenom, Adresse=@adresse, mail = @mail,telephone=@telephone WHERE id= 1";
-                MySqlCommand cmd3 = new MySqlCommand(command3, connection);
-                cmd3.Parameters.AddWithValue("@nom", TB_Name_INFO.Text);
-                cmd3.Parameters.AddWithValue("@prenom", TB_LasName_ENT.Text);
-                cmd3.Parameters.AddWithValue("@adresse", TB_Address_INFO.Text);
-                cmd3.Parameters.AddWithValue("@mail", TB_Mail_INFO.Text);
-                cmd3.Parameters.AddWithValue("@telephone", TB_Phone_INFO.Text);
-                cmd3.ExecuteNonQuery();
+                var db = DatabaseConnection.GetInstance();
+
+                string command3 = "UPDATE Info_entrepreneur SET nom=@nom, prenom=@prenom, Adresse=@adresse, mail=@mail, telephone=@telephone WHERE id=1";
+
+                using (MySqlCommand cmd3 = new MySqlCommand(command3, db.GetConnection()))
+                {
+                    cmd3.Parameters.AddWithValue("@nom", TB_Name_INFO.Text);
+                    cmd3.Parameters.AddWithValue("@prenom", TB_LasName_ENT.Text);
+                    cmd3.Parameters.AddWithValue("@adresse", TB_Address_INFO.Text);
+                    cmd3.Parameters.AddWithValue("@mail", TB_Mail_INFO.Text);
+                    cmd3.Parameters.AddWithValue("@telephone", TB_Phone_INFO.Text);
+
+                    cmd3.ExecuteNonQuery();
+                }
+
                 MessageBox.Show("Informations mises à jour");
-
-
             }
             catch (Exception ex)
             {
