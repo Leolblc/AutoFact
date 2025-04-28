@@ -47,7 +47,7 @@ namespace AutoFact
         {
             AjoutFacturation ajoutFacturation = new AjoutFacturation();
             ajoutFacturation.Show();
-            this.Close();
+            // this.Close();
         }
 
         private void InitializeDatabaseConnection()
