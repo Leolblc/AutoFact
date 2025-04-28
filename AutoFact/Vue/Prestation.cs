@@ -79,7 +79,7 @@ namespace AutoFact
         {
             string query = "SELECT Prestation.id, Prestation.name, Type_Prestation.libelle " +
                            "FROM Prestation " +
-                           "INNER JOIN Type_Prestation ON Prestation.id_type = Type_Prestation.id";
+                           "INNER JOIN Type_Prestation ON Prestation.id_type = Type_Prestation.id Order By Prestation.id";
 
             try
             {

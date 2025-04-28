@@ -134,28 +134,26 @@ namespace AutoFact
 
             try
             {
-
                 string command1 = "INSERT INTO Prestation (name, description, prix_unitaire, montant_ht, id_type) VALUES (@name, @description, @prix_unitaire, @montant_ht, @id_type)";
                 MySqlCommand cmmd = new MySqlCommand(command1, connection);
                 cmmd.Parameters.AddWithValue("@name", TBNom.Text);
                 cmmd.Parameters.AddWithValue("@description", richTextBox1.Text);
                 cmmd.Parameters.AddWithValue("@prix_unitaire", TBPrixunitaire.Text);
                 cmmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
-                cmmd.Parameters.AddWithValue("@id_type", comboBox1.Items.Count);
+
+                // Seule modification: utiliser selectedPrestation.anid au lieu de comboBox1.Items.Count
+                cmmd.Parameters.AddWithValue("@id_type", selectedPrestation.anid);
+
                 cmmd.ExecuteNonQuery();
                 MessageBox.Show("La Prestation a été ajoutée dans la liste");
 
                 Prestation presta = new Prestation();
                 presta.Show();
-                // this.Close();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erreur lors de l'enregistrement : {ex.Message}");
             }
-
-
         }
 
         private void buttonQuitter_Click(object sender, EventArgs e)
