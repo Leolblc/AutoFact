@@ -31,7 +31,7 @@ namespace AutoFact
         {
             InitializeComponent();
             InitializeDatabaseConnection();
-            
+
         }
 
         private void InitializeDatabaseConnection()
@@ -140,6 +140,12 @@ namespace AutoFact
             AjoutClient jout = new AjoutClient();
             jout.Show();
             // this.Close();
+        }
+
+        private void Btn_info1_Click(object sender, EventArgs e)
+        {
+            Form3 FormInfo = new Form3();
+            FormInfo.ShowDialog();
         }
     }
 }

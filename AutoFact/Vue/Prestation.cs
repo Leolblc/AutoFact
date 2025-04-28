@@ -89,7 +89,7 @@ namespace AutoFact
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
-                        DGVListClient.DataSource = dataTable; 
+                        DGVListClient.DataSource = dataTable;
                     }
                 }
             }
@@ -137,6 +137,12 @@ namespace AutoFact
             AjoutPresta ajoutPresta = new AjoutPresta();
             ajoutPresta.Show();
             // this.Close();
+        }
+
+        private void Btn_info1_Click(object sender, EventArgs e)
+        {
+            Form3 FormInfo = new Form3();
+            FormInfo.ShowDialog();
         }
     }
 }

@@ -85,13 +85,14 @@
             Btn_info1.FlatAppearance.BorderSize = 0;
             Btn_info1.FlatStyle = FlatStyle.Flat;
             Btn_info1.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
-            Btn_info1.ForeColor = SystemColors.Control;
+            Btn_info1.ForeColor = SystemColors.ActiveBorder;
             Btn_info1.Location = new Point(6, 665);
             Btn_info1.Name = "Btn_info1";
             Btn_info1.Size = new Size(198, 48);
             Btn_info1.TabIndex = 8;
             Btn_info1.Text = "Vos Informations";
             Btn_info1.UseVisualStyleBackColor = true;
+            Btn_info1.Click += Btn_info1_Click;
             // 
             // buttonQuitter
             // 

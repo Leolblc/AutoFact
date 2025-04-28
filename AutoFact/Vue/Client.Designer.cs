@@ -45,6 +45,7 @@
             DGVListClient = new DataGridView();
             printDocument1 = new System.Drawing.Printing.PrintDocument();
             buttonQuitter = new Button();
+            Btn_info1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -233,12 +234,28 @@
             buttonQuitter.UseVisualStyleBackColor = true;
             buttonQuitter.Click += buttonQuitter_Click;
             // 
+            // Btn_info1
+            // 
+            Btn_info1.BackColor = Color.FromArgb(45, 45, 45);
+            Btn_info1.FlatAppearance.BorderSize = 0;
+            Btn_info1.FlatStyle = FlatStyle.Flat;
+            Btn_info1.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
+            Btn_info1.ForeColor = SystemColors.Control;
+            Btn_info1.Location = new Point(6, 680);
+            Btn_info1.Name = "Btn_info1";
+            Btn_info1.Size = new Size(198, 48);
+            Btn_info1.TabIndex = 9;
+            Btn_info1.Text = "Vos Informations";
+            Btn_info1.UseVisualStyleBackColor = true;
+            Btn_info1.Click += Btn_info1_Click;
+            // 
             // Client
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1281, 877);
+            Controls.Add(Btn_info1);
             Controls.Add(buttonQuitter);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -275,5 +292,6 @@
         private Label label3;
         private Button button1;
         private Button buttonQuitter;
+        private Button Btn_info1;
     }
 }

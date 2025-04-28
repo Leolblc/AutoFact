@@ -233,5 +233,11 @@ namespace AutoFact.Vue
             form1.Show();
             // this.Close();
         }
+
+        private void Btn_info1_Click(object sender, EventArgs e)
+        {
+            Form3 FormInfo = new Form3();
+            FormInfo.ShowDialog();
+        }
     }
 }

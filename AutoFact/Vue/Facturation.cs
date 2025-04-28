@@ -26,6 +26,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
 using QuestPDF.Helpers;
 using System.Xml.Linq;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 
 
@@ -97,7 +98,7 @@ namespace AutoFact
 
         private void Facturation_Load(object sender, EventArgs e)
         {
-            string query = "SELECT numfact, condition_escompte,datepayement , Prestation.name as name , Client.name as clientName ,Prestation.prix_unitaire , quantite FROM Facturation JOIN db_AutoFact.Client on Client.id = Facturation.id_1 JOIN Prestation on Prestation.id = Facturation.id_2;";
+            string query = "SELECT numfact, condition_escompte, datepayement, Prestation.name as name , Client.name as clientName ,Prestation.prix_unitaire , quantite FROM Facturation JOIN db_AutoFact.Client on Client.id = Facturation.id_1 JOIN Prestation on Prestation.id = Facturation.id_2;";
 
             try
             {
@@ -164,7 +165,7 @@ namespace AutoFact
                 return;
             }
 
-            string query = "select Facturation.id as id, numfact, condition_escompte, datepayement, Facturation.description as description_F, quantite, Client.name as nom, Client.lastname, mail, phone, residence, address, echeance, taux_penalite, date_etat, etat, qte, Prestation.name as name, Prestation.description as description_P, prix_unitaire, montant_ht, libelle from Facturation left join Client on Client.id=Facturation.id_1 left join Payement on Payement.id=Facturation.id_2 left join Definir on Definir.id=Facturation.id left join Etat on Definir.id_1=Etat.id left join Generer on Generer.id_1=Facturation.id left join Prestation on Prestation.id=Generer.id left join Type_Prestation on Type_Prestation.id=Prestation.id_type WHERE numfact = @numfact;";
+            string query = "select Facturation.id as id, numfact, condition_escompte, datepayement, Facturation.description as description_F, quantite, Client.name as nom, Client.lastname, mail, phone, residence, address, echeance, taux_penalite, date_etat, etat, Prestation.name as name, Prestation.description as description_P, prix_unitaire, montant_ht, libelle from Facturation left join Client on Client.id=Facturation.id_1 left join Payement on Payement.id=Facturation.id_2 left join Definir on Definir.id=Facturation.id left join Etat on Definir.id_1=Etat.id left join Prestation on Prestation.id = Facturation.id_2 left join Type_Prestation on Type_Prestation.id=Prestation.id_type WHERE numfact = @numfact;";
             DataTable factureData = new DataTable();
 
             try
@@ -186,7 +187,7 @@ namespace AutoFact
 
             bool colonneVide = factureData.AsEnumerable().All(row =>
            row.IsNull("id") || string.IsNullOrWhiteSpace(row["id"].ToString()));
-            if (colonneVide) 
+            if (colonneVide)
             {
                 MessageBox.Show($"Aucune valeur correspond.");
                 return;
@@ -223,7 +224,7 @@ namespace AutoFact
                 });
             });
 
-            document.GeneratePdf("exemple.pdf");
+            document.GeneratePdfAndShow();
             MessageBox.Show("PDF généré avec succès !");
         }
 
@@ -279,18 +280,44 @@ namespace AutoFact
             string residence = row["residence"] != DBNull.Value ? row["residence"].ToString() : "Inconnu";
             string address = row["address"] != DBNull.Value ? row["address"].ToString() : "Inconnu";
 
+            string query = "select nom, prenom, Adresse, mail, telephone from Info_entrepreneur limit 1;";
+            DataTable factureData2 = new DataTable();
+
+            try
+            {
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    using (var adapter = new MySqlDataAdapter(command))
+                    {
+                        adapter.Fill(factureData2);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de la récupération des données : {ex.Message}", "Erreur de chargement");
+                return;
+            }
+            DataRow row2 = factureData2.Rows[0];
+
+            string Entrepreneur_n = row2["nom"] != DBNull.Value ? row2["nom"].ToString() : "Inconnu";
+            string Entrepreneur_p = row2["prenom"] != DBNull.Value ? row2["prenom"].ToString() : "Inconnu";
+            string Entrepreneur_mail = row2["mail"] != DBNull.Value ? row2["mail"].ToString() : "Inconnu";
+            string Entrepreneur_téléphone = row2["telephone"] != DBNull.Value ? row2["telephone"].ToString() : "Inconnu";
+            string Entrepreneur_adress = row2["Adresse"] != DBNull.Value ? row2["Adresse"].ToString() : "Inconnu";
+
+
             container.PaddingVertical(40).Column(column =>
             {
                 column.Item().Row(row =>
                 {
                     row.RelativeItem().Column(clientColumn =>  // Ajout des infos client
                     {
-                        clientColumn.Item().Text("For").Bold().Underline();
-                        clientColumn.Item().Text("expéditeur: Waché Nathan");
-                        clientColumn.Item().Text("Residence: Lycée Fulbert");
-                        clientColumn.Item().Text("Addresse: 62 rue Saint Chéron – 28000 Chartres");
-                        clientColumn.Item().Text("Adresse Mail: nat@nat.com");
-                        clientColumn.Item().Text("Numéro téléphone: 06 77 77 77 77");
+                        clientColumn.Item().Text("From").Bold().Underline();
+                        clientColumn.Item().Text($"expéditeur: {Entrepreneur_n} {Entrepreneur_p}");
+                        clientColumn.Item().Text($"Adresse: {Entrepreneur_adress}");
+                        clientColumn.Item().Text($"Adresse Mail: {Entrepreneur_mail}");
+                        clientColumn.Item().Text($"Numéro téléphone: {Entrepreneur_téléphone}");
                     });
                 });
 
@@ -300,7 +327,7 @@ namespace AutoFact
                 {
                     row.RelativeItem().Column(clientColumn =>  // Ajout des infos client
                     {
-                        clientColumn.Item().Text("From").Bold().Underline();
+                        clientColumn.Item().Text("For").Bold().Underline();
                         clientColumn.Item().Text($"Client: {client_n} {client_p}");
                         clientColumn.Item().Text($"Residence: {residence}");
                         clientColumn.Item().Text($"Addresse: {address}");
@@ -354,20 +381,23 @@ namespace AutoFact
                         int index = 0;
                         foreach (DataRow row in factureData.Rows)
                         {
-                            index++;
-                            int qte = row["qte"] != DBNull.Value ? Convert.ToInt32(row["qte"]) : 0;
                             string name = row["name"] != DBNull.Value ? row["name"].ToString() : "Inconnue";
-                            decimal prix_unitaire = row["prix_unitaire"] != DBNull.Value ? Convert.ToDecimal(row["prix_unitaire"]) : 0m;
-                            decimal montant_ht = row["montant_ht"] != DBNull.Value ? Convert.ToDecimal(row["montant_ht"]) : 0m;
-                            decimal total = prix_unitaire * qte;
-                            TousTotal += total;
+                            if (name != "Inconnue" )
+                            {
+                                index++;
+                                int quantite = row["quantite"] != DBNull.Value ? Convert.ToInt32(row["quantite"]) : 0;
+                                decimal prix_unitaire = row["prix_unitaire"] != DBNull.Value ? Convert.ToDecimal(row["prix_unitaire"]) : 0m;
+                                decimal montant_ht = row["montant_ht"] != DBNull.Value ? Convert.ToDecimal(row["montant_ht"]) : 0m;
+                                decimal total = prix_unitaire * quantite;
+                                TousTotal += total;
 
-                            table.Cell().Text($"{index}");
-                            table.Cell().Text(name);
-                            table.Cell().AlignRight().Text($"{qte}");
-                            table.Cell().AlignRight().Text($"{prix_unitaire:C}");
-                            table.Cell().AlignRight().Text($"{montant_ht:C}");
-                            table.Cell().AlignRight().Text($"{total:C}");
+                                table.Cell().Text($"{index}");
+                                table.Cell().Text(name);
+                                table.Cell().AlignRight().Text($"{quantite}");
+                                table.Cell().AlignRight().Text($"{prix_unitaire:C}");
+                                table.Cell().AlignRight().Text($"{montant_ht:C}");
+                                table.Cell().AlignRight().Text($"{total:C}");
+                            }
                         }
                     });
 
@@ -377,7 +407,7 @@ namespace AutoFact
                     column.Item().PaddingTop(10).AlignRight().Text($"Total Général : {TousTotal:C}").SemiBold().FontSize(14);
                     column.Item().PaddingTop(10).AlignRight().Text($"TVA (20%) : {TVA:C}").SemiBold().FontSize(14);
                     column.Item().PaddingTop(10).AlignRight().Text($"Total : {PlusTVA:C}").SemiBold().FontSize(14);
-                }   
+                }
             });
         }
 
@@ -429,6 +459,12 @@ namespace AutoFact
         private void BtnExportPDF_Click(object sender, EventArgs e)
         {
             ExportPDF();
+        }
+
+        private void Btn_info1_Click(object sender, EventArgs e)
+        {
+            Form3 FormInfo = new Form3();
+            FormInfo.ShowDialog();
         }
     }
 }

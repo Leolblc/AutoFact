@@ -119,6 +119,11 @@ namespace AutoFact.Vue
         {
             Application.Exit();
         }
+
+        private void Btn_info1_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 
 }

@@ -5,7 +5,7 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
-	<ApplicationIcon>C:\Users\leole\Source\Repos\Leolblc\Autofact\AutoFact\ae.png.pagespeed.ce.C-nGxigoz2.ico</ApplicationIcon>
+	<ApplicationIcon>ae.png.pagespeed.ce.C-nGxigoz2.ico</ApplicationIcon>
     <ImplicitUsings>enable</ImplicitUsings>
     <StartupObject></StartupObject>
   </PropertyGroup>
