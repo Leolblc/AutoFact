@@ -89,7 +89,7 @@ namespace AutoFact
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
-                        DGVListClient.DataSource = dataTable; // Assurez-vous que le nom du DataGridView est correct
+                        DGVListClient.DataSource = dataTable; 
                     }
                 }
             }
