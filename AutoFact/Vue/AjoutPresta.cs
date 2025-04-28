@@ -1,25 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using MySqlConnector;
-using MySql.EntityFrameworkCore;
-using MySql;
-using MySql.Data;
 using AutoFact.Vue;
-using System.Net.Mail;
-using System.ComponentModel.DataAnnotations;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Microsoft.Extensions.Logging;
-using System.Security.Cryptography.X509Certificates;
-using Org.BouncyCastle.Bcpg;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using System.ComponentModel.Design;
+
 
 namespace AutoFact
 {
@@ -29,33 +11,10 @@ namespace AutoFact
         public AjoutPresta()
         {
             InitializeComponent();
-            InitializeDatabaseConnection();
             LoadPresta2();
 
         }
 
-        private void InitializeDatabaseConnection()
-        {
-            string connectionString = "Server=172.16.119.9;Database=db_AutoFact;User ID=admin;Password=admin;";
-            connection = new MySqlConnection(connectionString);
-            var builder = new MySqlConnectionStringBuilder
-            {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
-            };
-            connection = new MySqlConnection(builder.ConnectionString);
-            try
-            {
-                connection.Open();
-                Console.WriteLine("Connexion à la base de données réussie!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erreur de connexion à la base de données : {ex.Message}", "Erreur de connexion");
-            }
-        }
 
 
         public class UnePresta
@@ -80,25 +39,23 @@ namespace AutoFact
 
             try
             {
+                var db = DatabaseConnection.GetInstance();
+                string query = "SELECT id, libelle FROM Type_Prestation";
 
-                MySqlCommand cmd = new MySqlCommand("SELECT id , libelle FROM Type_Prestation;", connection);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable ds2 = new DataTable();
-                adapter.Fill(ds2);
-
-                foreach (DataRow row in ds2.Rows)
+                using (MySqlCommand cmd = new MySqlCommand(query, db.GetConnection()))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    int ID = Convert.ToInt32(row["id"]);
-                    string nom = row["libelle"].ToString();
-                    UnePresta lapresta = new UnePresta { anName = nom, anid = ID };
-                    comboBox1.Items.Add(lapresta);
+                    while (reader.Read())
+                    {
+                        int ID = reader.GetInt32("id");
+                        string nom = reader.GetString("libelle");
+                        UnePresta lapresta = new UnePresta { anName = nom, anid = ID };
+                        comboBox1.Items.Add(lapresta);
+                    }
 
                 }
-
-
-
-
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show($"Erreur lors du chargement des données : {ex.Message}", "Erreur de chargement");
@@ -134,15 +91,19 @@ namespace AutoFact
 
             try
             {
+                var db = DatabaseConnection.GetInstance();
 
-                string command1 = "INSERT INTO Prestation (name, description, prix_unitaire, montant_ht, id_type) VALUES (@name, @description, @prix_unitaire, @montant_ht, @id_type)";
-                MySqlCommand cmmd = new MySqlCommand(command1, connection);
-                cmmd.Parameters.AddWithValue("@name", TBNom.Text);
-                cmmd.Parameters.AddWithValue("@description", richTextBox1.Text);
-                cmmd.Parameters.AddWithValue("@prix_unitaire", TBPrixunitaire.Text);
-                cmmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
-                cmmd.Parameters.AddWithValue("@id_type", comboBox1.Items.Count);
-                cmmd.ExecuteNonQuery();
+                string query = @"INSERT INTO Prestation (name, description, prix_unitaire, montant_ht, id_type) VALUES (@name, @description, @prix_unitaire, @montant_ht, @id_type)";
+                using (MySqlCommand cmd = new MySqlCommand(query, db.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@name", TBNom.Text);
+                    cmd.Parameters.AddWithValue("@description", richTextBox1.Text);
+                    cmd.Parameters.AddWithValue("@prix_unitaire", TBPrixunitaire.Text);
+                    cmd.Parameters.AddWithValue("@montant_ht", CB_HT.Text);
+                    cmd.Parameters.AddWithValue("@id_type", selectedPrestation.anid);
+                    cmd.ExecuteNonQuery();
+                };
+                
                 MessageBox.Show("La Prestation a été ajoutée dans la liste");
 
                 Prestation presta = new Prestation();

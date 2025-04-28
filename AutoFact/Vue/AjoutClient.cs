@@ -1,25 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySqlConnector;
-using MySql.EntityFrameworkCore;
-using MySql;
-using MySql.Data;
+﻿using MySqlConnector;
 using AutoFact.Vue;
-using System.Net.Mail;
-using System.ComponentModel.DataAnnotations;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Microsoft.Extensions.Logging;
-using System.Security.Cryptography.X509Certificates;
-using Org.BouncyCastle.Bcpg;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using System.ComponentModel.Design;
+
 
 namespace AutoFact
 {
@@ -29,31 +10,8 @@ namespace AutoFact
         public AjoutClient()
         {
             InitializeComponent();
-            InitializeDatabaseConnection();
         }
-
-        private void InitializeDatabaseConnection()
-        {
-            string connectionString = "Server=172.16.119.9;Database=db_AutoFact;User ID=admin;Password=admin;";
-            connection = new MySqlConnection(connectionString);
-            var builder = new MySqlConnectionStringBuilder
-            {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
-            };
-            connection = new MySqlConnection(builder.ConnectionString);
-            try
-            {
-                connection.Open();
-                Console.WriteLine("Connexion à la base de données réussie!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erreur de connexion à la base de données : {ex.Message}", "Erreur de connexion");
-            }
-        }
+ 
         public class UnCli
         {
             public string Text { get; set; }
@@ -79,14 +37,16 @@ namespace AutoFact
         {
             try
             {
-
-                string command2 = "INSERT INTO Client(name,lastname,mail,phone,address) VALUES (@name, @lastname,@mail,@phone,@address);";
-                MySqlCommand cmd1 = new MySqlCommand(command2, connection);
+                var db = DatabaseConnection.GetInstance();
+                string command2 = "INSERT INTO Client(name,lastname,mail,phone,address,active) VALUES (@name, @lastname,@mail,@phone,@address,@active);";
+                
+                MySqlCommand cmd1 = new MySqlCommand(command2, db.GetConnection());
                 cmd1.Parameters.AddWithValue("@name", TBNom.Text);
                 cmd1.Parameters.AddWithValue("@lastname", TBPrenom.Text);
                 cmd1.Parameters.AddWithValue("@mail", TBMail.Text);
                 cmd1.Parameters.AddWithValue("@phone", TBPhone.Text);
                 cmd1.Parameters.AddWithValue("@address", TBAdresse.Text);
+                cmd1.Parameters.AddWithValue("@active", true);
                 cmd1.ExecuteNonQuery();
                 MessageBox.Show("Le Client a été ajoutée dans la liste");
 

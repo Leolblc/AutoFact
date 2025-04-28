@@ -1,65 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySqlConnector;
-using MySql.EntityFrameworkCore;
-using MySql;
-using MySql.Data;
+﻿using MySqlConnector;
 using AutoFact.Vue;
-using System.Net.Mail;
-using System.ComponentModel.DataAnnotations;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Microsoft.Extensions.Logging;
-using System.Security.Cryptography.X509Certificates;
-using Org.BouncyCastle.Bcpg;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using static AutoFact.AjoutPresta;
-using static AutoFact.AjoutClient;
-using Org.BouncyCastle.Crypto;
+
 
 namespace AutoFact
 {
     public partial class AjoutFacturation : Form
     {
-        private MySqlConnection connection;
 
         private List<unePresta> ListePresta = new List<unePresta>();
         private List<unClients> ListedeClients = new List<unClients>();
         public AjoutFacturation()
         {
             InitializeComponent();
-            InitializeDatabaseConnection();
             LoadClient();
             LoadPresta();
-        }
-
-        private void InitializeDatabaseConnection()
-        {
-            string connectionString = "Server=172.16.119.9;Database=db_AutoFact;User ID=admin;Password=admin;";
-            connection = new MySqlConnection(connectionString);
-            var builder = new MySqlConnectionStringBuilder
-            {
-                Server = "172.16.119.9",
-                UserID = "admin",
-                Password = "admin",
-                Database = "db_AutoFact",
-            };
-            connection = new MySqlConnection(builder.ConnectionString);
-            try
-            {
-                connection.Open();
-                Console.WriteLine("Connexion à la base de données réussie!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erreur de connexion à la base de données : {ex.Message}", "Erreur de connexion");
-            }
         }
 
         public class unClients
@@ -84,19 +38,20 @@ namespace AutoFact
 
             try
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT id , name FROM Client", connection);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable ds = new DataTable();
-                adapter.Fill(ds);
+                var db = DatabaseConnection.GetInstance();
+                string query = "SELECT id, name FROM Client";
 
-                foreach (DataRow row in ds.Rows)
+                using (MySqlCommand cmd = new MySqlCommand(query, db.GetConnection()))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    int ID = Convert.ToInt32(row["id"]);
-                    string nom = row["name"].ToString();
-                    unClients leclient = new unClients { Name = nom, id = ID };
-                    CBListCli.Items.Add(leclient);
-                    ListedeClients.Add(leclient);
-
+                    while (reader.Read())
+                    {
+                        int ID = reader.GetInt32("id");
+                        string nom = reader.GetString("name");
+                        unClients leclient = new unClients { Name = nom, id = ID };
+                        CBListCli.Items.Add(leclient);
+                        ListedeClients.Add(leclient);
+                    }
                 }
 
             }
@@ -125,23 +80,24 @@ namespace AutoFact
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT id , name FROM Prestation", connection);
-                MySqlDataAdapter adapter2 = new MySqlDataAdapter(cmd);
-                DataTable ds = new DataTable();
-                adapter2.Fill(ds);
+                var db = DatabaseConnection.GetInstance();
+                string query = "SELECT id, name FROM Prestation";
 
-                foreach (DataRow row in ds.Rows)
+                using (MySqlCommand cmd = new MySqlCommand(query, db.GetConnection()))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    int ID = Convert.ToInt32(row["id"]);
-                    string lenom = row["name"].ToString();
-                    unePresta lapresta = new unePresta { anName = lenom, id = ID };
-                    CBNpresta.Items.Add(lapresta);
-                    ListePresta.Add(lapresta);
-
+                    while (reader.Read())
+                    {
+                        int ID = reader.GetInt32("id");
+                        string nom = reader.GetString("name");
+                        unePresta lapresta = new unePresta { anName = nom, id = ID };
+                        CBNpresta.Items.Add(lapresta);
+                        ListePresta.Add(lapresta);
+                    }
                 }
 
-
             }
+            
             catch (Exception ex)
             {
                 MessageBox.Show($"Erreur lors du chargement des données : {ex.Message}", "Erreur de chargement");
@@ -167,7 +123,7 @@ namespace AutoFact
         private void buttonValider_Click(object sender, EventArgs e)
         {
 
-            unePresta selectedPrestation = ListePresta[CBNpresta.SelectedIndex];
+            unePresta selectedPrestation = CBNpresta.SelectedItem as unePresta;
             if (selectedPrestation == null)
             {
                 MessageBox.Show("Veuillez sélectionner une prestation.", "Erreur");
@@ -183,17 +139,26 @@ namespace AutoFact
             try
             {
 
+                var db = DatabaseConnection.GetInstance();
+                
 
-                string command2 = "INSERT INTO Facturation(numfact,condition_escompte,datepayement,id_1,id_2,description,quantite) VALUES (@numfact, @escompte,@datepayement,@id_1,@id_2,@description,@quantite);";
-                MySqlCommand cmd1 = new MySqlCommand(command2, connection);
-                cmd1.Parameters.AddWithValue("@numfact", TBNomFacture.Text);
-                cmd1.Parameters.AddWithValue("@escompte", TBEscompte.Text);
-                cmd1.Parameters.AddWithValue("@datepayement", DTPDate.Value);
-                cmd1.Parameters.AddWithValue("@id_1", ListePresta[CBListCli.SelectedIndex].id);
-                cmd1.Parameters.AddWithValue("@id_2", ListePresta[CBNpresta.SelectedIndex].id);
-                cmd1.Parameters.AddWithValue("@description", TBDescription.Text);
-                cmd1.Parameters.AddWithValue("@quantite", NUDQte.Text);
-                cmd1.ExecuteNonQuery();
+                string query = @"INSERT INTO Facturation
+                    (numfact, quantite, condition_escompte, description, datepayement,id_1,id_2) VALUES 
+                    (@numfact, @quantite, @escompte,@description, @datepayement, @id_1, @id_2);";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, db.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@numfact", TBNomFacture.Text);
+                    cmd.Parameters.AddWithValue("@quantite", (int)NUDQte.Value);
+                    cmd.Parameters.AddWithValue("@escompte", TBEscompte.Text);
+                    cmd.Parameters.AddWithValue("@description", TBDescription.Text);
+                    cmd.Parameters.AddWithValue("@datepayement", DTPDate.Value);
+                    cmd.Parameters.AddWithValue("@id_1", selectedClient.id);
+                    cmd.Parameters.AddWithValue("@id_2", selectedPrestation.id);
+
+                    cmd.ExecuteNonQuery();
+                }
+                
                 MessageBox.Show("La facture a été ajoutée dans la liste");
 
                 Facturation facturation = new Facturation();

@@ -216,9 +216,9 @@
             DGVListClient.BorderStyle = BorderStyle.Fixed3D;
             DGVListClient.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             DGVListClient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVListClient.EditMode = DataGridViewEditMode.EditProgrammatically;
             DGVListClient.Location = new Point(30, 81);
             DGVListClient.Name = "DGVListClient";
-            DGVListClient.ReadOnly = true;
             DGVListClient.Size = new Size(780, 414);
             DGVListClient.TabIndex = 0;
             DGVListClient.CellContentClick += DGVListClient_CellContentClick;
