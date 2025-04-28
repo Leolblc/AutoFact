@@ -188,6 +188,11 @@ namespace AutoFact
             recapitulatif.Show();
             // this.Close();
         }
+
+        private void AjoutPresta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

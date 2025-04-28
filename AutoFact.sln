@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoFact", "AutoFact\AutoFact.csproj", "{4448BA26-3015-4E93-B1FA-1E20E86F6DED}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MonInstallateur", "MonInstallateur\MonInstallateur.vdproj", "{DA6FFE6C-C7F9-4BB6-B7B9-04887319C401}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installateur", "Installateur\Installateur.vdproj", "{60969908-7105-452E-829C-AFF7E5C744DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,9 @@ Global
 		{4448BA26-3015-4E93-B1FA-1E20E86F6DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4448BA26-3015-4E93-B1FA-1E20E86F6DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4448BA26-3015-4E93-B1FA-1E20E86F6DED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA6FFE6C-C7F9-4BB6-B7B9-04887319C401}.Debug|Any CPU.ActiveCfg = Release
-		{DA6FFE6C-C7F9-4BB6-B7B9-04887319C401}.Debug|Any CPU.Build.0 = Release
-		{DA6FFE6C-C7F9-4BB6-B7B9-04887319C401}.Release|Any CPU.ActiveCfg = Release
-		{DA6FFE6C-C7F9-4BB6-B7B9-04887319C401}.Release|Any CPU.Build.0 = Release
+		{60969908-7105-452E-829C-AFF7E5C744DC}.Debug|Any CPU.ActiveCfg = Release
+		{60969908-7105-452E-829C-AFF7E5C744DC}.Debug|Any CPU.Build.0 = Release
+		{60969908-7105-452E-829C-AFF7E5C744DC}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

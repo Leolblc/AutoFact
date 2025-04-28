@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panelClient = new Panel();
+            Btn_info1 = new Button();
             buttonQuitter = new Button();
             buttonRecap = new Button();
             buttonFact = new Button();
@@ -45,7 +46,6 @@
             LB_Last_Cli = new Label();
             LB_Last_Presta = new Label();
             LB_Last_Fact = new Label();
-            Btn_info1 = new Button();
             panelClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DGVPrestation).BeginInit();
@@ -69,6 +69,21 @@
             panelClient.Name = "panelClient";
             panelClient.Size = new Size(210, 877);
             panelClient.TabIndex = 0;
+            // 
+            // Btn_info1
+            // 
+            Btn_info1.BackColor = Color.FromArgb(45, 45, 45);
+            Btn_info1.FlatAppearance.BorderSize = 0;
+            Btn_info1.FlatStyle = FlatStyle.Flat;
+            Btn_info1.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
+            Btn_info1.ForeColor = SystemColors.Control;
+            Btn_info1.Location = new Point(6, 680);
+            Btn_info1.Name = "Btn_info1";
+            Btn_info1.Size = new Size(198, 48);
+            Btn_info1.TabIndex = 7;
+            Btn_info1.Text = "Vos Informations";
+            Btn_info1.UseVisualStyleBackColor = true;
+            Btn_info1.Click += Btn_info1_Click;
             // 
             // buttonQuitter
             // 
@@ -198,6 +213,7 @@
             dataGridViewCA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCA.Location = new Point(876, 528);
             dataGridViewCA.Name = "dataGridViewCA";
+            dataGridViewCA.ReadOnly = true;
             dataGridViewCA.Size = new Size(318, 200);
             dataGridViewCA.TabIndex = 5;
             // 
@@ -206,6 +222,7 @@
             DGVFact.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVFact.Location = new Point(254, 528);
             DGVFact.Name = "DGVFact";
+            DGVFact.ReadOnly = true;
             DGVFact.Size = new Size(521, 200);
             DGVFact.TabIndex = 6;
             DGVFact.CellContentClick += DGVFact_CellContentClick;
@@ -239,21 +256,6 @@
             LB_Last_Fact.Size = new Size(188, 22);
             LB_Last_Fact.TabIndex = 9;
             LB_Last_Fact.Text = "Dernières Factures";
-            // 
-            // Btn_info1
-            // 
-            Btn_info1.BackColor = Color.FromArgb(45, 45, 45);
-            Btn_info1.FlatAppearance.BorderSize = 0;
-            Btn_info1.FlatStyle = FlatStyle.Flat;
-            Btn_info1.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
-            Btn_info1.ForeColor = SystemColors.Control;
-            Btn_info1.Location = new Point(6, 680);
-            Btn_info1.Name = "Btn_info1";
-            Btn_info1.Size = new Size(198, 48);
-            Btn_info1.TabIndex = 7;
-            Btn_info1.Text = "Vos Informations";
-            Btn_info1.UseVisualStyleBackColor = true;
-            Btn_info1.Click += Btn_info1_Click;
             // 
             // Form1
             // 

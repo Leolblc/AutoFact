@@ -189,7 +189,7 @@ namespace AutoFact
             Lab_Ht.AutoSize = true;
             Lab_Ht.Location = new Point(44, 243);
             Lab_Ht.Name = "Lab_Ht";
-            Lab_Ht.Size = new Size(71, 15);
+            Lab_Ht.Size = new Size(72, 15);
             Lab_Ht.TabIndex = 18;
             Lab_Ht.Text = "Montant HT";
             // 
@@ -310,6 +310,7 @@ namespace AutoFact
             Controls.Add(panelAjoutClient);
             Name = "AjoutPresta";
             Text = "AjoutPresta";
+            Load += AjoutPresta_Load;
             panelAjoutClient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
