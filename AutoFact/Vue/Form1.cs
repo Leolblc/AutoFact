@@ -103,7 +103,8 @@ namespace AutoFact
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
-                        DGVLastClient.DataSource = dataTable; 
+                        DGVLastClient.DataSource = dataTable;
+                    }
                 }
             }
             catch (Exception ex)

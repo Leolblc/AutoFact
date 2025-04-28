@@ -35,10 +35,6 @@ namespace AutoFact
 
         private void LoadPresta2()
         {
-
-            try
-            {
-
                 try
                 {
                     var db = DatabaseConnection.GetInstance();
@@ -60,11 +56,12 @@ namespace AutoFact
 
 
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erreur lors du chargement des données : {ex.Message}", "Erreur de chargement");
-            }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erreur lors du chargement des données : {ex.Message}", "Erreur de chargement");
+                }
+            
 
         }
 
