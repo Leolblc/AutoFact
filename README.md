@@ -10,3 +10,4 @@ Pour l’installation des applications ainsi que de la base de données, il est 
 Merci de **lire la documentation** avant d’installer les composants.
 
 - **Debian12**
+- **MariaDB**
