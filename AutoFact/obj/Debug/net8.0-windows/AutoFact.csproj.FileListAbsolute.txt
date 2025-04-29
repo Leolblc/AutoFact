@@ -414,3 +414,4 @@ C:\Users\anneo\Documents\BTS\AutoFact\AutoFact\obj\Debug\net8.0-windows\AutoFact
 C:\Users\anneo\Documents\BTS\AutoFact\AutoFact\obj\Debug\net8.0-windows\AutoFact.genruntimeconfig.cache
 C:\Users\anneo\Documents\BTS\AutoFact\AutoFact\obj\Debug\net8.0-windows\ref\AutoFact.dll
 C:\Users\anneo\Documents\BTS\AutoFact\AutoFact\bin\Debug\net8.0-windows\config.ini
+C:\Users\anneo\Documents\BTS\AutoFact\AutoFact\bin\Debug\net8.0-windows\ae.png.pagespeed.ce.C-nGxigoz2.ico

@@ -1,32 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using MySqlConnector;
-using MySql.EntityFrameworkCore;
-using MySql;
-using MySql.Data;
 using AutoFact.Vue;
-using System.Net.Mail;
-using System.ComponentModel.DataAnnotations;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Microsoft.Extensions.Logging;
-using System.Security.Cryptography.X509Certificates;
-using Org.BouncyCastle.Bcpg;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using System.ComponentModel.Design;
+
 
 
 namespace AutoFact
 {
     public partial class Prestation : Form
     {
-        private MySqlConnection connection;
         public Prestation()
         {
             InitializeComponent();
@@ -41,7 +23,7 @@ namespace AutoFact
         {
             AjoutPresta newPresta = new AjoutPresta();
             newPresta.ShowDialog();
-            // this.Close();
+            this.Close();
         }
 
 
@@ -86,35 +68,35 @@ namespace AutoFact
         {
             Form1 form1 = new Form1();
             form1.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonClient3_Click(object sender, EventArgs e)
         {
             Client client = new Client();
             client.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonFact3_Click(object sender, EventArgs e)
         {
             Facturation facturation = new Facturation();
             facturation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonRecap3_Click(object sender, EventArgs e)
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
             AjoutPresta ajoutPresta = new AjoutPresta();
             ajoutPresta.Show();
-            // this.Close();
+            this.Close();
         }
     }
 }

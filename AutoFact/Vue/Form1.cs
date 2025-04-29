@@ -19,7 +19,7 @@ namespace AutoFact
         {
             Client FormClient = new Client();
             FormClient.ShowDialog();
-            // this.Hide();
+            this.Hide();
 
         }
 
@@ -27,14 +27,14 @@ namespace AutoFact
         {
             Prestation FormPrestation = new Prestation();
             FormPrestation.ShowDialog();
-            // this.Hide();
+            this.Hide();
         }
 
         private void buttonFact_Click(object sender, EventArgs e)
         {
             Facturation FormFacturation = new Facturation();
             FormFacturation.ShowDialog();
-            // this.Hide();
+            this.Hide();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -46,7 +46,7 @@ namespace AutoFact
         {
             Recapitulatif FormRecap = new Recapitulatif();
             FormRecap.ShowDialog();
-            // this.Hide();
+            this.Hide();
         }
 
         private void DGVPrestation_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -119,13 +119,14 @@ namespace AutoFact
 
             try
             {
-                using (var command = new MySqlCommand(query, connection))
+                var db = DatabaseConnection.GetInstance();
+                using (var command = new MySqlCommand(query, db.GetConnection()))
                 {
                     using (var adapter = new MySqlDataAdapter(command))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
-                        DGVFact.DataSource = dataTable; // Assurez-vous que le nom du DataGridView est correct
+                        DGVFact.DataSource = dataTable;
                     }
                 }
             }

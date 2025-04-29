@@ -126,7 +126,7 @@ namespace AutoFact
         {
             Client client = new Client();
             client.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void BtnPrestationNA_Click(object sender, EventArgs e)
@@ -138,14 +138,14 @@ namespace AutoFact
         {
             Facturation facturation = new Facturation();
             facturation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void BtnRecap3_Click(object sender, EventArgs e)
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void AjoutPresta_Load(object sender, EventArgs e)

@@ -28,7 +28,7 @@ namespace AutoFact
         {
             AjoutFacturation ajoutFacturation = new AjoutFacturation();
             ajoutFacturation.Show();
-            // this.Close();
+            this.Close();
         }
 
 
@@ -158,10 +158,10 @@ namespace AutoFact
                     page.PageColor(Colors.White);
                     page.DefaultTextStyle(x => x.FontSize(12));
 
-                    // 📌 En-tête
+                    // En-tête
                     page.Header().Element(container => ComposeHeader(container, factureData, selectedFacture));
 
-                    // 📌 Contenu unique (évite le double appel à `page.Content()`)
+                    // Contenu unique (évite le double appel à `page.Content()`)
                     page.Content().Column(column =>
                     {
                         column.Item().Element(container => ComposeForFrom(container, factureData));
@@ -169,7 +169,7 @@ namespace AutoFact
                         column.Item().Element(container => ComposeTable(container, factureData));
                     });
 
-                    // 📌 Pied de page
+                    // Pied de page
                     page.Footer().AlignCenter().Text(text =>
                     {
                         text.CurrentPageNumber();
@@ -183,7 +183,7 @@ namespace AutoFact
             MessageBox.Show("PDF généré avec succès !");
         }
 
-        // 📌 Déplacement des méthodes à l'extérieur pour plus de clarté
+        // Déplacement des méthodes à l'extérieur pour plus de clarté
         private void ComposeHeader(QuestPDF.Infrastructure.IContainer container, DataTable factureData, string numfact)
         {
             if (factureData.Rows.Count == 0) return;
@@ -346,35 +346,35 @@ namespace AutoFact
         {
             Form1 form = new Form1();
             form.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonClient3_Click(object sender, EventArgs e)
         {
             Client client = new Client();
             client.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonPresta3_Click(object sender, EventArgs e)
         {
             Prestation prestation = new Prestation();
             prestation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonRecap3_Click(object sender, EventArgs e)
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
             AjoutFacturation ajoutFacturation = new AjoutFacturation();
             ajoutFacturation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void CBPDF_SelectedIndexChanged_1(object sender, EventArgs e)

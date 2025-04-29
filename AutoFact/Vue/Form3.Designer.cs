@@ -232,6 +232,7 @@
             TB_LasName_ENT.Name = "TB_LasName_ENT";
             TB_LasName_ENT.Size = new Size(213, 23);
             TB_LasName_ENT.TabIndex = 10;
+            TB_LasName_ENT.TextChanged += TB_LasName_ENT_TextChanged;
             // 
             // TB_Name_INFO
             // 

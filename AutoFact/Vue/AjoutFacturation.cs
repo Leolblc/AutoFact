@@ -1,27 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
 using MySqlConnector;
-using MySql.EntityFrameworkCore;
-using MySql;
-using MySql.Data;
 using AutoFact.Vue;
-using System.Net.Mail;
-using System.ComponentModel.DataAnnotations;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Microsoft.Extensions.Logging;
-using System.Security.Cryptography.X509Certificates;
-using Org.BouncyCastle.Bcpg;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using static AutoFact.AjoutPresta;
-using static AutoFact.AjoutClient;
-using Org.BouncyCastle.Crypto;
+
 
 namespace AutoFact
 {
@@ -188,7 +168,7 @@ namespace AutoFact
 
                 Facturation facturation = new Facturation();
                 facturation.Show();
-                // this.Close();
+                this.Close();
 
             }
             catch (Exception ex)
@@ -206,28 +186,28 @@ namespace AutoFact
         {
             Form1 form = new Form1();
             form.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonClient_Click(object sender, EventArgs e)
         {
             Client client = new Client();
             client.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonPresta_Click(object sender, EventArgs e)
         {
             Prestation prestation = new Prestation();
             prestation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonRecap_Click(object sender, EventArgs e)
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
-            // this.Close();
+            this.Close();
         }
     }
 

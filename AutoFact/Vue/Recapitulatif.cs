@@ -109,13 +109,14 @@ namespace AutoFact.Vue
 
             try
             {
-                using (var command = new MySqlCommand(query, connection))
+                var db = DatabaseConnection.GetInstance();
+                using (var command = new MySqlCommand(query, db.GetConnection()))
                 {
                     using (var adapter = new MySqlDataAdapter(command))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
-                        ARPM.DataSource = dataTable; // Assurez-vous que le nom du DataGridView est correct
+                        ARPM.DataSource = dataTable;
                     }
                 }
             }
@@ -186,21 +187,21 @@ namespace AutoFact.Vue
 
             FormClient.Show();
 
-            // this.Close();
+            this.Close();
         }
 
         private void buttonPresta_Click_1(object sender, EventArgs e)
         {
             Prestation prestation = new Prestation();
             prestation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonFact_Click_1(object sender, EventArgs e)
         {
             Facturation formFacturation = new Facturation();
             formFacturation.Show();
-            // this.Close();
+            this.Close();
         }
 
         private void buttonRecap_Click(object sender, EventArgs e)
@@ -212,7 +213,7 @@ namespace AutoFact.Vue
         {
             Form1 form1 = new Form1();
             form1.Show();
-            // this.Close();
+            this.Close();
         }
     }
 }

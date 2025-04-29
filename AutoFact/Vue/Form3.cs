@@ -6,16 +6,41 @@ namespace AutoFact.Vue
 {
     public partial class Form3 : Form
     {
-        private MySqlConnection connection;
 
         public Form3()
         {
             InitializeComponent();
+            loadData();
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void loadData()
+        {
+            try
+            {
+                var db = DatabaseConnection.GetInstance();
+                string query = "SELECT * FROM Info_entrepreneur WHERE id=1";
+                using (MySqlCommand cmd = new MySqlCommand(query, db.GetConnection()))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        TB_Name_INFO.Text = reader["nom"].ToString();
+                        TB_LasName_ENT.Text = reader["prenom"].ToString();
+                        TB_Address_INFO.Text = reader["Adresse"].ToString();
+                        TB_Mail_INFO.Text = reader["mail"].ToString();
+                        TB_Phone_INFO.Text = reader["telephone"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors du chargement des données : {ex.Message}", "Erreur de chargement");
+            }
         }
 
         private void BTN_Update_INFO_Click(object sender, EventArgs e)
@@ -38,6 +63,7 @@ namespace AutoFact.Vue
                 }
 
                 MessageBox.Show("Informations mises à jour");
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -51,33 +77,38 @@ namespace AutoFact.Vue
         {
             Client FormClient = new Client();
             FormClient.ShowDialog();
-            // this.Hide();
+            this.Close();
         }
 
         private void buttonPresta_Click(object sender, EventArgs e)
         {
             Prestation FormPrestation = new Prestation();
             FormPrestation.ShowDialog();
-            // this.Hide();
+            this.Close();
         }
 
         private void buttonFact_Click(object sender, EventArgs e)
         {
             Facturation FormFacturation = new Facturation();
             FormFacturation.ShowDialog();
-            // this.Hide();
+            this.Close();
         }
 
         private void buttonRecap_Click(object sender, EventArgs e)
         {
             Recapitulatif FormRecap = new Recapitulatif();
             FormRecap.ShowDialog();
-            // this.Hide();
+            this.Close();
         }
 
         private void buttonQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void TB_LasName_ENT_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
