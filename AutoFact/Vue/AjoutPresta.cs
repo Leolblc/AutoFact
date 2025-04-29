@@ -35,33 +35,33 @@ namespace AutoFact
 
         private void LoadPresta2()
         {
-                try
+            try
+            {
+                var db = DatabaseConnection.GetInstance();
+                string query = "SELECT id, libelle FROM Type_Prestation";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, db.GetConnection()))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    var db = DatabaseConnection.GetInstance();
-                    string query = "SELECT id, libelle FROM Type_Prestation";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, db.GetConnection()))
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            int ID = reader.GetInt32("id");
-                            string nom = reader.GetString("libelle");
-                            UnePresta lapresta = new UnePresta { anName = nom, anid = ID };
-                            comboBox1.Items.Add(lapresta);
-                        }
-
+                        int ID = reader.GetInt32("id");
+                        string nom = reader.GetString("libelle");
+                        UnePresta lapresta = new UnePresta { anName = nom, anid = ID };
+                        comboBox1.Items.Add(lapresta);
                     }
 
-
-
-
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Erreur lors du chargement des données : {ex.Message}", "Erreur de chargement");
-                }
-            
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors du chargement des données : {ex.Message}", "Erreur de chargement");
+            }
+
 
         }
 
@@ -151,6 +151,13 @@ namespace AutoFact
         private void AjoutPresta_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_info1_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+            this.Close();
         }
     }
 }

@@ -52,6 +52,7 @@ namespace AutoFact
             TBNom = new TextBox();
             panel2 = new Panel();
             label2 = new Label();
+            Btn_info1 = new Button();
             panelAjoutClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
@@ -61,6 +62,7 @@ namespace AutoFact
             // panelAjoutClient
             // 
             panelAjoutClient.BackColor = Color.FromArgb(45, 45, 45);
+            panelAjoutClient.Controls.Add(Btn_info1);
             panelAjoutClient.Controls.Add(buttonQuitter);
             panelAjoutClient.Controls.Add(BtnRecap3);
             panelAjoutClient.Controls.Add(BtnFacture3);
@@ -298,6 +300,21 @@ namespace AutoFact
             label2.TabIndex = 0;
             label2.Text = "Nouvelle Prestation";
             // 
+            // Btn_info1
+            // 
+            Btn_info1.BackColor = Color.FromArgb(45, 45, 45);
+            Btn_info1.FlatAppearance.BorderSize = 0;
+            Btn_info1.FlatStyle = FlatStyle.Flat;
+            Btn_info1.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
+            Btn_info1.ForeColor = SystemColors.Control;
+            Btn_info1.Location = new Point(6, 666);
+            Btn_info1.Name = "Btn_info1";
+            Btn_info1.Size = new Size(198, 48);
+            Btn_info1.TabIndex = 8;
+            Btn_info1.Text = "Vos Informations";
+            Btn_info1.UseVisualStyleBackColor = true;
+            Btn_info1.Click += Btn_info1_Click;
+            // 
             // AjoutPresta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -308,6 +325,7 @@ namespace AutoFact
             Controls.Add(panel2);
             Controls.Add(panel5);
             Controls.Add(panelAjoutClient);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AjoutPresta";
             Text = "AjoutPresta";
             Load += AjoutPresta_Load;
@@ -347,5 +365,6 @@ namespace AutoFact
         private Label Lab_Ht;
         private TextBox CB_HT;
         private Button buttonQuitter;
+        private Button Btn_info1;
     }
 }

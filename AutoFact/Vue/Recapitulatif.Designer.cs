@@ -47,6 +47,7 @@
             dataGridViewT = new DataGridView();
             dataGridViewM = new DataGridView();
             label2 = new Label();
+            Btn_info1 = new Button();
             panelClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
@@ -69,6 +70,7 @@
             // panelClient
             // 
             panelClient.BackColor = Color.FromArgb(45, 45, 45);
+            panelClient.Controls.Add(Btn_info1);
             panelClient.Controls.Add(buttonQuitter);
             panelClient.Controls.Add(buttonRecap);
             panelClient.Controls.Add(buttonFact);
@@ -267,6 +269,21 @@
             label2.TabIndex = 12;
             label2.Text = "Votre cumul trimestriel";
             // 
+            // Btn_info1
+            // 
+            Btn_info1.BackColor = Color.FromArgb(45, 45, 45);
+            Btn_info1.FlatAppearance.BorderSize = 0;
+            Btn_info1.FlatStyle = FlatStyle.Flat;
+            Btn_info1.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
+            Btn_info1.ForeColor = SystemColors.Control;
+            Btn_info1.Location = new Point(6, 668);
+            Btn_info1.Name = "Btn_info1";
+            Btn_info1.Size = new Size(198, 48);
+            Btn_info1.TabIndex = 13;
+            Btn_info1.Text = "Vos Informations";
+            Btn_info1.UseVisualStyleBackColor = true;
+            Btn_info1.Click += Btn_info1_Click;
+            // 
             // Recapitulatif
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -279,6 +296,7 @@
             Controls.Add(panel5);
             Controls.Add(panel2);
             Controls.Add(panelClient);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Recapitulatif";
             Text = "Recapitulatif";
             Load += Recapitulatif_Load;
@@ -316,5 +334,6 @@
         private Label label2;
         private Label label4;
         private Button buttonQuitter;
+        private Button Btn_info1;
     }
 }

@@ -150,6 +150,7 @@ namespace AutoFact
         {
             Form3 FormInfo = new Form3();
             FormInfo.ShowDialog();
+            this.Hide();
         }
     }
 }

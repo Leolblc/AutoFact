@@ -7,7 +7,7 @@ namespace AutoFact
 {
     public partial class AjoutFacturation : Form
     {
-      
+
         private List<unePresta> ListePresta = new List<unePresta>();
         private List<unClients> ListedeClients = new List<unClients>();
         public AjoutFacturation()
@@ -17,7 +17,7 @@ namespace AutoFact
             LoadPresta();
         }
 
-        
+
 
         public class unClients
         {
@@ -207,6 +207,13 @@ namespace AutoFact
         {
             Recapitulatif recapitulatif = new Recapitulatif();
             recapitulatif.Show();
+            this.Close();
+        }
+
+        private void Btn_info1_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
             this.Close();
         }
     }

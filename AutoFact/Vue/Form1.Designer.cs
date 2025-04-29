@@ -77,7 +77,7 @@
             Btn_info1.FlatStyle = FlatStyle.Flat;
             Btn_info1.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
             Btn_info1.ForeColor = SystemColors.Control;
-            Btn_info1.Location = new Point(6, 680);
+            Btn_info1.Location = new Point(6, 671);
             Btn_info1.Name = "Btn_info1";
             Btn_info1.Size = new Size(198, 48);
             Btn_info1.TabIndex = 7;
@@ -273,6 +273,7 @@
             Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(panelClient);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

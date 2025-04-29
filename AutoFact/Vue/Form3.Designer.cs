@@ -170,6 +170,7 @@
             pictureBox1.Size = new Size(48, 50);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
@@ -292,6 +293,7 @@
             Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(panelClient);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form3";
             Text = "Information";
             Load += Form3_Load;

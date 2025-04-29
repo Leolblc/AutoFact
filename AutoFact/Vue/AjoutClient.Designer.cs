@@ -53,6 +53,7 @@
             TBPhone = new TextBox();
             TBNom = new TextBox();
             buttonQuitter = new Button();
+            Btn_info1 = new Button();
             panelAjoutClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -72,6 +73,7 @@
             // panelAjoutClient
             // 
             panelAjoutClient.BackColor = Color.FromArgb(45, 45, 45);
+            panelAjoutClient.Controls.Add(Btn_info1);
             panelAjoutClient.Controls.Add(BtnRecap2);
             panelAjoutClient.Controls.Add(BtnFacture2);
             panelAjoutClient.Controls.Add(BtnPrestation2);
@@ -321,6 +323,21 @@
             buttonQuitter.UseVisualStyleBackColor = true;
             buttonQuitter.Click += buttonQuitter_Click;
             // 
+            // Btn_info1
+            // 
+            Btn_info1.BackColor = Color.FromArgb(45, 45, 45);
+            Btn_info1.FlatAppearance.BorderSize = 0;
+            Btn_info1.FlatStyle = FlatStyle.Flat;
+            Btn_info1.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
+            Btn_info1.ForeColor = SystemColors.Control;
+            Btn_info1.Location = new Point(6, 663);
+            Btn_info1.Name = "Btn_info1";
+            Btn_info1.Size = new Size(198, 48);
+            Btn_info1.TabIndex = 8;
+            Btn_info1.Text = "Vos Informations";
+            Btn_info1.UseVisualStyleBackColor = true;
+            Btn_info1.Click += Btn_info1_Click;
+            // 
             // AjoutClient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -332,6 +349,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panelAjoutClient);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AjoutClient";
             Text = "AjoutClient";
             Load += AjoutClient_Load;
@@ -373,5 +391,6 @@
         private TextBox TBPrenom;
         private Button BtnVal;
         private Button buttonQuitter;
+        private Button Btn_info1;
     }
 }

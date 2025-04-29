@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoFact", "AutoFact\AutoFact.csproj", "{4448BA26-3015-4E93-B1FA-1E20E86F6DED}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AutoFact_Installer", "AutoFact_Installer\AutoFact_Installer.vdproj", "{079084D7-5E26-4BB6-BCF7-0E9145056922}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,9 @@ Global
 		{4448BA26-3015-4E93-B1FA-1E20E86F6DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4448BA26-3015-4E93-B1FA-1E20E86F6DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4448BA26-3015-4E93-B1FA-1E20E86F6DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079084D7-5E26-4BB6-BCF7-0E9145056922}.Debug|Any CPU.ActiveCfg = Release
+		{079084D7-5E26-4BB6-BCF7-0E9145056922}.Debug|Any CPU.Build.0 = Release
+		{079084D7-5E26-4BB6-BCF7-0E9145056922}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

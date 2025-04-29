@@ -55,6 +55,7 @@
             label3 = new Label();
             TBNomFacture = new TextBox();
             buttonQuitter = new Button();
+            Btn_info1 = new Button();
             panelClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -65,6 +66,7 @@
             // panelClient
             // 
             panelClient.BackColor = Color.FromArgb(45, 45, 45);
+            panelClient.Controls.Add(Btn_info1);
             panelClient.Controls.Add(buttonRecap);
             panelClient.Controls.Add(buttonFact);
             panelClient.Controls.Add(buttonPresta);
@@ -342,6 +344,21 @@
             buttonQuitter.UseVisualStyleBackColor = true;
             buttonQuitter.Click += buttonQuitter_Click;
             // 
+            // Btn_info1
+            // 
+            Btn_info1.BackColor = Color.FromArgb(45, 45, 45);
+            Btn_info1.FlatAppearance.BorderSize = 0;
+            Btn_info1.FlatStyle = FlatStyle.Flat;
+            Btn_info1.Font = new Font("Segoe UI", 16F, FontStyle.Underline);
+            Btn_info1.ForeColor = SystemColors.Control;
+            Btn_info1.Location = new Point(9, 678);
+            Btn_info1.Name = "Btn_info1";
+            Btn_info1.Size = new Size(198, 48);
+            Btn_info1.TabIndex = 10;
+            Btn_info1.Text = "Vos Informations";
+            Btn_info1.UseVisualStyleBackColor = true;
+            Btn_info1.Click += Btn_info1_Click;
+            // 
             // AjoutFacturation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -353,6 +370,7 @@
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(panelClient);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AjoutFacturation";
             Text = "AjoutFacturation";
             Load += AjoutFacturation_Load;
@@ -394,5 +412,6 @@
         private DateTimePicker DTPDate;
         private Label LBDate;
         private Button buttonQuitter;
+        private Button Btn_info1;
     }
 }
