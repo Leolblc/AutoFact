@@ -11,3 +11,7 @@ Merci de **lire la documentation** avant d’installer les composants.
 
 - **Debian12**
 - **MariaDB**
+
+## Installation 
+
+https://mega.nz/file/mcsUFA7C#wkzPX1k6x0aXCw-vFSbI3c51ZiXAgmpIo8hHimNvsbI
