@@ -15,3 +15,10 @@ Merci de **lire la documentation** avant d’installer les composants.
 ## Installation 
 
 https://mega.nz/file/mcsUFA7C#wkzPX1k6x0aXCw-vFSbI3c51ZiXAgmpIo8hHimNvsbI
+
+## Setup
+
+Afin de connecter l'application à votre base de données, aller dans le dossier LANCORP/Autofact_Installer/
+Puis prendre le fichier **config.ini** et le déplacer sur le bureau, modifier les information de connection de la base de donnée , enregistrer le fichier et remettez le dans  LANCORP/Autofact_Installer/
+
+## Utilisation 
