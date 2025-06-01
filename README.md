@@ -12,13 +12,25 @@ Merci de **lire la documentation** avant d’installer les composants.
 - **Debian12**
 - **MariaDB**
 
-## Installation 
+## 📃​ Installation 
 
 https://mega.nz/file/mcsUFA7C#wkzPX1k6x0aXCw-vFSbI3c51ZiXAgmpIo8hHimNvsbI
 
-## Setup
+## 🛠️ Setup
 
-Afin de connecter l'application à votre base de données, aller dans le dossier LANCORP/Autofact_Installer/
-Puis prendre le fichier **config.ini** et le déplacer sur le bureau, modifier les information de connection de la base de donnée , enregistrer le fichier et remettez le dans  LANCORP/Autofact_Installer/
+Afin de connecter l'application à votre base de données, aller dans le dossier LANCORP/Autofact_Installer/ <br>
+Puis prendre le fichier **config.ini** et le déplacer sur le bureau, modifier les information de connection de la base de donnée , enregistrer le fichier et remettez le dans  LANCORP/Autofact_Installer/<br><br>
 
-## Utilisation 
+## 💿 Utilisation <br>
+
+L'application est composé de 5 catégorie contenant pour certaine des sous catégorie<br>
+
+-Dashboard : Le dashboard ressources les dernières informations principal <br>
+-Clients : L'onglet client ressource sous un tableau simple, tout les clients que vous avez enregistré<br>
+          -Ajouter Client : Une sous catégorie de Clients permettant d'entrée les informations du clients.<br>
+-Prestation : L'onglet client ressource sous un tableau simple, toute les prestations que vous avez enregistré<br>
+          -Ajouter Prestation : Une sous catégorie de Clients permettant d'entrée les informations du clients.<br>
+-Facturation : Est un onglet permettant d'ajouter des factures aux clients, ils vous est possible de les exportés en pdf pour les transmettre<br>
+          -Ajouter Facture : Permet d'ajouter une nouvelle factures, en choissisant la prestation et le client ainsi que d'autre information<br>
+- Vos Information : Vous permet de mettre vos informations : /!\ Obligatoire pour les factures (relier)<br>
+- Récapitatif : permet de voir votre chiffre d'affaire<br>
