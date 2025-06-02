@@ -16,6 +16,8 @@ Merci de **lire la documentation** avant d’installer les composants.
 
 [https://mega.nz/file/mcsUFA7C#wkzPX1k6x0aXCw-vFSbI3c51ZiXAgmpIo8hHimNvsbI
 ](https://mega.nz/folder/fIlU2ZRL#Ar8aDbbu_tlTB5CuJ39tPA)
+
+Faire un dump de la base de données (Données de test inclus !)
 ## 🛠️ Setup
 
 Afin de connecter l'application à votre base de données, aller dans le dossier LANCORP/Autofact_Installer/ <br>
